@@ -73,9 +73,9 @@ body {
 }
 
 .header {
-  margin-right: auto;
-  margin-left: auto;
-  width: 400px;
+  margin: calc(20rem / 16) auto;
+  width: 80dvw;
+  text-align: center;
 }
 
 .decoration {
