@@ -1,14 +1,15 @@
+import Carousel from "../components/Carousel";
+import Decoration from "../components/Decoration";
+import Header from "../components/Header";
+import ReasonsWhy from "../components/ReasonsWhy";
+
 export default function Home() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyConten: "center",
-        alignItems: "center",
-        height: "90dvh",
-      }}
-    >
-      <h1>Home</h1>
-    </div>
+    <>
+      <Header />
+      <Carousel />
+      <Decoration />
+      <ReasonsWhy />
+    </>
   );
 }

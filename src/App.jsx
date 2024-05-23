@@ -17,8 +17,6 @@ function App() {
           <Route path="/about" exact element={<About />} />
         </Routes>
       </Router>
-      <Header />
-      <Decoration />
     </main>
   );
 }

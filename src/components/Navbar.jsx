@@ -29,13 +29,13 @@ export default function Navbar() {
         </NavBtn>
       </Nav>
       <Sidebar isOpen={isOpen} toggle={handleToggle}>
+        <SideBarLinkClose
+          style={{ justifyContent: "flex-end", fontSize: "2.5rem" }}
+          onClick={handleToggle}
+        >
+          <AiOutlineClose />
+        </SideBarLinkClose>
         <SideMenu>
-          <SideBarLink
-            style={{ justifyContent: "flex-end", fontSize: "2.5rem" }}
-            onClick={handleToggle}
-          >
-            <AiOutlineClose />
-          </SideBarLink>
           <SideBarLink onClick={handleToggle} to="/about">
             About
           </SideBarLink>
@@ -56,6 +56,7 @@ const Sidebar = styled.aside`
   top: 0;
   transition: 0.3s ease-in-out;
   right: ${({ isOpen }) => (isOpen ? "0" : "-1000px")};
+  z-index: 999;
 
   @media screen and (max-width: 550px) {
     width: 100%;
@@ -63,25 +64,33 @@ const Sidebar = styled.aside`
 `;
 
 const SideMenu = styled.div`
-  display: flex
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100%;
+  margin-top: -3.5rem;
 `;
 
 const SideBarLink = styled(Link)`
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
   cursor: pointer;
   margin: 1rem 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
 
   &.active {
     color: var(--color-green);
   }
+`;
+
+const SideBarLinkClose = styled.div`
+  display: flex;
+  color: var(--color-green);
+  justify-content: flex-end;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 1rem;
 `;
 
 const Nav = styled.nav`
