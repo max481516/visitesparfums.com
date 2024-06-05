@@ -3,7 +3,10 @@ import styled from "styled-components";
 import { ChevronRightIcon, ChevronLeftIcon } from "@radix-ui/react-icons";
 
 export default function ReasonsWhy() {
-  const [sliderPointer, setSliderPointer] = useState(0);
+  const [sliderPointer, setSliderPointer] = useState(1);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [offset, setOffset] = useState(0);
+  const isTransitioning = useRef(false); // Flag to prevent simultaneous updates
   const sliderData = useRef([
     {
       description:
@@ -22,58 +25,115 @@ export default function ReasonsWhy() {
     },
   ]).current;
 
+  const totalSlides = sliderData.length;
+  const touchStartX = useRef(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setSliderPointer((prevPointer) =>
-        prevPointer === sliderData.length - 1 ? 0 : prevPointer + 1
-      );
-    }, 6000); // Change slide every 3 seconds
+      if (!isTransitioning.current) {
+        handleNextSlide();
+      }
+    }, 6000); // Change slide every 6 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, [sliderData.length]);
+  }, []);
 
-  const nextSlide = () => {
-    setSliderPointer((prevPointer) =>
-      prevPointer === sliderData.length - 1 ? 0 : prevPointer + 1
-    );
+  const handleNextSlide = () => {
+    if (isTransitioning.current) return;
+    setIsAnimating(true);
+    isTransitioning.current = true;
+    setSliderPointer((prevPointer) => prevPointer + 1);
   };
 
-  const prevSlide = () => {
-    setSliderPointer((prevPointer) =>
-      prevPointer === 0 ? sliderData.length - 1 : prevPointer - 1
-    );
+  const handlePrevSlide = () => {
+    if (isTransitioning.current) return;
+    setIsAnimating(true);
+    isTransitioning.current = true;
+    setSliderPointer((prevPointer) => prevPointer - 1);
   };
 
   const goToSlide = (index) => {
-    setSliderPointer(index);
+    if (isTransitioning.current) return;
+    setIsAnimating(true);
+    isTransitioning.current = true;
+    setSliderPointer(index + 1); // Offset by 1 due to the extra slides
   };
 
-  const currentSlide = sliderData[sliderPointer];
+  const handleTransitionEnd = () => {
+    setIsAnimating(false);
+    if (sliderPointer === 0) {
+      setSliderPointer(totalSlides);
+    } else if (sliderPointer === totalSlides + 1) {
+      setSliderPointer(1);
+    }
+    setOffset(0);
+    isTransitioning.current = false;
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    const touchCurrentX = e.targetTouches[0].clientX;
+    setOffset(touchCurrentX - touchStartX.current);
+  };
+
+  const handleTouchEnd = () => {
+    if (offset < -50) {
+      handleNextSlide();
+    } else if (offset > 50) {
+      handlePrevSlide();
+    } else {
+      setOffset(0);
+    }
+  };
 
   return (
     <>
       <Title>3 reasons why:</Title>
       <Slider>
-        {currentSlide && (
-          <SlideContainer>
-            <Slides>
-              <Text>{currentSlide.description}</Text>
-              <Author>{currentSlide.author}</Author>
-            </Slides>
-            <Previous onClick={prevSlide}>
-              <ChevronLeftIcon width="42" height="42" />
-            </Previous>
-            <Next onClick={nextSlide}>
-              <ChevronRightIcon width="42" height="42" />
-            </Next>
-          </SlideContainer>
-        )}
+        <SlideContainer
+          sliderPointer={sliderPointer}
+          offset={offset}
+          isAnimating={isAnimating}
+          onTransitionEnd={handleTransitionEnd}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <Slide>
+            <Text>{sliderData[totalSlides - 1].description}</Text>
+            <Author>{sliderData[totalSlides - 1].author}</Author>
+          </Slide>
+          {sliderData.map((slide, index) => (
+            <Slide key={index}>
+              <Text>{slide.description}</Text>
+              <Author>{slide.author}</Author>
+            </Slide>
+          ))}
+          <Slide>
+            <Text>{sliderData[0].description}</Text>
+            <Author>{sliderData[0].author}</Author>
+          </Slide>
+        </SlideContainer>
+        <Previous onClick={handlePrevSlide}>
+          <ChevronLeftIcon width="42" height="42" />
+        </Previous>
+        <Next onClick={handleNextSlide}>
+          <ChevronRightIcon width="42" height="42" />
+        </Next>
         <Dots>
           {sliderData.map((_, index) => (
             <Dot
               key={index}
               onClick={() => goToSlide(index)}
-              className={index === sliderPointer ? "active" : ""}
+              className={
+                index + 1 === sliderPointer ||
+                (index === 0 && sliderPointer === totalSlides + 1)
+                  ? "active"
+                  : ""
+              }
             />
           ))}
         </Dots>
@@ -89,15 +149,24 @@ const Title = styled.h2`
   margin: 2rem 0;
 `;
 
-const Slider = styled.div``;
-
-const SlideContainer = styled.div`
+const Slider = styled.div`
   position: relative;
+  overflow: hidden;
+  width: 100%;
 `;
 
-const Slides = styled.div`
-  padding: 10px 80px;
+const SlideContainer = styled.div`
+  display: flex;
+  transition: ${(props) =>
+    props.isAnimating ? "transform 0.3s ease-in-out" : "none"};
+  transform: ${(props) =>
+    `translateX(calc(-${props.sliderPointer * 100}% + ${props.offset}px))`};
+`;
+
+const Slide = styled.div`
+  min-width: 100%;
   text-align: center;
+  padding: 10px 80px;
 `;
 
 const Text = styled.p``;
@@ -110,9 +179,9 @@ const Author = styled.p`
 const Previous = styled.button`
   cursor: pointer;
   position: absolute;
-  top: 50%;
-  margin-top: -30px;
-  padding: 16px;
+  top: 30%;
+  left: 2px;
+  transform: translateY(-50%);
   color: #888;
   border: none;
   background-color: transparent;
@@ -121,10 +190,9 @@ const Previous = styled.button`
 const Next = styled.button`
   cursor: pointer;
   position: absolute;
-  right: 0;
-  top: 50%;
-  margin-top: -30px;
-  padding: 16px;
+  top: 30%;
+  right: 2px;
+  transform: translateY(-50%);
   color: #888;
   border: none;
   background-color: transparent;

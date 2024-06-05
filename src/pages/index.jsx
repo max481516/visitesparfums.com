@@ -1,3 +1,4 @@
+import AboutMe from "../components/AboutMe";
 import Carousel from "../components/Carousel";
 import Decoration from "../components/Decoration";
 import Header from "../components/Header";
@@ -11,6 +12,7 @@ export default function Home() {
       <Carousel />
       <Decoration />
       <ReasonsWhy />
+      <AboutMe />
     </>
   );
 }
