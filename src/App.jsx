@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages";
 import About from "./pages/about";
 import GlobalStyles from "./GlobalStyles";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/about" exact element={<About />} />
         </Routes>
+        <Footer />
       </Router>
     </main>
   );

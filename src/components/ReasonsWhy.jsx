@@ -90,7 +90,7 @@ export default function ReasonsWhy() {
   };
 
   return (
-    <>
+    <Div>
       <Title>3 reasons why:</Title>
       <Slider>
         <SlideContainer
@@ -138,9 +138,13 @@ export default function ReasonsWhy() {
           ))}
         </Dots>
       </Slider>
-    </>
+    </Div>
   );
 }
+
+const Div = styled.div`
+  background: hsl(20, 25%, 90%);
+`;
 
 const Title = styled.h2`
   text-align: center;
