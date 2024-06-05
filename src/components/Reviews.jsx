@@ -14,7 +14,7 @@ export default function SimpleSlider() {
   return (
     <Slider {...settings}>
       <div>
-        <p>dweqdqwdq</p>
+        <h3>1</h3>
       </div>
       <div>
         <h3>2</h3>
