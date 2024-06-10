@@ -1,8 +1,9 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,8 @@ export default function Navbar() {
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -19,13 +22,13 @@ export default function Navbar() {
         </NavLink>
         <Bars onClick={handleToggle} />
         <NavMenu>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/services">Services</NavLink>
-          <NavLink to="/contact-us">Contact Us</NavLink>
-          <NavLink to="/sign-up">Sign Up</NavLink>
+          <NavLink to="/about">{t("About")}</NavLink>
+          <NavLink to="/services">{t("Services")}</NavLink>
+          <NavLink to="/contact-us">{t("Contact Us")}</NavLink>
+          <NavLink to="/sign-up">{t("Book Now!")}</NavLink>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to="/sign-in">Sign In</NavBtnLink>
+          <NavBtnLink to="/sign-in">{t("Book Now!")}</NavBtnLink>
         </NavBtn>
       </Nav>
       <Sidebar isOpen={isOpen} toggle={handleToggle}>
@@ -37,17 +40,18 @@ export default function Navbar() {
         </SideBarLinkClose>
         <SideMenu>
           <SideBarLink onClick={handleToggle} to="/about">
-            About
+            {t("About")}
           </SideBarLink>
-          <SideBarLink to="/services">Services</SideBarLink>
-          <SideBarLink to="/contact-us">Contact Us</SideBarLink>
-          <SideBarLink to="/sign-up">Sign Up</SideBarLink>
+          <SideBarLink to="/services">{t("Services")}</SideBarLink>
+          <SideBarLink to="/contact-us">{t("Contact Us")}</SideBarLink>
+          <SideBarLink to="/sign-up">{t("Book Now!")}</SideBarLink>
         </SideMenu>
       </Sidebar>
     </>
   );
 }
 
+// Define your styled components...
 const Sidebar = styled.aside`
   position: fixed;
   width: 350px;
@@ -111,8 +115,9 @@ const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
 
-  &.active {
+  &:hover {
     color: var(--color-green);
+    transition: all 0.2s ease-in-out;
   }
 `;
 
@@ -162,8 +167,9 @@ const NavBtnLink = styled(Link)`
   transition: all 0.2s ease-in-out;
   text-decoration: none;
 
-    &:hover {
-        transition: all 0.2s ease-in-out;
-        background: #fff;
-        color: #010606;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #010606;
+  }
 `;

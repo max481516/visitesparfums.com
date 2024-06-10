@@ -12,8 +12,10 @@ export default function Footer() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             iconRef.current.style.color = "var(--color-pink)";
+            iconRef.current.style.opacity = "1";
           } else {
             iconRef.current.style.color = "var(--color-brown)";
+            iconRef.current.style.opacity = "0.3";
           }
         });
       },
@@ -42,7 +44,6 @@ export default function Footer() {
       >
         <FaInstagram
           style={{
-            opacity: "0.8",
             width: "42px",
             height: "42px",
           }}
