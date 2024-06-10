@@ -10,9 +10,9 @@ export default function Home() {
       <Header />
       <Carousel />
       <Decoration />
-      <ReasonsWhy />
+      <ReasonsWhy title="3 Reasons Why:" />
       <AboutMe />
-      <ReasonsWhy />
+      <ReasonsWhy title="My Reviews:" />
     </>
   );
 }

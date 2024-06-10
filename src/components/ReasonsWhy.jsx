@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { ChevronRightIcon, ChevronLeftIcon } from "@radix-ui/react-icons";
 
-export default function ReasonsWhy() {
+export default function ReasonsWhy({ title }) {
   const [sliderPointer, setSliderPointer] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
   const [offset, setOffset] = useState(0);
@@ -91,7 +91,7 @@ export default function ReasonsWhy() {
 
   return (
     <Div>
-      <Title>3 reasons why:</Title>
+      <Title>{title}</Title>
       <Slider>
         <SlideContainer
           sliderPointer={sliderPointer}
