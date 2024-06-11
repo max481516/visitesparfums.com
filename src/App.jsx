@@ -4,14 +4,12 @@ import Home from "./pages";
 import About from "./pages/about";
 import GlobalStyles from "./GlobalStyles";
 import Footer from "./components/Footer";
-import LanguageSelector from "./components/LanguageSelector";
-import "./i18n";
+import "./i18n/i18n";
 
 function App() {
   return (
     <main>
       <Router>
-        <LanguageSelector />
         <GlobalStyles />
         <Navbar />
         <Routes>

@@ -1,6 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-
+import LanguageDetector from "i18next-browser-languagedetector";
 import translationsInEng from "../locales/en/translation.json";
 import translationsInFrench from "../locales/fr/translation.json";
 import translationsInRussian from "../locales/ru/translation.json";
@@ -19,17 +19,17 @@ const resources = {
 };
 
 i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
-    resources, // resources are important to load translations for the languages.
-    lng: "en", // It acts as default language. When the site loads, content is shown in this language.
+    resources,
     debug: true,
-    fallbackLng: "fr", // use fr if selected language is not available
+    lng: localStorage.getItem("lang"), // It acts as default language. When the site loads, content is shown in this language.
+    fallbackLng: "fr",
+    returnObjects: true,
     interpolation: {
-      escapeValue: false,
+      escapeValue: false, // not needed for react as it escapes by default
     },
-    ns: "translation", // namespaces help to divide huge translations into multiple small files.
-    defaultNS: "translation",
   });
 
 export default i18n;

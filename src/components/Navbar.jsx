@@ -4,6 +4,7 @@ import { NavLink as Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
+import LanguageSelector from "./LanguageSelector";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,12 +26,12 @@ export default function Navbar() {
           <NavLink to="/about">{t("About")}</NavLink>
           <NavLink to="/services">{t("Services")}</NavLink>
           <NavLink to="/contact-us">{t("Contact Us")}</NavLink>
-          <NavLink to="/sign-up">{t("Book Now!")}</NavLink>
         </NavMenu>
         <NavBtn>
           <NavBtnLink to="/sign-in">{t("Book Now!")}</NavBtnLink>
         </NavBtn>
       </Nav>
+
       <Sidebar isOpen={isOpen} toggle={handleToggle}>
         <SideBarLinkClose
           style={{ justifyContent: "flex-end", fontSize: "2.5rem" }}
@@ -46,6 +47,7 @@ export default function Navbar() {
           <SideBarLink to="/contact-us">{t("Contact Us")}</SideBarLink>
           <SideBarLink to="/sign-up">{t("Book Now!")}</SideBarLink>
         </SideMenu>
+        <LanguageSelector />
       </Sidebar>
     </>
   );
