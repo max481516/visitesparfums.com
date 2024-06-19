@@ -1,18 +1,16 @@
 import styled from "styled-components";
 import natImage from "../img/Nat.jpg";
+import { useTranslation } from "react-i18next";
 
 export default function AboutMe() {
+  const { t } = useTranslation();
+
   return (
     <Div>
-      <Title>About Me</Title>
+      <Title>{t("About Me")}</Title>
       <Container>
         <Image src={natImage} alt="aboutme" />
-        <Text>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet
-          distinctio, reprehenderit cum molestiae odio sit adipisci amet
-          delectus, est commodi id voluptatibus, quibusdam harum! Sapiente
-          aliquid aliquam fugit expedita laboriosam.
-        </Text>
+        <Text>{t("aboutMeDescription")}</Text>
       </Container>
     </Div>
   );

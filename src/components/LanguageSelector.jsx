@@ -18,8 +18,8 @@ export default function LanguageSelector() {
       onChange={chooseLanguage}
     >
       <option value="en">English</option>
-      <option value="fr">French</option>
-      <option value="ru">Russian</option>
+      <option value="fr">Français</option>
+      <option value="ru">Русский</option>
     </LanguageSelectorContainer>
   );
 }
@@ -38,6 +38,7 @@ const LanguageSelectorContainer = styled.select`
   background-position: right 0.5em top 50%;
   background-size: 0.65em auto;
   cursor: pointer;
+  width: 105px;
   position: absolute;
   bottom: 3rem;
   left: 50%;

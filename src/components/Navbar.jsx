@@ -28,15 +28,12 @@ export default function Navbar() {
           <NavLink to="/contact-us">{t("Contact Us")}</NavLink>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to="/sign-in">{t("Book Now!")}</NavBtnLink>
+          <NavBtnLink to="/Booking">{t("Book Now!")}</NavBtnLink>
         </NavBtn>
       </Nav>
 
       <Sidebar isOpen={isOpen} toggle={handleToggle}>
-        <SideBarLinkClose
-          style={{ justifyContent: "flex-end", fontSize: "2.5rem" }}
-          onClick={handleToggle}
-        >
+        <SideBarLinkClose onClick={handleToggle}>
           <AiOutlineClose />
         </SideBarLinkClose>
         <SideMenu>
@@ -45,7 +42,7 @@ export default function Navbar() {
           </SideBarLink>
           <SideBarLink to="/services">{t("Services")}</SideBarLink>
           <SideBarLink to="/contact-us">{t("Contact Us")}</SideBarLink>
-          <SideBarLink to="/sign-up">{t("Book Now!")}</SideBarLink>
+          <SideBarLink to="/Booking">{t("Book Now!")}</SideBarLink>
         </SideMenu>
         <LanguageSelector />
       </Sidebar>
@@ -53,7 +50,6 @@ export default function Navbar() {
   );
 }
 
-// Define your styled components...
 const Sidebar = styled.aside`
   position: fixed;
   width: 350px;
@@ -160,7 +156,7 @@ const NavBtn = styled.nav`
 
 const NavBtnLink = styled(Link)`
   border-radius: 4px;
-  background: #256ce1;
+  background: var(--color-green);
   padding: 10px 22px;
   color: #fff;
   border: none;
