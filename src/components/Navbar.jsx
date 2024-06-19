@@ -40,9 +40,15 @@ export default function Navbar() {
           <SideBarLink onClick={handleToggle} to="/about">
             {t("About")}
           </SideBarLink>
-          <SideBarLink to="/services">{t("Services")}</SideBarLink>
-          <SideBarLink to="/contact-us">{t("Contact Us")}</SideBarLink>
-          <SideBarLink to="/Booking">{t("Book Now!")}</SideBarLink>
+          <SideBarLink onClick={handleToggle} to="/services">
+            {t("Services")}
+          </SideBarLink>
+          <SideBarLink onClick={handleToggle} to="/contact-us">
+            {t("Contact Us")}
+          </SideBarLink>
+          <SideBarLink onClick={handleToggle} to="/Booking">
+            {t("Book Now!")}
+          </SideBarLink>
         </SideMenu>
         <LanguageSelector />
       </Sidebar>

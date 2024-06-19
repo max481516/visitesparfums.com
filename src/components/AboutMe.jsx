@@ -6,19 +6,17 @@ export default function AboutMe() {
   const { t } = useTranslation();
 
   return (
-    <Div>
+    <Wrapper>
       <Title>{t("About Me")}</Title>
       <Container>
         <Image src={natImage} alt="aboutme" />
         <Text>{t("aboutMeDescription")}</Text>
       </Container>
-    </Div>
+    </Wrapper>
   );
 }
 
-const Div = styled.div`
-  background-color: var(--color-light-green);
-`;
+const Wrapper = styled.div``;
 
 const Title = styled.h2`
   text-align: center;
