@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { IoArrowUpSharp } from "react-icons/io5";
+import { IoIosArrowDropup } from "react-icons/io";
 
 export default function Footer() {
   const iconRef = useRef(null);
@@ -43,19 +43,14 @@ export default function Footer() {
 
   return (
     <FooterContainer ref={footerRef}>
-      <ArrowTop
+      <BackToTop
         href="#nav"
         title="back to top"
         ref={iconRef}
         onClick={handleScrollToTop}
       >
-        <IoArrowUpSharp
-          style={{
-            width: "38px",
-            height: "38px",
-          }}
-        />
-      </ArrowTop>
+        <IoIosArrowDropup size={38} />
+      </BackToTop>
       <Copyright>© 2024, VISITES PARFUMS PARIS</Copyright>
     </FooterContainer>
   );
@@ -69,7 +64,7 @@ const FooterContainer = styled.footer`
   position: relative;
 `;
 
-const ArrowTop = styled.a`
+const BackToTop = styled.a`
   position: fixed;
   bottom: calc(12rem / 16);
   left: 4px;
@@ -78,8 +73,9 @@ const ArrowTop = styled.a`
 `;
 
 const Copyright = styled.small`
-  color: var(--color-blue);
+  color: var(--color-green);
   font-size: calc(11rem / 16);
+  font-weight: 600;
   position: absolute;
   top: 50%;
   left: 50%;

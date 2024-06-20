@@ -22,7 +22,7 @@ export default function Sidebar({ isOpen, toggle }) {
         <SideBarItem onClick={toggle} to="/contact-us">
           {t("Contact Us")}
         </SideBarItem>
-        <SideBarItem onClick={toggle} to="/Booking">
+        <SideBarItem onClick={toggle} to="/booking">
           {t("Book Now!")}
         </SideBarItem>
       </SideMenu>

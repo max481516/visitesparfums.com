@@ -3,6 +3,7 @@ import PhotoCarousel from "../components/PhotoCarousel";
 import Decoration from "../components/Decoration";
 import Header from "../components/Header";
 import ReasonsWhy from "../components/ReasonsWhy";
+import ContactUs from "../components/ContactUs";
 
 const images = [
   {
@@ -24,10 +25,10 @@ export default function Home() {
       <Decoration />
       <ReasonsWhy title="3 Reasons Why:" />
       <AboutMe />
-      {/* <ReasonsWhy title="My Reviews:" /> */}
       <ReasonsWhy title="My Reviews:" />
       <Decoration />
       <ReasonsWhy title="My Reviews:" />
+      <ContactUs />
     </>
   );
 }

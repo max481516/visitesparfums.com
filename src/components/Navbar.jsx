@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Nav id="nav">
+      <Nav>
         <LogoLink to="/">
           <Logo src={logo}></Logo>
         </LogoLink>
@@ -23,7 +23,7 @@ export default function Navbar() {
           <NavItem to="/contact-us">{t("Contact Us")}</NavItem>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to="/Booking">{t("Book Now!")}</NavBtnLink>
+          <NavBtnLink to="/booking">{t("Book Now!")}</NavBtnLink>
         </NavBtn>
       </Nav>
       <Sidebar isOpen={isOpen} toggle={toggle} />
