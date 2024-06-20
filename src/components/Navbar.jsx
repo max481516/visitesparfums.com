@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Nav>
+      <Nav id="nav">
         <LogoLink to="/">
           <Logo src={logo}></Logo>
         </LogoLink>
