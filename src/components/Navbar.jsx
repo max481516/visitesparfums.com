@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import useSidebar from "../hooks/useSidebar";
 import Sidebar from "./Sidebar";
+import logo from "../img/logo.svg";
 
 export default function Navbar() {
   const { t } = useTranslation();
@@ -11,9 +12,9 @@ export default function Navbar() {
 
   return (
     <>
-      <Nav>
+      <Nav id="nav">
         <LogoLink to="/">
-          <h1>LOGO</h1>
+          <Logo src={logo}></Logo>
         </LogoLink>
         <Bars onClick={toggle} />
         <NavMenu>
@@ -44,7 +45,7 @@ const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
+
   height: 100%;
   cursor: pointer;
 
@@ -52,6 +53,11 @@ const LogoLink = styled(Link)`
     color: var(--color-green);
     transition: all 0.2s ease-in-out;
   }
+`;
+
+const Logo = styled.img`
+  width: 130px;
+  height: 40px;
 `;
 
 const Bars = styled(FaBars)`

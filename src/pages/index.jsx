@@ -25,12 +25,9 @@ export default function Home() {
       <ReasonsWhy title="3 Reasons Why:" />
       <AboutMe />
       {/* <ReasonsWhy title="My Reviews:" /> */}
-      <iframe
-        src="https://e190aab39c5c4840a41e9961438e18df.elf.site"
-        width="100%"
-        height="500"
-        frameborder="0"
-      ></iframe>
+      <ReasonsWhy title="My Reviews:" />
+      <Decoration />
+      <ReasonsWhy title="My Reviews:" />
     </>
   );
 }

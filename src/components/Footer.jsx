@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { FaInstagram } from "react-icons/fa";
+import { IoArrowUpSharp } from "react-icons/io5";
 
 export default function Footer() {
   const iconRef = useRef(null);
@@ -11,11 +11,11 @@ export default function Footer() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            iconRef.current.style.color = "var(--color-pink)";
-            iconRef.current.style.opacity = "1";
+            iconRef.current.style.color = "var(--color-green)";
+            iconRef.current.style.opacity = "0.9";
           } else {
             iconRef.current.style.color = "var(--color-brown)";
-            iconRef.current.style.opacity = "0.3";
+            iconRef.current.style.opacity = "0.2";
           }
         });
       },
@@ -36,19 +36,27 @@ export default function Footer() {
     };
   }, []);
 
+  const handleScrollToTop = (e) => {
+    e.preventDefault();
+    document.getElementById("nav").scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <FooterContainer ref={footerRef}>
-      <SocialIcons
-        href="https://www.instagram.com/visitesparfumsparis/"
+      <ArrowTop
+        href="#nav"
+        title="back to top"
         ref={iconRef}
+        onClick={handleScrollToTop}
       >
-        <FaInstagram
+        <IoArrowUpSharp
           style={{
-            width: "42px",
-            height: "42px",
+            width: "38px",
+            height: "38px",
           }}
         />
-      </SocialIcons>
+      </ArrowTop>
+      <Copyright>© 2024, VISITES PARFUMS PARIS</Copyright>
     </FooterContainer>
   );
 }
@@ -61,10 +69,19 @@ const FooterContainer = styled.footer`
   position: relative;
 `;
 
-const SocialIcons = styled.a`
+const ArrowTop = styled.a`
   position: fixed;
-  bottom: 6px;
+  bottom: calc(12rem / 16);
   left: 4px;
   text-decoration: none;
   transition: color 0.3s ease;
+`;
+
+const Copyright = styled.small`
+  color: var(--color-blue);
+  font-size: calc(11rem / 16);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
