@@ -4,7 +4,6 @@ import Decoration from "../components/Decoration";
 import Header from "../components/Header";
 import ReasonsWhy from "../components/ReasonsWhy";
 import ContactUs from "../components/ContactUs";
-import ContactForm from "../components/ContactForm";
 
 const images = [
   {
@@ -29,7 +28,6 @@ export default function Home() {
       <ReasonsWhy title="My Reviews:" />
       <Decoration />
       <ContactUs />
-      <ContactForm />
     </>
   );
 }

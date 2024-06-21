@@ -5,7 +5,9 @@ export default function ContactForm() {
   const [state, handleSubmit] = useForm("mqazzaer");
 
   if (state.succeeded) {
-    return <p>Thanks for your message!</p>;
+    return (
+      <ConfirmationMessage>Thank you for your message!😸</ConfirmationMessage>
+    );
   }
 
   return (
@@ -26,7 +28,7 @@ export default function ContactForm() {
           type="email"
           name="email"
           id="email-address"
-          placeholder="email@domain.tld"
+          placeholder="email@domain.com"
           required
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -106,4 +108,11 @@ const SubmitButton = styled.button`
     background-color: var(--color-gray);
     cursor: not-allowed;
   }
+`;
+
+const ConfirmationMessage = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10dvh;
 `;
