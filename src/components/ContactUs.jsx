@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FaInstagram } from "react-icons/fa";
+import { SlSocialInstagram } from "react-icons/sl";
 import { FaAirbnb } from "react-icons/fa";
 import { AiOutlineMessage } from "react-icons/ai";
 import ContactForm from "./ContactForm";
@@ -21,7 +21,7 @@ export default function ContactUs() {
         <Title>Book Now!</Title>
       </Book>
       <FollowUs href="https://www.instagram.com/visitesparfumsparis/">
-        <FaInstagram size={50} />
+        <SlSocialInstagram size={50} />
         <Title>Follow me!</Title>
       </FollowUs>
       <ContactFormButton onClick={toggleModal}>

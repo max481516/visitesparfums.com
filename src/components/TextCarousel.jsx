@@ -2,30 +2,12 @@ import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { ChevronRightIcon, ChevronLeftIcon } from "@radix-ui/react-icons";
 
-export default function ReasonsWhy({ title }) {
+export default function TextCarousel({ title, data }) {
   const [sliderPointer, setSliderPointer] = useState(1);
   const [isAnimating, setIsAnimating] = useState(false);
   const [offset, setOffset] = useState(0);
   const isTransitioning = useRef(false); // Flag to prevent simultaneous updates
-  const sliderData = useRef([
-    {
-      description:
-        "I love you the more in that I believe you had liked me for my own sake and for nothing else",
-      author: "John Keats",
-    },
-    {
-      description:
-        "But man is not made for defeat. A man can be destroyed but not defeated.",
-      author: "Ernest Hemingway",
-    },
-    {
-      description:
-        "I have not failed. I've just found 10,000 ways that won't work.",
-      author: "Thomas A. Edison",
-    },
-  ]).current;
-
-  const totalSlides = sliderData.length;
+  const totalSlides = data.length;
   const touchStartX = useRef(0);
 
   useEffect(() => {
@@ -90,7 +72,7 @@ export default function ReasonsWhy({ title }) {
   };
 
   return (
-    <Div>
+    <Wrapper>
       <Title>{title}</Title>
       <Slider>
         <SlideContainer
@@ -103,18 +85,18 @@ export default function ReasonsWhy({ title }) {
           onTouchEnd={handleTouchEnd}
         >
           <Slide>
-            <Text>{sliderData[totalSlides - 1].description}</Text>
-            <Author>{sliderData[totalSlides - 1].author}</Author>
+            <Text>{data[totalSlides - 1].description}</Text>
+            <Author>{data[totalSlides - 1].author}</Author>
           </Slide>
-          {sliderData.map((slide, index) => (
+          {data.map((slide, index) => (
             <Slide key={index}>
               <Text>{slide.description}</Text>
               <Author>{slide.author}</Author>
             </Slide>
           ))}
           <Slide>
-            <Text>{sliderData[0].description}</Text>
-            <Author>{sliderData[0].author}</Author>
+            <Text>{data[0].description}</Text>
+            <Author>{data[0].author}</Author>
           </Slide>
         </SlideContainer>
         <Previous onClick={handlePrevSlide}>
@@ -124,7 +106,7 @@ export default function ReasonsWhy({ title }) {
           <ChevronRightIcon width="42" height="42" />
         </Next>
         <Dots>
-          {sliderData.map((_, index) => (
+          {data.map((_, index) => (
             <Dot
               key={index}
               onClick={() => goToSlide(index)}
@@ -138,11 +120,11 @@ export default function ReasonsWhy({ title }) {
           ))}
         </Dots>
       </Slider>
-    </Div>
+    </Wrapper>
   );
 }
 
-const Div = styled.div`
+const Wrapper = styled.div`
   background: hsl(20, 25%, 90%);
 `;
 
