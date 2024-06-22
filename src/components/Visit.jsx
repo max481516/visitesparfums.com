@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import AirbnbLogo from "../img/airbnb.svg";
+import AirbnbLogo from "../media/airbnb.svg";
 import PhotoCarousel from "./PhotoCarousel";
 
 export default function Visit({ title, text, images }) {

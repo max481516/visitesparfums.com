@@ -1,19 +1,27 @@
-import AboutMe from "../components/AboutMe";
 import PhotoCarousel from "../components/PhotoCarousel";
 import Decoration from "../components/Decoration";
 import Header from "../components/Header";
 import TextCarousel from "../components/TextCarousel";
 import ContactUs from "../components/ContactUs";
+import AboutVisit from "../components/AboutVisit";
+import PhotoGallery from "../components/PhotoGallery";
+import HomeCarouselPhoto1 from "../media/HomeCarouselPhotos/HomeCarouselPhoto1.jpeg";
+import HomeCarouselPhoto2 from "../media/HomeCarouselPhotos/HomeCarouselPhoto2.jpeg";
+import HomeCarouselPhoto3 from "../media/HomeCarouselPhotos/HomeCarouselPhoto3.jpeg";
+import HomeCarouselPhoto4 from "../media/HomeCarouselPhotos/HomeCarouselPhoto4.jpeg";
 
 const images = [
   {
-    original: "https://picsum.photos/id/1018/1000/600/",
+    original: HomeCarouselPhoto1,
   },
   {
-    original: "https://picsum.photos/id/1015/1000/600/",
+    original: HomeCarouselPhoto2,
   },
   {
-    original: "https://picsum.photos/id/1019/1000/600/",
+    original: HomeCarouselPhoto3,
+  },
+  {
+    original: HomeCarouselPhoto4,
   },
 ];
 
@@ -109,10 +117,10 @@ export default function Home() {
       <Header />
       <PhotoCarousel images={images} />
       <Decoration />
-      <TextCarousel title="3 Reasons Why:" data={reasons} />
-      <AboutMe />
+      <AboutVisit title="rgew" />
+      <TextCarousel title="Why Book a Visit:" data={reasons} />
+      <PhotoGallery />
       <TextCarousel title="My Reviews:" data={reviews} />
-      <Decoration />
       <ContactUs />
     </>
   );

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import natImage from "../img/Nat.jpg";
+import natImage from "../media/Nat.jpg";
 import { useTranslation } from "react-i18next";
 
 export default function AboutMe() {

@@ -2,16 +2,15 @@ import styled from "styled-components";
 
 export default function Header() {
   return (
-    <HeaderText>
-      Lorem ipsum dolor sit amet consectetur. Vulputate sed nascetur sem
-      faucibus a narat suscipit risus aliquet viverra sapien. Aliquam mauris
-      euismod sit tellus ullamcorper lectus dolor blandit.
-    </HeaderText>
+    <>
+      <Title>Exclusive perfume guided boutiques tours in Paris</Title>
+    </>
   );
 }
 
-const HeaderText = styled.header`
-  margin: calc(20rem / 16) auto;
-  width: 80dvw;
+const Title = styled.h1`
   text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 2rem 0;
 `;

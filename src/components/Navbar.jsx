@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import useSidebar from "../hooks/useSidebar";
 import Sidebar from "./Sidebar";
-import logo from "../img/logo.svg";
+import logo from "../media/logo.svg";
 
 export default function Navbar() {
   const { t } = useTranslation();
