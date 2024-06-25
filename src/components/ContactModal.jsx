@@ -1,14 +1,24 @@
 import styled from "styled-components";
+import useStores from "../stores/useStores";
 
-export default function ContactModal({ show, onClose, children }) {
-  if (!show) {
+export default function ContactModal({ children }) {
+  const showModal = useStores((state) => state.showModal);
+  const toggleModal = useStores((state) => state.toggleModal);
+
+  if (!showModal) {
     return null;
   }
 
+  const handleOverlayClick = (e) => {
+    // This stops the click event from propagating beyond the Overlay keeping the close onclick
+    e.stopPropagation();
+    toggleModal();
+  };
+
   return (
-    <Overlay onClick={onClose}>
+    <Overlay onClick={handleOverlayClick}>
       <ModalContainer onClick={(e) => e.stopPropagation()}>
-        <CloseButton onClick={onClose}>&times;</CloseButton>
+        <CloseButton onClick={toggleModal}>&times;</CloseButton>
         {children}
       </ModalContainer>
     </Overlay>
@@ -17,6 +27,7 @@ export default function ContactModal({ show, onClose, children }) {
 
 const Overlay = styled.div`
   position: fixed;
+  z-index: 998;
   top: 0;
   left: 0;
   right: 0;

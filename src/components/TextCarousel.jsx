@@ -1,55 +1,52 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import styled from "styled-components";
 import { ChevronRightIcon, ChevronLeftIcon } from "@radix-ui/react-icons";
 
 export default function TextCarousel({ title, data }) {
-  const [sliderPointer, setSliderPointer] = useState(1);
+  const [sliderPointer, setSliderPointer] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [offset, setOffset] = useState(0);
-  const isTransitioning = useRef(false); // Flag to prevent simultaneous updates
+  const isTransitioning = useRef(false);
   const totalSlides = data.length;
   const touchStartX = useRef(0);
+  const slideContainerRef = useRef(null);
+  const activeSlideRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isTransitioning.current) {
         handleNextSlide();
       }
-    }, 6000); // Change slide every 6 seconds
+    }, 6000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (sliderPointer < 0) {
+      setSliderPointer(totalSlides - 1);
+    } else if (sliderPointer >= totalSlides) {
+      setSliderPointer(0);
+    }
+
+    setIsAnimating(false);
+    isTransitioning.current = false;
+  }, [sliderPointer, totalSlides]);
 
   const handleNextSlide = () => {
     if (isTransitioning.current) return;
     setIsAnimating(true);
     isTransitioning.current = true;
-    setSliderPointer((prevPointer) => prevPointer + 1);
+    setSliderPointer((prevPointer) => (prevPointer + 1) % totalSlides);
   };
 
   const handlePrevSlide = () => {
     if (isTransitioning.current) return;
     setIsAnimating(true);
     isTransitioning.current = true;
-    setSliderPointer((prevPointer) => prevPointer - 1);
-  };
-
-  const goToSlide = (index) => {
-    if (isTransitioning.current) return;
-    setIsAnimating(true);
-    isTransitioning.current = true;
-    setSliderPointer(index + 1); // Offset by 1 due to the extra slides
-  };
-
-  const handleTransitionEnd = () => {
-    setIsAnimating(false);
-    if (sliderPointer === 0) {
-      setSliderPointer(totalSlides);
-    } else if (sliderPointer === totalSlides + 1) {
-      setSliderPointer(1);
-    }
-    setOffset(0);
-    isTransitioning.current = false;
+    setSliderPointer(
+      (prevPointer) => (prevPointer - 1 + totalSlides) % totalSlides
+    );
   };
 
   const handleTouchStart = (e) => {
@@ -71,33 +68,56 @@ export default function TextCarousel({ title, data }) {
     }
   };
 
+  useLayoutEffect(() => {
+    const setHeight = () => {
+      if (activeSlideRef.current && slideContainerRef.current) {
+        const activeSlideHeight = activeSlideRef.current.scrollHeight;
+        /* console.log("Active Slide Height:", activeSlideHeight); */
+        slideContainerRef.current.style.height = `${activeSlideHeight}px`;
+      }
+    };
+
+    const currentActiveSlide = activeSlideRef.current;
+    setHeight();
+
+    const resizeObserver = new ResizeObserver(() => {
+      setHeight();
+    });
+
+    if (currentActiveSlide) {
+      resizeObserver.observe(currentActiveSlide);
+    }
+
+    return () => {
+      if (currentActiveSlide) {
+        resizeObserver.unobserve(currentActiveSlide);
+      }
+      resizeObserver.disconnect();
+    };
+  }, [sliderPointer]);
+
   return (
     <Wrapper>
       <Title>{title}</Title>
       <Slider>
         <SlideContainer
+          ref={slideContainerRef}
           sliderPointer={sliderPointer}
           offset={offset}
           isAnimating={isAnimating}
-          onTransitionEnd={handleTransitionEnd}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <Slide>
-            <Text>{data[totalSlides - 1].description}</Text>
-            <Author>{data[totalSlides - 1].author}</Author>
-          </Slide>
           {data.map((slide, index) => (
-            <Slide key={index}>
+            <Slide
+              key={index}
+              ref={index === sliderPointer ? activeSlideRef : null}
+            >
               <Text>{slide.description}</Text>
               <Author>{slide.author}</Author>
             </Slide>
           ))}
-          <Slide>
-            <Text>{data[0].description}</Text>
-            <Author>{data[0].author}</Author>
-          </Slide>
         </SlideContainer>
         <Previous onClick={handlePrevSlide}>
           <ChevronLeftIcon width="42" height="42" />
@@ -109,13 +129,8 @@ export default function TextCarousel({ title, data }) {
           {data.map((_, index) => (
             <Dot
               key={index}
-              onClick={() => goToSlide(index)}
-              className={
-                index + 1 === sliderPointer ||
-                (index === 0 && sliderPointer === totalSlides + 1)
-                  ? "active"
-                  : ""
-              }
+              onClick={() => setSliderPointer(index)}
+              className={index === sliderPointer ? "active" : ""}
             />
           ))}
         </Dots>
@@ -144,7 +159,9 @@ const Slider = styled.div`
 const SlideContainer = styled.div`
   display: flex;
   transition: ${(props) =>
-    props.isAnimating ? "transform 0.3s ease-in-out" : "none"};
+    props.isAnimating
+      ? "transform 0.3s ease-in-out, height 0.3s ease-in-out"
+      : "none"};
   transform: ${(props) =>
     `translateX(calc(-${props.sliderPointer * 100}% + ${props.offset}px))`};
 `;

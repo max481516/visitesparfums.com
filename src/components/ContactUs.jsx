@@ -1,18 +1,16 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { SlSocialInstagram } from "react-icons/sl";
+import { RxInstagramLogo } from "react-icons/rx";
+
 import { FaAirbnb } from "react-icons/fa";
 import { AiOutlineMessage } from "react-icons/ai";
 import ContactForm from "./ContactForm";
 import ContactModal from "./ContactModal";
+import useStores from "../stores/useStores";
 
 export default function ContactUs() {
-  const [showModal, setShowModal] = useState(false);
-
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
+  const showModal = useStores((state) => state.showModal);
+  const toggleModal = useStores((state) => state.toggleModal);
 
   return (
     <Wrapper>
@@ -21,7 +19,7 @@ export default function ContactUs() {
         <Title>Book Now!</Title>
       </Book>
       <FollowUs href="https://www.instagram.com/visitesparfumsparis/">
-        <SlSocialInstagram size={50} />
+        <RxInstagramLogo size={50} />
         <Title>Follow me!</Title>
       </FollowUs>
       <ContactFormButton onClick={toggleModal}>
@@ -74,4 +72,5 @@ const ContactFormButton = styled.div`
   gap: 1rem;
   text-decoration: none;
   color: black;
+  cursor: pointer;
 `;

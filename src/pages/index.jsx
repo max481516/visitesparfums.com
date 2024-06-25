@@ -114,8 +114,8 @@ const reviews = [
 export default function Home() {
   return (
     <>
-      <Header />
       <PhotoCarousel images={images} />
+      <Header />
       <Decoration />
       <AboutVisit title="rgew" />
       <TextCarousel title="Why Book a Visit:" data={reasons} />

@@ -3,8 +3,11 @@ import { AiOutlineClose } from "react-icons/ai";
 import { NavLink as Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "./LanguageSelector";
+import useStores from "../stores/useStores";
 
 export default function Sidebar({ isOpen, toggle }) {
+  const toggleModal = useStores((state) => state.toggleModal);
+
   const { t } = useTranslation();
 
   return (
@@ -14,13 +17,10 @@ export default function Sidebar({ isOpen, toggle }) {
       </SideBarLinkClose>
       <SideMenu>
         <SideBarItem onClick={toggle} to="/about">
-          {t("About")}
+          {t("About me")}
         </SideBarItem>
-        <SideBarItem onClick={toggle} to="/services">
-          {t("Services")}
-        </SideBarItem>
-        <SideBarItem onClick={toggle} to="/contact-us">
-          {t("Contact Us")}
+        <SideBarItem as="div" onClick={toggleModal}>
+          {t("Ask a question")}
         </SideBarItem>
         <SideBarItem onClick={toggle} to="/booking">
           {t("Book Now!")}
@@ -39,7 +39,7 @@ const SidebarContainer = styled.aside`
   top: 0;
   transition: 0.3s ease-in-out;
   right: ${({ isOpen }) => (isOpen ? "0" : "-1000px")};
-  z-index: 999;
+  z-index: 990;
 
   @media screen and (max-width: 550px) {
     width: 100%;
@@ -52,7 +52,8 @@ const SideMenu = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-top: -3.5rem;
+  margin-top: -4rem;
+  gap: 2rem;
 `;
 
 const SideBarItem = styled(Link)`
