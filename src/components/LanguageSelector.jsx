@@ -40,7 +40,7 @@ const LanguageSelectorContainer = styled.select`
   cursor: pointer;
   width: 105px;
   position: absolute;
-  bottom: 3rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(
     -50%

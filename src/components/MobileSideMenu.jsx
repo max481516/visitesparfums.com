@@ -4,6 +4,7 @@ import { NavLink as Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "./LanguageSelector";
 import useStores from "../stores/useStores";
+import { RxInstagramLogo } from "react-icons/rx";
 
 export default function Sidebar({ isOpen, toggle }) {
   const toggleModal = useStores((state) => state.toggleModal);
@@ -16,6 +17,9 @@ export default function Sidebar({ isOpen, toggle }) {
         <AiOutlineClose />
       </SideBarLinkClose>
       <SideMenu>
+        <SideBarItem onClick={toggle} to="/">
+          {t("Home")}
+        </SideBarItem>
         <SideBarItem onClick={toggle} to="/about">
           {t("About me")}
         </SideBarItem>
@@ -25,11 +29,18 @@ export default function Sidebar({ isOpen, toggle }) {
         <SideBarItem onClick={toggle} to="/booking">
           {t("Book Now!")}
         </SideBarItem>
+        <FollowUs href="https://www.instagram.com/visitesparfumsparis/">
+          <RxInstagramLogo size={50} />
+        </FollowUs>
       </SideMenu>
       <LanguageSelector />
     </SidebarContainer>
   );
 }
+
+const FollowUs = styled.a`
+  color: #fff;
+`;
 
 const SidebarContainer = styled.aside`
   position: fixed;
@@ -52,8 +63,8 @@ const SideMenu = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-top: -4rem;
-  gap: 2rem;
+  margin-top: -5rem;
+  gap: 1rem;
 `;
 
 const SideBarItem = styled(Link)`
@@ -75,4 +86,8 @@ const SideBarLinkClose = styled.div`
   font-size: 2.5rem;
   cursor: pointer;
   padding: 1rem;
+`;
+
+const MobileLanguageSelector = styled(LanguageSelector)`
+  color: blue;
 `;

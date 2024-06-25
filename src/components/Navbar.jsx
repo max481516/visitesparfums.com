@@ -3,7 +3,7 @@ import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import useSidebar from "../hooks/useSidebar";
-import Sidebar from "./MobileNavbar";
+import Sidebar from "./MobileSideMenu";
 import logo from "../media/logo.svg";
 
 export default function Navbar() {
