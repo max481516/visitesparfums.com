@@ -29,17 +29,33 @@ export default function Sidebar({ isOpen, toggle }) {
         <SideBarItem onClick={toggle} to="/booking">
           {t("Book Now!")}
         </SideBarItem>
-        <FollowUs href="https://www.instagram.com/visitesparfumsparis/">
-          <RxInstagramLogo size={50} />
-        </FollowUs>
       </SideMenu>
+      <FollowUs href="https://www.instagram.com/visitesparfumsparis/">
+        <RxInstagramLogo size={50} />
+        <Title>Follow me!</Title>
+      </FollowUs>
       <LanguageSelector />
     </SidebarContainer>
   );
 }
 
 const FollowUs = styled.a`
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 10dvh;
+  width: 25%;
+  margin: 0 auto;
+  gap: 1rem;
+  text-decoration: none;
+  color: white;
+  margin-top: -1.5rem;
+`;
+
+const Title = styled.h2`
+  font-weight: 500;
+  font-size: calc(20rem / 16);
 `;
 
 const SidebarContainer = styled.aside`
@@ -62,8 +78,7 @@ const SideMenu = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  margin-top: -5rem;
+  height: 70dvh;
   gap: 1rem;
 `;
 
