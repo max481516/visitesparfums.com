@@ -34,7 +34,7 @@ export default function Sidebar({ isOpen, toggle }) {
         <RxInstagramLogo size={50} />
         <Title>Follow me!</Title>
       </FollowUs>
-      <LanguageSelector />
+      <MobileLanguageSelector />
     </SidebarContainer>
   );
 }
@@ -44,13 +44,13 @@ const FollowUs = styled.a`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 10dvh;
-  width: 25%;
+  height: 10%;
+  min-width: 25%;
   margin: 0 auto;
   gap: 1rem;
   text-decoration: none;
   color: white;
-  margin-top: -1.5rem;
+  margin-top: -0.5rem;
 `;
 
 const Title = styled.h2`
@@ -101,4 +101,15 @@ const SideBarLinkClose = styled.div`
   font-size: 2.5rem;
   cursor: pointer;
   padding: 1rem;
+`;
+
+const MobileLanguageSelector = styled(LanguageSelector)`
+  position: absolute;
+  bottom: 2rem;
+  min-width: 96px;
+  max-width: 104px;
+  left: 50%;
+  transform: translateX(
+    -50%
+  ); // This shifts the element to the left by 50% of its own width, effectively centering it horizontally
 `;

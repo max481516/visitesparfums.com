@@ -39,15 +39,5 @@ const LanguageSelectorContainer = styled.select`
   background-position: right 0.5em top 50%;
   background-size: 0.65em auto;
   cursor: pointer;
-  width: 105px;
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(
-    -50%
-  ); // This shifts the element to the left by 50% of its own width, effectively centering it horizontally
-
-  &:focus {
-    outline: 2px solid var(--color-green);
-  }
+  border-radius: 4px;
 `;

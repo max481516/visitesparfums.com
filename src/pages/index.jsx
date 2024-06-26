@@ -9,6 +9,7 @@ import HomeCarouselPhoto1 from "../media/HomeCarouselPhotos/HomeCarouselPhoto1.j
 import HomeCarouselPhoto2 from "../media/HomeCarouselPhotos/HomeCarouselPhoto2.jpeg";
 import HomeCarouselPhoto3 from "../media/HomeCarouselPhotos/HomeCarouselPhoto3.jpeg";
 import HomeCarouselPhoto4 from "../media/HomeCarouselPhotos/HomeCarouselPhoto4.jpeg";
+import styled from "styled-components";
 
 const images = [
   {
@@ -113,7 +114,7 @@ const reviews = [
 
 export default function Home() {
   return (
-    <>
+    <Wrapper>
       <PhotoCarousel images={images} />
       <Header />
       <Decoration />
@@ -122,6 +123,12 @@ export default function Home() {
       <PhotoGallery />
       <TextCarousel title="My Reviews:" data={reviews} />
       <ContactUs />
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

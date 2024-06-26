@@ -6,6 +6,8 @@ import Booking from "./pages/booking";
 import GlobalStyles from "./GlobalStyles";
 import Footer from "./components/Footer";
 import "./i18n/i18n";
+import ContactModal from "./components/ContactModal";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   return (
@@ -13,6 +15,10 @@ function App() {
       <Router>
         <GlobalStyles />
         <Navbar />
+        <ContactModal>
+          {/* to ensure that modal opens on every page */}
+          <ContactForm />
+        </ContactModal>
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/about" exact element={<About />} />

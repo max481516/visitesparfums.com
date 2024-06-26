@@ -5,8 +5,11 @@ import { useTranslation } from "react-i18next";
 import useSidebar from "../hooks/useSidebar";
 import Sidebar from "./MobileSideMenu";
 import logo from "../media/logo.svg";
+import LanguageSelector from "./LanguageSelector";
+import useStores from "../stores/useStores";
 
 export default function Navbar() {
+  const toggleModal = useStores((state) => state.toggleModal);
   const { t } = useTranslation();
   const { isOpen, toggle } = useSidebar();
 
@@ -18,12 +21,13 @@ export default function Navbar() {
         </LogoLink>
         <Bars onClick={toggle} />
         <NavMenu>
-          <NavItem to="/about">{t("About")}</NavItem>
-          <NavItem to="/services">{t("Services")}</NavItem>
-          <NavItem to="/contact-us">{t("Contact Us")}</NavItem>
+          <NavItem to="/">{t("Home")}</NavItem>
+          <NavItem to="/about">{t("About me")}</NavItem>
+          <NavItem onClick={toggleModal}>{t("Ask a question")}</NavItem>
         </NavMenu>
         <NavBtn>
           <NavBtnLink to="/booking">{t("Book Now!")}</NavBtnLink>
+          <DesktopLanguageSelector />
         </NavBtn>
       </Nav>
       <Sidebar isOpen={isOpen} toggle={toggle} />
@@ -36,7 +40,7 @@ const Nav = styled.nav`
   height: 80px;
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1000px) / 2);
+  width: 100%;
   z-index: 10;
 `;
 
@@ -45,7 +49,8 @@ const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-
+  margin-left: 16px;
+  width: 213px;
   height: 100%;
   cursor: pointer;
 
@@ -78,7 +83,6 @@ const Bars = styled(FaBars)`
 const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  margin-right: -24px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -102,8 +106,9 @@ const NavItem = styled(Link)`
 
 const NavBtn = styled.nav`
   display: flex;
+  gap: 16px;
   align-items: center;
-  margin-right: 24px;
+  margin-right: 16px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -123,7 +128,26 @@ const NavBtnLink = styled(Link)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
+    background: var(--color-grey);
     color: #010606;
+  }
+`;
+
+const DesktopLanguageSelector = styled(LanguageSelector)`
+  font-size: calc(12rem / 16);
+  width: 76px;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: var(--color-green);
+    border: 1px solid var(--color-green);
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path fill="%238EB6A5" d="M0 3.5l5 5 5-5z"/></svg>');
+  }
+
+  &:active {
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;
