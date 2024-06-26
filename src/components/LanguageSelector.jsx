@@ -2,7 +2,7 @@ import { useState } from "react";
 import i18n from "../i18n/i18n";
 import styled from "styled-components";
 
-export default function LanguageSelector() {
+export default function LanguageSelector({ className }) {
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
 
   const chooseLanguage = (e) => {
@@ -16,6 +16,7 @@ export default function LanguageSelector() {
     <LanguageSelectorContainer
       defaultValue={selectedLanguage}
       onChange={chooseLanguage}
+      className={className}
     >
       <option value="en">English</option>
       <option value="fr">Français</option>
@@ -25,7 +26,7 @@ export default function LanguageSelector() {
 }
 
 const LanguageSelectorContainer = styled.select`
-  color: white;
+  color: #fff;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;

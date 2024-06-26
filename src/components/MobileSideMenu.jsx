@@ -87,7 +87,3 @@ const SideBarLinkClose = styled.div`
   cursor: pointer;
   padding: 1rem;
 `;
-
-const MobileLanguageSelector = styled(LanguageSelector)`
-  color: blue;
-`;
