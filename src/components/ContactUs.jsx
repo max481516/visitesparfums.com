@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { RxInstagramLogo } from "react-icons/rx";
-
 import { FaAirbnb } from "react-icons/fa";
 import { AiOutlineMessage } from "react-icons/ai";
 import ContactForm from "./ContactForm";
@@ -65,7 +64,7 @@ const FollowUs = styled.a`
   color: black;
 `;
 
-const ContactFormButton = styled.div`
+const ContactFormButton = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,4 +72,11 @@ const ContactFormButton = styled.div`
   text-decoration: none;
   color: black;
   cursor: pointer;
+  text-decoration: none;
+  border: none;
+  background: none;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-green);
+  }
 `;

@@ -40,6 +40,7 @@ const Nav = styled.nav`
   height: 80px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   z-index: 10;
 `;
@@ -51,7 +52,7 @@ const LogoLink = styled(Link)`
   text-decoration: none;
   margin-left: 16px;
   width: 213px;
-  height: 100%;
+  height: 50%;
   cursor: pointer;
 
   &:hover {
@@ -95,12 +96,17 @@ const NavItem = styled(Link)`
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
-  height: 100%;
+  height: 50%;
   cursor: pointer;
+  font-size: calc(20rem / 16);
 
   &:hover {
     color: var(--color-green);
     transition: all 0.2s ease-in-out;
+  }
+
+  @media screen and (max-width: 828px) {
+    font-size: 1rem;
   }
 `;
 
@@ -135,16 +141,17 @@ const NavBtnLink = styled(Link)`
 
 const DesktopLanguageSelector = styled(LanguageSelector)`
   font-size: calc(12rem / 16);
-  width: 76px;
+  width: 74px;
+  border: none;
 
   &:hover {
     transition: all 0.2s ease-in-out;
     color: var(--color-green);
-    border: 1px solid var(--color-green);
     background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path fill="%238EB6A5" d="M0 3.5l5 5 5-5z"/></svg>');
   }
 
-  &:active {
+  &:focus-visible {
+    outline: 2px solid var(--color-green);
   }
 
   @media screen and (max-width: 768px) {

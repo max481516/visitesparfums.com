@@ -1,12 +1,16 @@
 import { useForm, ValidationError } from "@formspree/react";
 import styled from "styled-components";
+import { FaRegCheckCircle } from "react-icons/fa";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("mqazzaer");
 
   if (state.succeeded) {
     return (
-      <ConfirmationMessage>Thank you for your message!😸</ConfirmationMessage>
+      <Wrapper>
+        <FaRegCheckCircle color="var(--color-green)" size={50} />
+        <ConfirmationMessage>Thank you for your message!</ConfirmationMessage>
+      </Wrapper>
     );
   }
 
@@ -110,9 +114,15 @@ const SubmitButton = styled.button`
   }
 `;
 
-const ConfirmationMessage = styled.p`
+const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 10dvh;
+  justify-content: center;
+  height: 15dvh;
+  gap: 1rem;
+`;
+
+const ConfirmationMessage = styled.p`
+  font-size: 1.5rem;
 `;

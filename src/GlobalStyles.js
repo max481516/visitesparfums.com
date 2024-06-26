@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { Link } from "react-router-dom";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -150,6 +151,10 @@ body {
   font-weight: 400;
   font-style: normal;
   background: hsl(20, 25%, 95%);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-green);
 }
 `;
 
