@@ -1,6 +1,6 @@
 import { useForm, ValidationError } from "@formspree/react";
-import styled from "styled-components";
 import { FaRegCheckCircle } from "react-icons/fa";
+import styled from "styled-components";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("mqazzaer");
@@ -49,13 +49,6 @@ export default function ContactForm() {
           prefix="Message"
           field="message"
           errors={state.errors}
-        />
-
-        <input
-          type="hidden"
-          name="_subject"
-          id="email-subject"
-          value="Contact Form Submission"
         />
       </fieldset>
       <SubmitButton type="submit" disabled={state.submitting}>

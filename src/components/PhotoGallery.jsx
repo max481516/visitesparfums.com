@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { QUERIES } from "../constants";
 import {
   PhotoGalleryImage1,
   PhotoGalleryImage2,
@@ -36,4 +37,8 @@ const IMG = styled.img`
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+
+  @media ${QUERIES.bigTabletAndUp} {
+    width: 20%;
+  }
 `;

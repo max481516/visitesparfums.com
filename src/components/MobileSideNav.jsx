@@ -7,7 +7,7 @@ import useStores from "../stores/useStores";
 import { RxInstagramLogo } from "react-icons/rx";
 import { QUERIES } from "../constants";
 
-export default function Sidebar({ isOpen, toggle }) {
+export default function MobileSideNav({ isOpen, toggle }) {
   const toggleModal = useStores((state) => state.toggleModal);
 
   const { t } = useTranslation();

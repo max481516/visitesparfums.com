@@ -3,7 +3,7 @@ import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import useSidebar from "../hooks/useSidebar";
-import Sidebar from "./MobileSideMenu";
+import MobileSideNav from "./MobileSideNav";
 import logo from "../media/logo.svg";
 import LanguageSelector from "./LanguageSelector";
 import useStores from "../stores/useStores";
@@ -31,7 +31,7 @@ export default function Navbar() {
           <DesktopLanguageSelector />
         </NavBtn>
       </Nav>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <MobileSideNav isOpen={isOpen} toggle={toggle} />
     </>
   );
 }
@@ -106,7 +106,7 @@ const NavItem = styled(Link)`
     transition: all 0.2s ease-in-out;
   }
 
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     font-size: calc(20rem / 16);
   }
 `;
