@@ -108,9 +108,8 @@ const SubmitButton = styled.button`
     background-color: var(--color-dark-green);
   }
 
-  &:disabled {
-    background-color: var(--color-gray);
-    cursor: not-allowed;
+  &:focus-visible {
+    outline: 2px solid var(--color-yellow);
   }
 `;
 

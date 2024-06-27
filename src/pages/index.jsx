@@ -5,10 +5,12 @@ import TextCarousel from "../components/TextCarousel";
 import ContactUs from "../components/ContactUs";
 import AboutVisit from "../components/AboutVisit";
 import PhotoGallery from "../components/PhotoGallery";
-import HomeCarouselPhoto1 from "../media/HomeCarouselPhotos/HomeCarouselPhoto1.jpeg";
-import HomeCarouselPhoto2 from "../media/HomeCarouselPhotos/HomeCarouselPhoto2.jpeg";
-import HomeCarouselPhoto3 from "../media/HomeCarouselPhotos/HomeCarouselPhoto3.jpeg";
-import HomeCarouselPhoto4 from "../media/HomeCarouselPhotos/HomeCarouselPhoto4.jpeg";
+import {
+  HomeCarouselPhoto1,
+  HomeCarouselPhoto2,
+  HomeCarouselPhoto3,
+  HomeCarouselPhoto4,
+} from "../media/HomeCarousel/HomeCarouselPhotos.js";
 import styled from "styled-components";
 
 const images = [

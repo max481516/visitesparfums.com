@@ -1,18 +1,18 @@
 import { createGlobalStyle } from "styled-components";
-import { Link } from "react-router-dom";
 
 const GlobalStyles = createGlobalStyle`
 
 //COLOR VARIABLES
 
 :root {
-    --color-brown: #57321d;
-    --color-yellow: #f9db53;
-    --color-pink: #ba4e75;
-    --color-orange: #eea04c;
-    --color-blue: #a1cad1;
-    --color-green: #8eb6a5;
-    --color-grey: hsl(20, 25%, 95%);
+    --color-brown: hsl(19, 52%, 22%);
+    --color-yellow: hsl(49, 92%, 65%);
+    --color-pink: hsl(339, 44%, 51%);
+    --color-orange: hsl(29, 81%, 61%);
+    --color-blue: hsl(189, 36%, 73%);
+    --color-green: hsl(157, 22%, 62%);
+    --color-dark-green: hsl(157, 22%, 52%);
+    --color-beige: hsl(20, 25%, 90%);
   }
 
 

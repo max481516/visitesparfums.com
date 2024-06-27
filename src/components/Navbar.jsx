@@ -134,8 +134,7 @@ const NavBtnLink = styled(Link)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: var(--color-grey);
-    color: #010606;
+    background: var(--color-dark-green);
   }
 `;
 

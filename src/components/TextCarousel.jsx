@@ -140,7 +140,7 @@ export default function TextCarousel({ title, data }) {
 }
 
 const Wrapper = styled.div`
-  background: hsl(20, 25%, 90%);
+  background: var(--color-beige);
   width: 100dvw;
 `;
 
