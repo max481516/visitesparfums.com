@@ -141,6 +141,7 @@ export default function TextCarousel({ title, data }) {
 
 const Wrapper = styled.div`
   background: hsl(20, 25%, 90%);
+  width: 100dvw;
 `;
 
 const Title = styled.h2`
@@ -153,7 +154,6 @@ const Title = styled.h2`
 const Slider = styled.div`
   position: relative;
   overflow: hidden;
-  width: 100%;
 `;
 
 const SlideContainer = styled.div`
