@@ -45,10 +45,10 @@ const FollowUs = styled.a`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 10%;
+  height: 10dvh;
   min-width: 25%;
   margin: 0 auto;
-  gap: 1rem;
+  gap: 0.5rem;
   text-decoration: none;
   color: white;
   margin-top: -0.5rem;
@@ -106,7 +106,7 @@ const SideBarLinkClose = styled.div`
 
 const MobileLanguageSelector = styled(LanguageSelector)`
   position: absolute;
-  bottom: 2rem;
+  bottom: 1.5rem;
   min-width: 96px;
   max-width: 104px;
   left: 50%;
