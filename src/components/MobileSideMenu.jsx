@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import LanguageSelector from "./LanguageSelector";
 import useStores from "../stores/useStores";
 import { RxInstagramLogo } from "react-icons/rx";
+import { QUERIES } from "../constants";
 
 export default function Sidebar({ isOpen, toggle }) {
   const toggleModal = useStores((state) => state.toggleModal);
@@ -60,7 +61,7 @@ const Title = styled.h2`
 
 const SidebarContainer = styled.aside`
   position: fixed;
-  width: 350px;
+  width: 100%;
   height: 100%;
   background: var(--color-brown);
   top: 0;
@@ -68,8 +69,8 @@ const SidebarContainer = styled.aside`
   right: ${({ isOpen }) => (isOpen ? "0" : "-1000px")};
   z-index: 990;
 
-  @media screen and (max-width: 550px) {
-    width: 100%;
+  @media ${QUERIES.tabletAndUp} {
+    width: 350px;
   }
 `;
 

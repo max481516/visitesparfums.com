@@ -30,8 +30,10 @@ const Wrapper = styled.div`
 `;
 
 const IMG = styled.img`
+  flex: 1 0 auto;
+  min-width: 10%;
+  max-width: 30%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  width: 132px;
-  height: 132px;
-  flex-shrink: 0;
 `;

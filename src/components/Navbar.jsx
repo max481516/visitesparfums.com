@@ -7,6 +7,7 @@ import Sidebar from "./MobileSideMenu";
 import logo from "../media/logo.svg";
 import LanguageSelector from "./LanguageSelector";
 import useStores from "../stores/useStores";
+import { QUERIES } from "../constants";
 
 export default function Navbar() {
   const toggleModal = useStores((state) => state.toggleModal);
@@ -67,26 +68,26 @@ const Logo = styled.img`
 `;
 
 const Bars = styled(FaBars)`
-  display: none;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-100%, 75%);
+  font-size: 1.8rem;
+  cursor: pointer;
   color: #fff;
 
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 1.8rem;
-    cursor: pointer;
+  @media ${QUERIES.bigTabletAndUp} {
+    display: none;
   }
 `;
 
 const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
+  display: none;
 
-  @media screen and (max-width: 768px) {
-    display: none;
+  @media ${QUERIES.bigTabletAndUp} {
+    display: flex;
+    align-items: center;
   }
 `;
 
@@ -98,26 +99,26 @@ const NavItem = styled(Link)`
   padding: 0 1rem;
   height: 50%;
   cursor: pointer;
-  font-size: calc(20rem / 16);
+  font-size: 1rem;
 
   &:hover {
     color: var(--color-green);
     transition: all 0.2s ease-in-out;
   }
 
-  @media screen and (max-width: 828px) {
-    font-size: 1rem;
+  @media ${QUERIES.desktopAndUp} {
+    font-size: calc(20rem / 16);
   }
 `;
 
 const NavBtn = styled.nav`
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  margin-right: 16px;
+  display: none;
 
-  @media screen and (max-width: 768px) {
-    display: none;
+  @media ${QUERIES.bigTabletAndUp} {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-right: 16px;
   }
 `;
 
@@ -151,9 +152,5 @@ const DesktopLanguageSelector = styled(LanguageSelector)`
 
   &:focus-visible {
     outline: 2px solid var(--color-green);
-  }
-
-  @media screen and (max-width: 768px) {
-    display: none;
   }
 `;
