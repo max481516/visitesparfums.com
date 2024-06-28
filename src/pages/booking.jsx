@@ -1,8 +1,8 @@
 import Visit from "../components/Visit";
-import styled from "styled-components";
 import Photo1 from "../media/Saint Honore.jpeg";
 import Photo2 from "../media/Marais.jpeg";
 import Decoration from "../components/Decoration";
+import { Helmet } from "react-helmet-async";
 
 export default function Booking() {
   const images1 = [
@@ -31,6 +31,15 @@ export default function Booking() {
 
   return (
     <>
+      <Helmet>
+        <title>Booking page</title>
+        <meta
+          name="description"
+          content="Information and booking page for perfume tours in Paris."
+        />
+        <link rel="canonical" href="/booking" />
+      </Helmet>
+
       <Visit
         title="Paris Saint-Honoré"
         text="Passionnée des fragrances et professionnelle dans ce milieu, j'organise des visites des boutiques de parfum les plus uniques de Paris. Le but de @visitesparfumsparis est de vous plonger dans le monde sensoriel des odeurs en vous faisant découvrir l'histoire de la parfumerie, des marques de parfum originales mais aussi vous apprendre les bases de l'olfaction. Les visites se font à pied 2h maximum par séance et par arrondissement de Paris. 

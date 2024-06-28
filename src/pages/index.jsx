@@ -12,6 +12,7 @@ import {
   HomeCarouselPhoto4,
 } from "../media/HomeCarousel/HomeCarouselPhotos.js";
 import styled from "styled-components";
+import { Helmet } from "react-helmet-async";
 
 const images = [
   {
@@ -116,16 +117,27 @@ const reviews = [
 
 export default function Home() {
   return (
-    <Wrapper>
-      <PhotoCarousel images={images} />
-      <Header />
-      <Decoration />
-      <AboutVisit title="rgew" />
-      <TextCarousel title="Why Book a Visit:" data={reasons} />
-      <PhotoGallery />
-      <TextCarousel title="My Reviews:" data={reviews} />
-      <ContactUs />
-    </Wrapper>
+    <>
+      <Helmet>
+        <title>Visites Parfums Paris</title>
+        <meta
+          name="description"
+          content="Guided tours of the best perfume shops in Paris"
+        />
+        <link rel="canonical" href="http://localhost:5173/" />
+      </Helmet>
+
+      <Wrapper>
+        <PhotoCarousel images={images} />
+        <Header />
+        <Decoration />
+        <AboutVisit title="rgew" />
+        <TextCarousel title="Why Book a Visit:" data={reasons} />
+        <PhotoGallery />
+        <TextCarousel title="My Reviews:" data={reviews} />
+        <ContactUs />
+      </Wrapper>
+    </>
   );
 }
 
