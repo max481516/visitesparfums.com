@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 
 //COLOR VARIABLES
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --color-brown: hsl(19, 52%, 22%);
@@ -147,7 +148,7 @@ form select {
 //GLOBAL STYLES
 
 body {
-  font-family: "Questrial", sans-serif;
+  font-family: "Archivo", sans-serif;
   font-weight: 400;
   font-style: normal;
   background: hsl(20, 25%, 95%);

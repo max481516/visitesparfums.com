@@ -12,7 +12,7 @@ export default function About() {
         />
         <link rel="canonical" href="/about" />
       </Helmet>
-      <AboutMe />;
+      <AboutMe />
     </>
   );
 }
