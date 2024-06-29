@@ -49,7 +49,6 @@ const FollowUs = styled.a`
   min-width: 25%;
   margin: 0 auto;
   gap: 0.5rem;
-  text-decoration: none;
   color: white;
   margin-top: -0.5rem;
 `;
@@ -85,10 +84,10 @@ const SideMenu = styled.div`
 
 const SideBarItem = styled(Link)`
   color: #fff;
-  text-decoration: none;
   cursor: pointer;
   margin: 1rem 0;
   font-size: 2rem;
+  text-transform: uppercase;
 
   &.active {
     color: var(--color-green);

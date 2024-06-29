@@ -12,4 +12,12 @@ const QUERIES = {
   desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
 };
 
-export { BREAKPOINTS, QUERIES };
+const FONT_SIZES = {
+  mobile: "",
+  tablet: "16px",
+  bigTablet: "18px",
+  laptop: "20px",
+  desktop: "24px",
+};
+
+export { BREAKPOINTS, QUERIES, FONT_SIZES };

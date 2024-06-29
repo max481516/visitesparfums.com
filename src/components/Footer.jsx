@@ -73,9 +73,9 @@ const BackToTop = styled.a`
 `;
 
 const Copyright = styled.small`
-  color: var(--color-green);
+  color: white;
   font-size: calc(11rem / 16);
-  font-weight: 600;
+  font-weight: 400;
   position: absolute;
   top: 50%;
   left: 50%;

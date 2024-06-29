@@ -154,6 +154,10 @@ body {
   background: hsl(20, 25%, 95%);
 }
 
+a {
+  text-decoration: none;
+}
+
 a:focus-visible {
   outline: 2px solid var(--color-green);
 }

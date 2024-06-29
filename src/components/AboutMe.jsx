@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { QUERIES } from "../constants";
 import {
   AboutMePhoto1,
   AboutMePhoto2,
@@ -61,8 +63,8 @@ export default function AboutMe() {
           and inspired every day.
         </Text>
         <Conclusion>
-          Ready to dive into the world of fragrances? Reach out and let's book a
-          tour!
+          Ready to dive into the world of fragrances? Reach out and let's{" "}
+          <BookLink to="/booking">book a tour!</BookLink>
         </Conclusion>
       </ItemContainer>
     </Wrapper>
@@ -73,6 +75,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
+
+  @media ${QUERIES.laptopAndUp} {
+    flex-direction: row;
+    flex: 0;
+  }
 `;
 
 const Title = styled.h2`
@@ -96,17 +103,30 @@ const Image = styled.img`
 
 const ItemTitle = styled.h3`
   font-size: calc(24rem / 16);
+  font-weight: 800;
   padding: 0 0.5rem;
+  line-height: 1.2;
 `;
 
 const Text = styled.p`
   font-size: calc(14rem / 16);
   padding: 0.5rem;
-  text-align: start;
+  text-align: justify;
   line-height: 1.2;
 `;
 
 const Conclusion = styled.p`
   padding: 0.5rem;
+  width: 75dvw;
   font-weight: 700;
+  line-height: 1.2;
+`;
+
+const BookLink = styled(Link)`
+  color: var(--color-dark-green);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-green);
+  }
 `;

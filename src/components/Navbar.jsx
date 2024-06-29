@@ -95,7 +95,6 @@ const NavItem = styled(Link)`
   color: #fff;
   display: flex;
   align-items: center;
-  text-decoration: none;
   padding: 0 1rem;
   height: 50%;
   cursor: pointer;
