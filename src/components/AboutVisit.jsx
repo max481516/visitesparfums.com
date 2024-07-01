@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FONT_STYLES } from "../constants";
 
 export default function AboutVisit() {
   return (
@@ -12,20 +13,22 @@ export default function AboutVisit() {
         of perfumery history, and introduce you to the fundamentals of
         olfaction. These walking tours, lasting no more than two hours per
         session, are conducted by arrondissement, ensuring a personalized and
-        in-depth experience of Paris's fragrant landscape.
+        in-depth experience of Paris&apos;s fragrant landscape.
       </Text>
     </>
   );
 }
 
 const Title = styled.h2`
-  text-align: center;
-  font-size: 1.5;
-  font-weight: 500;
-  margin: 2rem 0;
+  text-align: start;
+  font-size: ${FONT_STYLES.secondaryTitles.size};
+  font-weight: ${FONT_STYLES.secondaryTitles.weight};
+  padding: 0.5rem;
+  margin: 2rem 0 0 0;
 `;
 
 const Text = styled.p`
+  font-size: ${FONT_STYLES.texts.size};
   padding: 8px;
-  text-align: center;
+  text-align: start;
 `;

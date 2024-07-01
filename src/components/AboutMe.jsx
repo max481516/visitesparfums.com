@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { QUERIES } from "../constants";
+import { QUERIES, FONT_STYLES } from "../constants.js";
 import {
   AboutMePhoto1,
   AboutMePhoto2,
@@ -17,10 +17,10 @@ export default function AboutMe() {
       <Title>{t("About Me")}</Title>
       <ItemContainer>
         <Image src={AboutMePhoto1} alt="aboutme" />
-        <ItemTitle>Natacha – From Moscow to Paris</ItemTitle>
+        <ItemTitle>Natacha - From Moscow to Paris</ItemTitle>
         <Text>
-          I'm Natacha, a passionate perfume enthusiast based in Paris. Growing
-          up in a multicultural environment with dual French-Russian
+          I&apos;m Natacha, a passionate perfume enthusiast based in Paris.
+          Growing up in a multicultural environment with dual French-Russian
           nationality, I have always been inspired by my encounters and life
           experiences, leading me to a creative career. With a strong background
           in olfactory arts, I bring a unique and personalized approach to the
@@ -36,7 +36,7 @@ export default function AboutMe() {
           and Frederic Malle unfrogettable. As a student, I worked for
           prestigious French brands like Fragonard and Le Labo, appreciating the
           customer interactions and the dialogue about fragrances. I am
-          eternally impressed by their ability to evoke emotions and memories. 
+          eternally impressed by their ability to evoke emotions and memories.
           Today, I live, breathe, and sleep fragrances.
         </Text>
       </ItemContainer>
@@ -44,7 +44,7 @@ export default function AboutMe() {
         <Image src={AboutMePhoto3} alt="aboutme" />
         <ItemTitle>My Experience at Your Service</ItemTitle>
         <Text>
-          Over the years, I’ve honed my skills and knowledge, working for
+          Over the years, I&apos;ve honed my skills and knowledge, working for
           fragrances brands like Jimmy Choo and fragrance houses such as
           Givaudan, IFF, and Sozio. I am dedicated to elevating the fragrance
           experience for every customer I meet. This world is full of secrets,
@@ -54,7 +54,7 @@ export default function AboutMe() {
       </ItemContainer>
       <ItemContainer>
         <Image src={AboutMePhoto4} alt="aboutme" />
-        <ItemTitle>Let’s Make the Magic Happen</ItemTitle>
+        <ItemTitle>Let&apos;s Make the Magic Happen</ItemTitle>
         <Text>
           I believe that a fragrance should be as unique as the person wearing
           it. Each scent tells a story, captures a moment, and expresses
@@ -63,7 +63,7 @@ export default function AboutMe() {
           and inspired every day.
         </Text>
         <Conclusion>
-          Ready to dive into the world of fragrances? Reach out and let's{" "}
+          Ready to dive into the world of fragrances? Reach out and let&apos;s{" "}
           <BookLink to="/booking">book a tour!</BookLink>
         </Conclusion>
       </ItemContainer>
@@ -84,8 +84,8 @@ const Wrapper = styled.div`
 
 const Title = styled.h2`
   text-align: start;
-  font-size: calc(32rem / 16);
-  font-weight: 1000;
+  font-size: ${FONT_STYLES.primaryTitles.size};
+  font-weight: ${FONT_STYLES.primaryTitles.weight};
   padding: 0 0.5rem;
 `;
 
@@ -102,14 +102,15 @@ const Image = styled.img`
 `;
 
 const ItemTitle = styled.h3`
-  font-size: calc(24rem / 16);
-  font-weight: 800;
+  font-size: ${FONT_STYLES.secondaryTitles.size};
+  font-weight: ${FONT_STYLES.secondaryTitles.weight};
   padding: 0 0.5rem;
   line-height: 1.2;
 `;
 
 const Text = styled.p`
-  font-size: calc(14rem / 16);
+  font-size: ${FONT_STYLES.texts.size};
+  font-weight: ${FONT_STYLES.texts.weight};
   padding: 0.5rem;
   text-align: justify;
   line-height: 1.2;

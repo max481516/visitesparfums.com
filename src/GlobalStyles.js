@@ -2,9 +2,11 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 
-//COLOR VARIABLES
+//FONTS
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
+//COLOR VARIABLES
 :root {
     --color-brown: hsl(19, 52%, 22%);
     --color-yellow: hsl(49, 92%, 65%);

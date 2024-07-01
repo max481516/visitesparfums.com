@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Home from "./pages";
 import About from "./pages/about";
 import Booking from "./pages/booking";
-import GlobalStyles from "./GlobalStyles";
 import Footer from "./components/Footer";
 import "./i18n/i18n";
 import ContactModal from "./components/ContactModal";
@@ -13,7 +12,6 @@ function App() {
   return (
     <main>
       <Router>
-        <GlobalStyles />
         <Navbar />
         <ContactModal>
           {/* to ensure that modal opens on every page */}

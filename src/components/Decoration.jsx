@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function Decoration() {
+export default function Decoration({ className }) {
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <Rectangle></Rectangle>
       <Rectangle></Rectangle>
       <Rectangle></Rectangle>
@@ -16,7 +16,6 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   gap: 5px;
-  margin-top: calc(20rem / 16);
 `;
 
 const Rectangle = styled.div`

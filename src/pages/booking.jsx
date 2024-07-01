@@ -3,6 +3,7 @@ import Photo1 from "../media/Saint Honore.jpeg";
 import Photo2 from "../media/Marais.jpeg";
 import Decoration from "../components/Decoration";
 import { Helmet } from "react-helmet-async";
+import styled from "styled-components";
 
 export default function Booking() {
   const images1 = [
@@ -53,7 +54,7 @@ export default function Booking() {
         - Maison de Niche tendances"
         images={images1}
       />
-      <Decoration />
+      <BookingDecoration />
       <Visit
         title="Visit 2"
         text="Cette visite vous emmènera dans le monde fascinant de la parfumerie parisienne, en explorant les boutiques les plus emblématiques et les plus cachées de la ville. Apprenez l'histoire des parfums, découvrez des marques exclusives et développez votre propre sens olfactif au cours de cette expérience unique."
@@ -62,3 +63,7 @@ export default function Booking() {
     </>
   );
 }
+
+const BookingDecoration = styled(Decoration)`
+  padding-bottom: 2rem;
+`;

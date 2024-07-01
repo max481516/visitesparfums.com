@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import AirbnbLogo from "../media/airbnb.svg";
 import PhotoCarousel from "./PhotoCarousel";
+import { FONT_STYLES } from "../constants";
 
 export default function Visit({ title, text, images }) {
   return (
@@ -22,20 +23,19 @@ export default function Visit({ title, text, images }) {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 1rem;
+  align-items: start;
+  padding: 0.5rem;
 `;
 
 const Title = styled.h2`
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 500;
-  margin: 2rem 0;
+  font-size: ${FONT_STYLES.primaryTitles.size};
+  font-weight: ${FONT_STYLES.primaryTitles.weight};
 `;
 
 const Text = styled.p`
+  font-size: ${FONT_STYLES.texts.size};
   padding: 8px;
-  text-align: center;
+  text-align: start;
 `;
 
 const BookContainer = styled.a`
@@ -47,7 +47,9 @@ const BookContainer = styled.a`
   color: black;
 `;
 
-const BookText = styled.p``;
+const BookText = styled.p`
+  font-weight: 700;
+`;
 
 const BookButton = styled.img`
   width: 35%;
