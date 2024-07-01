@@ -12,19 +12,4 @@ const QUERIES = {
   desktopAndUp: `(min-width: ${BREAKPOINTS.desktopMin / 16}rem)`,
 };
 
-const FONT_STYLES = {
-  primaryTitles: {
-    size: "calc(32rem / 16)",
-    weight: 1000,
-  },
-  secondaryTitles: {
-    size: "calc(24rem / 16)",
-    weight: 800,
-  },
-  texts: {
-    size: "calc(14rem / 16)",
-    weight: 400,
-  },
-};
-
-export { BREAKPOINTS, QUERIES, FONT_STYLES };
+export { BREAKPOINTS, QUERIES };

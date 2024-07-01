@@ -78,6 +78,10 @@ const Input = styled.input`
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+
+  &::placeholder {
+    color: var(--color-green);
+  }
 `;
 
 const Textarea = styled.textarea`
@@ -86,6 +90,10 @@ const Textarea = styled.textarea`
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+
+  &::placeholder {
+    color: var(--color-green);
+  }
 `;
 
 const SubmitButton = styled.button`

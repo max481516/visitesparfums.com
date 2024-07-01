@@ -4,7 +4,6 @@ const GlobalStyles = createGlobalStyle`
 
 //FONTS
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 //COLOR VARIABLES
 :root {
@@ -34,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
 html,
 body {
   height: 100%;
+  font-size: 16px;
 }
 
 body {

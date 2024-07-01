@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FONT_STYLES } from "../constants";
 
 export default function AboutVisit() {
   return (
@@ -21,14 +20,13 @@ export default function AboutVisit() {
 
 const Title = styled.h2`
   text-align: start;
-  font-size: ${FONT_STYLES.secondaryTitles.size};
-  font-weight: ${FONT_STYLES.secondaryTitles.weight};
+  font-size: clamp(1.2rem, 4vw + 1rem, 1.5rem);
+  font-weight: 800;
   padding: 0.5rem;
   margin: 2rem 0 0 0;
 `;
 
 const Text = styled.p`
-  font-size: ${FONT_STYLES.texts.size};
   padding: 8px;
   text-align: start;
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { QUERIES, FONT_STYLES } from "../constants.js";
+import { QUERIES } from "../constants.js";
 import {
   AboutMePhoto1,
   AboutMePhoto2,
@@ -94,13 +94,12 @@ const Wrapper = styled.div`
 
 const Title = styled.h2`
   text-align: start;
-  font-size: ${FONT_STYLES.primaryTitles.size};
-  font-weight: ${FONT_STYLES.primaryTitles.weight};
+  font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+  font-weight: 1000;
   text-transform: uppercase;
   padding: 0 8px;
 
   @media ${QUERIES.laptopAndUp} {
-    font-size: calc(48rem / 16);
     padding: 3rem 8px 4rem;
   }
 `;
@@ -134,26 +133,16 @@ const Image = styled.img`
 `;
 
 const ItemTitle = styled.h3`
-  font-size: ${FONT_STYLES.secondaryTitles.size};
-  font-weight: ${FONT_STYLES.secondaryTitles.weight};
+  font-size: clamp(1.2rem, 4vw + 1rem, 1.5rem);
+  font-weight: 800;
   padding: 0 0.5rem;
   line-height: 1.2;
-
-  @media ${QUERIES.laptopAndUp} {
-    font-size: calc(48rem / 16);
-  }
 `;
 
 const Text = styled.p`
-  font-size: ${FONT_STYLES.texts.size};
-  font-weight: ${FONT_STYLES.texts.weight};
   padding: 0.5rem;
   text-align: justify;
   line-height: 1.2;
-
-  @media ${QUERIES.laptopAndUp} {
-    font-size: calc(18rem / 16);
-  }
 `;
 
 const Conclusion = styled.p`
@@ -161,9 +150,10 @@ const Conclusion = styled.p`
   min-width: 75%;
   font-weight: 700;
   line-height: 1.2;
+  font-size: calc(18rem / 16);
 
   @media ${QUERIES.laptopAndUp} {
-    font-size: calc(20rem / 16);
+    font-size: calc(17rem / 16);
   }
 `;
 

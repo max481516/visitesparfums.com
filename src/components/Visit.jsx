@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import AirbnbLogo from "../media/airbnb.svg";
 import PhotoCarousel from "./PhotoCarousel";
-import { FONT_STYLES } from "../constants";
 
 export default function Visit({ title, text, images }) {
   return (
@@ -28,12 +27,11 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: ${FONT_STYLES.primaryTitles.size};
-  font-weight: ${FONT_STYLES.primaryTitles.weight};
+  font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+  font-weight: 1000;
 `;
 
 const Text = styled.p`
-  font-size: ${FONT_STYLES.texts.size};
   padding: 8px;
   text-align: start;
 `;

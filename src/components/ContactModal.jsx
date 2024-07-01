@@ -53,4 +53,5 @@ const CloseButton = styled.span`
   right: 10px;
   font-size: 2rem;
   cursor: pointer;
+  color: var(--color-green);
 `;

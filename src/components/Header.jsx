@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FONT_STYLES } from "../constants.js";
 
 export default function Header() {
   return (
@@ -11,8 +10,8 @@ export default function Header() {
 
 const Title = styled.h1`
   text-align: start;
-  font-size: ${FONT_STYLES.primaryTitles.size};
-  font-weight: ${FONT_STYLES.primaryTitles.weight};
+  font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+  font-weight: 1000;
   padding: 0.5rem;
   margin: 2rem 0;
 `;
