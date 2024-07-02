@@ -130,10 +130,10 @@ export default function Home() {
       <Wrapper>
         <PhotoCarousel images={images} />
         <Header />
-        <Decoration />
         <AboutVisit title="rgew" />
-        <TextCarousel title="Why Book a Visit:" data={reasons} />
         <PhotoGallery />
+        <TextCarousel title="Why Book a Visit:" data={reasons} />
+        <Decoration />
         <TextCarousel title="My Reviews:" data={reviews} />
         <ContactUs />
       </Wrapper>

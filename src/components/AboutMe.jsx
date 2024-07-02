@@ -16,8 +16,10 @@ export default function AboutMe() {
     <Wrapper>
       <Title>{t("About Me")}</Title>
       <ItemContainer>
-        <Image src={AboutMePhoto1} alt="aboutme" />
-        <ItemTextContainer>
+        <ImageContainer>
+          <Image src={AboutMePhoto1} alt="aboutme" />
+        </ImageContainer>
+        <TextContainer>
           <ItemTitle>Natacha - From Moscow to Paris</ItemTitle>
           <Text>
             I&apos;m Natacha, a passionate perfume enthusiast based in Paris.
@@ -27,11 +29,13 @@ export default function AboutMe() {
             background in olfactory arts, I bring a unique and personalized
             approach to the world of scents.
           </Text>
-        </ItemTextContainer>
+        </TextContainer>
       </ItemContainer>
       <ItemContainer>
-        <Image src={AboutMePhoto2} alt="aboutme" />
-        <ItemTextContainer>
+        <ImageContainer>
+          <Image src={AboutMePhoto2} alt="aboutme" />
+        </ImageContainer>
+        <TextContainer>
           <ItemTitle>From Perfume Lover to Fragrance Nerd</ItemTitle>
           <Text>
             My journey into perfumes began with my mum, who introduced me to
@@ -42,11 +46,13 @@ export default function AboutMe() {
             fragrances. I am eternally impressed by their ability to evoke
             emotions and memories. Today, I live, breathe, and sleep fragrances.
           </Text>
-        </ItemTextContainer>
+        </TextContainer>
       </ItemContainer>
       <ItemContainer>
-        <Image src={AboutMePhoto3} alt="aboutme" />
-        <ItemTextContainer>
+        <ImageContainer>
+          <Image src={AboutMePhoto3} alt="aboutme" />
+        </ImageContainer>
+        <TextContainer>
           <ItemTitle>My Experience at Your Service</ItemTitle>
           <Text>
             Over the years, I&apos;ve honed my skills and knowledge, working for
@@ -56,11 +62,13 @@ export default function AboutMe() {
             creativity, and curiosity - and I am passionate about sharing it
             with others.
           </Text>
-        </ItemTextContainer>
+        </TextContainer>
       </ItemContainer>
       <ItemContainer>
-        <Image src={AboutMePhoto4} alt="aboutme" />
-        <ItemTextContainer>
+        <ImageContainer>
+          <Image4 src={AboutMePhoto4} alt="aboutme" />
+        </ImageContainer>
+        <TextContainer>
           <ItemTitle>Let&apos;s Make the Magic Happen</ItemTitle>
           <Text>
             I believe that a fragrance should be as unique as the person wearing
@@ -73,7 +81,7 @@ export default function AboutMe() {
             Ready to dive into the world of fragrances? Reach out and let&apos;s{" "}
             <BookLink to="/booking">book a tour!</BookLink>
           </Conclusion>
-        </ItemTextContainer>
+        </TextContainer>
       </ItemContainer>
     </Wrapper>
   );
@@ -88,7 +96,7 @@ const Wrapper = styled.div`
   @media ${QUERIES.laptopAndUp} {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 0 64px;
+    padding: 0 128px;
   }
 `;
 
@@ -110,26 +118,42 @@ const ItemContainer = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 3rem;
+
+    &:nth-of-type(2) {
+      flex-direction: row-reverse;
+    }
+
+    &:nth-of-type(4) {
+      flex-direction: row-reverse;
+    }
   }
 `;
 
-const ItemTextContainer = styled.div`
+const TextContainer = styled.div`
+  flex: 1;
   @media ${QUERIES.laptopAndUp} {
     width: 50%;
   }
 `;
 
+const ImageContainer = styled.div`
+  @media ${QUERIES.laptopAndUp} {
+    flex: 1;
+  }
+`;
+
 const Image = styled.img`
   object-fit: cover;
-  min-width: 50%;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
   padding: 8px;
 
-  @media ${QUERIES.laptopAndUp} {
-    max-width: 50%;
-    height: 100%;
+  @media ${QUERIES.tabletAndUp} {
+    height: 500px;
   }
+`;
+
+const Image4 = styled(Image)`
+  object-position: left top;
 `;
 
 const ItemTitle = styled.h3`

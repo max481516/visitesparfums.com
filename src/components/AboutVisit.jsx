@@ -20,10 +20,9 @@ export default function AboutVisit() {
 
 const Title = styled.h2`
   text-align: start;
-  font-size: clamp(1.2rem, 4vw + 1rem, 1.5rem);
+  font-size: calc(20rem / 16);
   font-weight: 800;
   padding: 0.5rem;
-  margin: 2rem 0 0 0;
 `;
 
 const Text = styled.p`
