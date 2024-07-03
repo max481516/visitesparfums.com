@@ -32,7 +32,7 @@ export default function ContactUs() {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   padding: 2rem;

@@ -24,7 +24,7 @@ export default function PhotoGallery() {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   overflow-x: auto;
   white-space: nowrap;

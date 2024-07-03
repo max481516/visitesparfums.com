@@ -87,7 +87,7 @@ export default function AboutMe() {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   padding: 0.5rem;

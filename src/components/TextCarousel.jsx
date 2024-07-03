@@ -139,7 +139,7 @@ export default function TextCarousel({ title, data }) {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   background: var(--color-beige);
   width: 100dvw;
 `;
