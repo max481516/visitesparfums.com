@@ -1,4 +1,3 @@
-import PhotoCarousel from "../components/PhotoCarousel";
 import Decoration from "../components/Decoration";
 import Header from "../components/Header";
 import TextCarousel from "../components/TextCarousel";
@@ -13,6 +12,7 @@ import {
 } from "../media/HomeCarousel/HomeCarouselPhotos.js";
 import styled from "styled-components";
 import { Helmet } from "react-helmet-async";
+import MySwiper from "../components/MySwiper.jsx";
 
 const images = [
   {
@@ -128,7 +128,8 @@ export default function Home() {
       </Helmet>
 
       <Wrapper>
-        <PhotoCarousel images={images} />
+        {/* <PhotoCarousel images={images} /> */}
+        <MySwiper />
         <Header />
         <AboutVisit title="rgew" />
         <PhotoGallery />
@@ -141,8 +142,4 @@ export default function Home() {
   );
 }
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+const Wrapper = styled.div``;
