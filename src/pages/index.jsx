@@ -4,30 +4,9 @@ import TextCarousel from "../components/TextCarousel";
 import ContactUs from "../components/ContactUs";
 import AboutVisit from "../components/AboutVisit";
 import PhotoGallery from "../components/PhotoGallery";
-import {
-  HomeCarouselPhoto1,
-  HomeCarouselPhoto2,
-  HomeCarouselPhoto3,
-  HomeCarouselPhoto4,
-} from "../media/HomeCarousel/HomeCarouselPhotos.js";
 import styled from "styled-components";
 import { Helmet } from "react-helmet-async";
-import MySwiper from "../components/MySwiper.jsx";
-
-const images = [
-  {
-    original: HomeCarouselPhoto1,
-  },
-  {
-    original: HomeCarouselPhoto2,
-  },
-  {
-    original: HomeCarouselPhoto3,
-  },
-  {
-    original: HomeCarouselPhoto4,
-  },
-];
+import HomePhotoCarousel from "../components/HomePhotoCarousel.jsx";
 
 const reasons = [
   {
@@ -129,7 +108,7 @@ export default function Home() {
 
       <Wrapper>
         {/* <PhotoCarousel images={images} /> */}
-        <MySwiper />
+        <HomePhotoCarousel />
         <Header />
         <AboutVisit title="rgew" />
         <PhotoGallery />

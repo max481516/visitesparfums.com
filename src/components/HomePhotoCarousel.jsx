@@ -9,15 +9,21 @@ import { register } from "swiper/element/bundle";
 import { useLayoutEffect as useIsomorphicLayoutEffect } from "react";
 register();
 
-const MySwiper = () => {
+const HomePhotoCarousel = () => {
   const swiperRef = useRef(null);
 
   const params = {
     slidesPerView: 1,
+    autoHeight: true,
+    autoplay: {
+      delay: 6000,
+    },
     breakpoints: {
+      770: {
+        slidesPerView: 2,
+      },
       1100: {
         slidesPerView: 3,
-        spaceBetween: 20,
       },
     },
     navigation: true,
@@ -29,30 +35,33 @@ const MySwiper = () => {
         .swiper-button-next,
         .swiper-button-prev {
           cursor: pointer;
-          color: var(--color-green);
           transition: color 0.6s ease;
+          --swiper-navigation-color: white;
         }
 
         .swiper-button-next:hover,
         .swiper-button-prev:hover {
-          color: hsl(0, 0%, 20%);
+           --swiper-navigation-color: hsl(0, 0%, 70%);
         }
 
         .swiper-pagination-bullet{
-          height: 8px;
-          width: 8px;
           cursor: pointer;
-          background-color: var(--color-pink);
-          transition: background-color 0.6s ease;
+          transition: background-color 0.3s ease;
+          --swiper-pagination-bullet-horizontal-gap: 6px;
+          --swiper-pagination-color: white;
+          --swiper-pagination-bullet-inactive-opacity: 0.7;
         }
 
-        .swiper-pagination-bullet:hover {
-          background-color: var(--color-dark-green);
-        }
+        @media (hover: none) {
+          .swiper-button-next,
+          .swiper-button-prev {
+            color: white;
+          }
     `,
     ],
   };
 
+  //using useIsomorphicLayoutEffect to remove breakpoints bug
   useIsomorphicLayoutEffect(() => {
     if (swiperRef.current) {
       if (swiperRef.current?.swiper?.currentBreakpoint) {
@@ -67,7 +76,7 @@ const MySwiper = () => {
   }, []);
 
   return (
-    <swiper-container ref={swiperRef} init="false" auto-height="true">
+    <swiper-container ref={swiperRef} init="false">
       <swiper-slide>
         <img src={HomeCarouselPhoto1} alt="" />
       </swiper-slide>
@@ -84,4 +93,4 @@ const MySwiper = () => {
   );
 };
 
-export default MySwiper;
+export default HomePhotoCarousel;

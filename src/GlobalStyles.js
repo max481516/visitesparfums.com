@@ -164,10 +164,7 @@ a:focus-visible {
   outline: 2px solid var(--color-green);
 }
 
-swiper-slide {
-  height: auto;
-  object-fit: cover;
-}
+
 `;
 
 export default GlobalStyles;
