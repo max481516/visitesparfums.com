@@ -9,7 +9,7 @@ import { register } from "swiper/element/bundle";
 import { useLayoutEffect as useIsomorphicLayoutEffect } from "react";
 register();
 
-const HomePhotoCarousel = () => {
+export default function HomePhotoCarousel() {
   const swiperRef = useRef(null);
 
   const params = {
@@ -91,6 +91,4 @@ const HomePhotoCarousel = () => {
       </swiper-slide>
     </swiper-container>
   );
-};
-
-export default HomePhotoCarousel;
+}

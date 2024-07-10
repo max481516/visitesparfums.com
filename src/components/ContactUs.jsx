@@ -37,7 +37,6 @@ const Wrapper = styled.section`
   justify-content: center;
   padding: 2rem;
   gap: 3rem;
-  margin-left: 20px;
 `;
 
 const Title = styled.h2`

@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import AirbnbLogo from "../media/airbnb.svg";
-import PhotoCarousel from "./PhotoCarousel";
 
-export default function Visit({ title, text, images }) {
+export default function Visit({ title, text }) {
   return (
     <Wrapper>
       <Title>{title}</Title>
-      <PhotoCarousel images={images} />
+
       <Text>{text}</Text>
       <BookContainer
         a

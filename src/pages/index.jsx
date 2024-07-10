@@ -7,6 +7,7 @@ import PhotoGallery from "../components/PhotoGallery";
 import styled from "styled-components";
 import { Helmet } from "react-helmet-async";
 import HomePhotoCarousel from "../components/HomePhotoCarousel.jsx";
+import ReviewsCarousel from "../components/ReviewsCarousel.jsx";
 
 const reasons = [
   {
@@ -114,7 +115,7 @@ export default function Home() {
         <PhotoGallery />
         <TextCarousel title="Why Book a Visit:" data={reasons} />
         <Decoration />
-        <TextCarousel title="My Reviews:" data={reviews} />
+        <ReviewsCarousel />
         <ContactUs />
       </Wrapper>
     </>
