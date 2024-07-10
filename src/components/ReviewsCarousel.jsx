@@ -10,15 +10,12 @@ export default function ReviewsCarousel() {
     const params = {
       autoHeight: true,
       slidesPerView: 1,
-      navigation: true,
       pagination: {
         clickable: true,
+        type: "fraction",
       },
-      breakpoints: {
-        1100: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
+      autoplay: {
+        delay: 6000,
       },
       injectStyles: [
         `
@@ -34,19 +31,15 @@ export default function ReviewsCarousel() {
             color: hsl(0, 0%, 20%);
           }
 
-          .swiper-pagination-bullet {
-            height: 8px;
-            width: 8px;
-            cursor: pointer;
-            background-color: var(--color-pink);
-            transition: background-color 0.6s ease;
+          .swiper-pagination-fraction {
+            position: absolute;
+            text-align: end;
+            font-size: calc(14rem / 16);
+            opacity: 0.6;
+            left: -16px;
+            bottom: 40px;
           }
 
-          .swiper-pagination-bullet:hover {
-            background-color: var(--color-dark-green);
-          }
-
-          
         `,
       ],
     };
@@ -59,23 +52,31 @@ export default function ReviewsCarousel() {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
-    padding: "20px",
+    alignItems: "start",
+    padding: "8px 16px 0",
+  };
+
+  const title = {
+    textAlign: "start",
+    fontSize: "calc(20rem / 16)",
+    fontWeight: "800",
+    padding: "2rem 0 0 16px",
   };
 
   const text = {
-    fontSize: "1.2rem",
-    textAlign: "center",
+    marginBottom: "1rem",
   };
 
   const clientName = {
     fontStyle: "italic",
     color: "#555",
+    opacity: "0.6",
+    marginBottom: "2.5rem",
   };
 
   return (
     <>
-      <h2>My Reviews:</h2>
+      <h2 style={title}>My Reviews:</h2>
       <swiper-container ref={swiperRef} init="false">
         <swiper-slide style={slideContent}>
           <p style={text}>
@@ -96,7 +97,7 @@ export default function ReviewsCarousel() {
           Natacha explained the history of perfume, this was very interested.
           Even though I have this hobby for over 10 years I never got into the
           history of perfume. We went to 3 stores in the Marais area and smelled
-          some gorgeous en exclusive scents. It was a great time.,
+          some gorgeous en exclusive scents. It was a great time.
           <p style={text}></p>
           <cite style={clientName}>Lidia</cite>
         </swiper-slide>
@@ -104,7 +105,7 @@ export default function ReviewsCarousel() {
           original activity in an emblematic area of Paris, Natacha showed us
           perfumeries that we would not have had the idea of visiting and where
           we enjoyed unprecedented scents. I would recommend it, whatever your
-          knowledge of perfumes.,
+          knowledge of perfumes.
           <p style={text}></p>
           <cite style={clientName}>Nathalie</cite>
         </swiper-slide>
