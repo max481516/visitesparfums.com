@@ -33,7 +33,7 @@ export default function AboutMe() {
       </ItemContainer>
       <ItemContainer>
         <ImageContainer>
-          <Image src={AboutMePhoto2} alt="aboutme" />
+          <Image src={AboutMePhoto3} alt="aboutme" />
         </ImageContainer>
         <TextContainer>
           <ItemTitle>From Perfume Lover to Fragrance Nerd</ItemTitle>
@@ -50,7 +50,7 @@ export default function AboutMe() {
       </ItemContainer>
       <ItemContainer>
         <ImageContainer>
-          <Image src={AboutMePhoto3} alt="aboutme" />
+          <Image src={AboutMePhoto2} alt="aboutme" />
         </ImageContainer>
         <TextContainer>
           <ItemTitle>My Experience at Your Service</ItemTitle>
