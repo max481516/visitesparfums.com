@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function AboutVisit() {
   return (
-    <>
+    <Wrapper>
       <Title>Discover Unique Boutiques and the Art of Olfaction</Title>
       <Text>
         Passionate about the world of fragrances and working within this vibrant
@@ -14,18 +14,25 @@ export default function AboutVisit() {
         session, are conducted by arrondissement, ensuring a personalized and
         in-depth experience of Paris&apos;s fragrant landscape.
       </Text>
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  margin: 1rem 0 1rem;
+  padding: 0 1rem;
+`;
 
 const Title = styled.h2`
   text-align: start;
   font-size: calc(20rem / 16);
   font-weight: 800;
+  line-height: 1.2;
   padding: 0.5rem;
 `;
 
 const Text = styled.p`
   padding: 8px;
+  line-height: 1.3;
   text-align: start;
 `;

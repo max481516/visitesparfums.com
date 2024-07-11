@@ -35,7 +35,7 @@ export default function ContactUs() {
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: 0 2rem 2rem;
   gap: 3rem;
 `;
 

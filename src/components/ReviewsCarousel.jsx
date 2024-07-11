@@ -10,6 +10,7 @@ export default function ReviewsCarousel() {
     const params = {
       autoHeight: true,
       slidesPerView: 1,
+      loop: true,
       pagination: {
         clickable: true,
         type: "fraction",
@@ -64,6 +65,7 @@ export default function ReviewsCarousel() {
   };
 
   const text = {
+    lineHeight: "1.3",
     marginBottom: "1rem",
   };
 
