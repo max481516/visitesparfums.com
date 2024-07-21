@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import useSidebar from "../hooks/useSidebar";
 import MobileSideNav from "./MobileSideNav";
-import logo from "../media/logo.svg";
+import Logo from "../media/logo.svg?react";
 import LanguageSelector from "./LanguageSelector";
 import useStores from "../stores/useStores";
 import { QUERIES } from "../constants";
@@ -18,7 +18,7 @@ export default function Navbar() {
     <>
       <Nav id="nav">
         <LogoLink to="/">
-          <Logo src={logo}></Logo>
+          <StyledLogo></StyledLogo>
         </LogoLink>
         <Bars onClick={toggle} />
         <NavMenu>
@@ -47,13 +47,10 @@ const Nav = styled.nav`
 `;
 
 const LogoLink = styled(Link)`
-  color: #fff;
   display: flex;
   align-items: center;
   text-decoration: none;
   margin-left: 16px;
-  width: 213px;
-  height: 50%;
   cursor: pointer;
 
   &:hover {
@@ -62,9 +59,11 @@ const LogoLink = styled(Link)`
   }
 `;
 
-const Logo = styled.img`
-  width: 130px;
-  height: 40px;
+const StyledLogo = styled(Logo)`
+  width: 175px;
+  height: 125px;
+  color: #fff;
+  margin-left: -8px;
 `;
 
 const Bars = styled(FaBars)`

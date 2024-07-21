@@ -16,7 +16,7 @@ export default function ReasonsWhyCarousel() {
         type: "fraction",
       },
       autoplay: {
-        delay: 6000,
+        delay: 10000,
       },
       injectStyles: [
         `
@@ -75,23 +75,31 @@ export default function ReasonsWhyCarousel() {
 
   return (
     <>
-      <h2 style={title}>Why Book A Visit:</h2>
+      <h2 style={title}>3 Reasons Why:</h2>
       <swiper-container style={swiperContainer} ref={swiperRef} init="false">
         <swiper-slide style={slideContent}>
           <p style={text}>
-            Discover rare and exclusive fragrances with expert guides who unveil
-            the hidden gems of Parisian perfumery.
+            <b>Deep dive into the world of fragrances:</b>
+            <br></br> enjoy a guided tour led by a passionate perfume expert who
+            will provide insights into the world of perfumery, enhancing your
+            knowledge and appreciation of fine fragrances
           </p>
         </swiper-slide>
         <swiper-slide style={slideContent}>
-          Experience personalized scent journeys tailored to your unique
-          preferences and olfactory senses.
-          <p style={text}></p>
+          <p style={text}>
+            <b>Discover Hidden Gems:</b>
+            <br></br> visit hidden perfumery boutiques in historical Parisian
+            districts, offering a unique experience that goes beyond typical
+            tourist paths
+          </p>
         </swiper-slide>
         <swiper-slide style={slideContent}>
-          Gain insider knowledge on the art of perfume making and the history
-          behind Paris's most esteemed niche perfumeries.
-          <p style={text}></p>
+          <p style={text}>
+            <b>Customized Perfume:</b>
+            <br></br> experience Receive personalized attention and
+            recommendations tailored to your scent preferences, ensuring a
+            memorable and unique fragrance discovery journey.
+          </p>
         </swiper-slide>
       </swiper-container>
     </>

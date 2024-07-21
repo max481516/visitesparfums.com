@@ -1,35 +1,9 @@
 import Visit from "../components/Visit";
-import Photo1 from "../media/Saint Honore.jpeg";
-import Photo2 from "../media/Marais.jpeg";
 import Decoration from "../components/Decoration";
 import { Helmet } from "react-helmet-async";
 import styled from "styled-components";
 
 export default function Booking() {
-  const images1 = [
-    {
-      original: Photo1,
-    },
-    {
-      original: Photo2,
-    },
-    {
-      original: "https://picsum.photos/id/1019/1000/600/",
-    },
-  ];
-
-  const images2 = [
-    {
-      original: "https://picsum.photos/id/1018/1000/600/",
-    },
-    {
-      original: "https://picsum.photos/id/1015/1000/600/",
-    },
-    {
-      original: "https://picsum.photos/id/1019/1000/600/",
-    },
-  ];
-
   return (
     <>
       <Helmet>
@@ -52,13 +26,11 @@ export default function Booking() {
         - Entre histoire et modernité marques inspirées des parfumeries du 16-18 siècles
         - Pionniers de la parfumerie de Niche
         - Maison de Niche tendances"
-        images={images1}
       />
       <BookingDecoration />
       <Visit
         title="Visit 2"
         text="Cette visite vous emmènera dans le monde fascinant de la parfumerie parisienne, en explorant les boutiques les plus emblématiques et les plus cachées de la ville. Apprenez l'histoire des parfums, découvrez des marques exclusives et développez votre propre sens olfactif au cours de cette expérience unique."
-        images={images2}
       />
     </>
   );

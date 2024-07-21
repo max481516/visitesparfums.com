@@ -6,8 +6,6 @@ import {
   PhotoGalleryImage3,
   PhotoGalleryImage4,
   PhotoGalleryImage5,
-  PhotoGalleryImage6,
-  PhotoGalleryImage7,
 } from "../media/PhotoGallery/PhotoGalleryImages.js";
 
 export default function PhotoGallery() {
@@ -18,8 +16,6 @@ export default function PhotoGallery() {
       <IMG src={PhotoGalleryImage3} alt="PhotoGalleryImage3" />
       <IMG src={PhotoGalleryImage4} alt="PhotoGalleryImage4" />
       <IMG src={PhotoGalleryImage5} alt="PhotoGalleryImage5" />
-      <IMG src={PhotoGalleryImage6} alt="PhotoGalleryImage6" />
-      <IMG src={PhotoGalleryImage7} alt="PhotoGalleryImage7" />
     </Wrapper>
   );
 }

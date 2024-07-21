@@ -1,6 +1,5 @@
 import Decoration from "../components/Decoration";
 import Header from "../components/Header";
-import TextCarousel from "../components/TextCarousel";
 import ContactUs from "../components/ContactUs";
 import AboutVisit from "../components/AboutVisit";
 import PhotoGallery from "../components/PhotoGallery";

@@ -16,7 +16,7 @@ export default function ReviewsCarousel() {
         type: "fraction",
       },
       autoplay: {
-        delay: 6000,
+        delay: 10000,
       },
       injectStyles: [
         `

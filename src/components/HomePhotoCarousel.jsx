@@ -1,13 +1,16 @@
+import { useRef } from "react";
+import { register } from "swiper/element/bundle";
+import { useLayoutEffect as useIsomorphicLayoutEffect } from "react";
+register();
+
+//MEDIA IMPORTS
 import {
   HomeCarouselPhoto1,
   HomeCarouselPhoto2,
   HomeCarouselPhoto3,
   HomeCarouselPhoto4,
+  HomeCarouselPhoto5,
 } from "../media/HomeCarousel/HomeCarouselPhotos.js";
-import { useRef } from "react";
-import { register } from "swiper/element/bundle";
-import { useLayoutEffect as useIsomorphicLayoutEffect } from "react";
-register();
 
 export default function HomePhotoCarousel() {
   const swiperRef = useRef(null);
@@ -15,9 +18,6 @@ export default function HomePhotoCarousel() {
   const params = {
     slidesPerView: 1,
     loop: true,
-    autoplay: {
-      delay: 6000,
-    },
     breakpoints: {
       770: {
         slidesPerView: 2,
@@ -88,6 +88,9 @@ export default function HomePhotoCarousel() {
       </swiper-slide>
       <swiper-slide>
         <img src={HomeCarouselPhoto4} alt="" />
+      </swiper-slide>
+      <swiper-slide>
+        <img src={HomeCarouselPhoto5} alt="" />
       </swiper-slide>
     </swiper-container>
   );
