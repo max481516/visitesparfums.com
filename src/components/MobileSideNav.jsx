@@ -88,6 +88,7 @@ const SideBarItem = styled(Link)`
   margin: 1rem 0;
   font-size: 2rem;
   text-transform: uppercase;
+  font-weight: 600;
 
   &.active {
     color: var(--color-green);

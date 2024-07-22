@@ -64,6 +64,7 @@ const StyledLogo = styled(Logo)`
   height: 125px;
   color: #fff;
   margin-left: -8px;
+  margin-top: -3px;
 `;
 
 const Bars = styled(FaBars)`
