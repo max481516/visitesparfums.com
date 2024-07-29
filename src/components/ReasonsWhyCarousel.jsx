@@ -73,13 +73,17 @@ export default function ReasonsWhyCarousel() {
     marginBottom: "1rem",
   };
 
+  const secondTitle = {
+    color: "var(--color-pink)",
+  };
+
   return (
     <>
       <h2 style={title}>3 Reasons Why:</h2>
       <swiper-container style={swiperContainer} ref={swiperRef} init="false">
         <swiper-slide style={slideContent}>
           <p style={text}>
-            <b>Deep dive into the world of fragrances:</b>
+            <b style={secondTitle}>Deep dive into the world of fragrances</b>
             <br></br> enjoy a guided tour led by a passionate perfume expert who
             will provide insights into the world of perfumery, enhancing your
             knowledge and appreciation of fine fragrances
@@ -87,7 +91,7 @@ export default function ReasonsWhyCarousel() {
         </swiper-slide>
         <swiper-slide style={slideContent}>
           <p style={text}>
-            <b>Discover Hidden Gems:</b>
+            <b style={secondTitle}>Discover Hidden Gems</b>
             <br></br> visit hidden perfumery boutiques in historical Parisian
             districts, offering a unique experience that goes beyond typical
             tourist paths
@@ -95,7 +99,7 @@ export default function ReasonsWhyCarousel() {
         </swiper-slide>
         <swiper-slide style={slideContent}>
           <p style={text}>
-            <b>Customized Perfume:</b>
+            <b style={secondTitle}>Customized Perfume</b>
             <br></br> experience Receive personalized attention and
             recommendations tailored to your scent preferences, ensuring a
             memorable and unique fragrance discovery journey.

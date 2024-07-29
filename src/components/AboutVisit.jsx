@@ -19,7 +19,6 @@ export default function AboutVisit() {
 }
 
 const Wrapper = styled.div`
-  margin: 1rem 0 1rem;
   padding: 0 1rem;
 `;
 
@@ -32,7 +31,7 @@ const Title = styled.h2`
 `;
 
 const Text = styled.p`
-  padding: 8px;
+  padding: 0 8px 0.5rem;
   line-height: 1.3;
   text-align: start;
 `;

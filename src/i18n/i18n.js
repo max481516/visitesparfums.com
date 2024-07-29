@@ -1,4 +1,5 @@
 import i18n from "i18next";
+import HttpApi from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import translationsInEng from "../locales/en/translation.json";
@@ -19,16 +20,23 @@ const resources = {
 };
 
 i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
+  .use(HttpApi) // load translation using http
+  .use(LanguageDetector) // detect user language
+  .use(initReactI18next) // pass the i18n instance to react-i18next
   .init({
     resources,
     debug: true,
-    lng: localStorage.getItem("lang"), // It acts as default language. When the site loads, content is shown in this language.
+    supportedLngs: ["en", "fr", "ru"],
     fallbackLng: "fr",
     returnObjects: true,
     interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
+      escapeValue: false,
+    },
+    detection: {
+      order: ["localStorage", "cookie", "navigator"],
+      caches: ["localStorage", "cookie"],
+      lookupLocalStorage: "lang",
+      lookupCookie: "i18next",
     },
   });
 
