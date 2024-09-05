@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import AirbnbLogo from "../media/airbnb.svg";
 
-export default function Visit({ title, text }) {
+export default function Visit({ title, text, photo }) {
   return (
     <Wrapper>
       <Title>{title}</Title>
-
+      <Photo src={photo}></Photo>
       <Text>{text}</Text>
       <BookContainer
         a
@@ -30,8 +30,13 @@ const Title = styled.h2`
   font-weight: 1000;
 `;
 
+const Photo = styled.img`
+  object-fit: cover;
+  padding: 0 8px 8px 0;
+`;
+
 const Text = styled.p`
-  padding: 8px;
+  padding: 8px 8px 0 0;
   text-align: start;
 `;
 
