@@ -27,11 +27,11 @@ const Title = styled.h2`
   font-size: calc(20rem / 16);
   font-weight: 800;
   line-height: 1.2;
-  padding: 0.5rem;
+  padding: 1rem 0;
 `;
 
 const Text = styled.p`
-  padding: 0 8px 0.5rem;
+  padding: 0 0 0.5rem;
   line-height: 1.3;
   text-align: start;
 `;

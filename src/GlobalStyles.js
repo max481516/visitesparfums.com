@@ -2,6 +2,14 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 
+@font-face {
+  font-family: 'TitleFont';
+  src: url('/fonts/NyghtSerif-Regular.woff2') format('woff2'),
+       url('/fonts/NyghtSerif-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 //COLOR VARIABLES
 :root {
     --color-brown: hsl(19, 52%, 22%);

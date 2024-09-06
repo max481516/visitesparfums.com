@@ -22,7 +22,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 0.5rem;
+  padding: 0.5rem 16px;
 `;
 
 const Title = styled.h2`

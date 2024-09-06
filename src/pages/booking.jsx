@@ -70,7 +70,7 @@ information
 }
 
 const Intro = styled.p`
-  padding: 16px;
+  padding: 8px 16px;
 `;
 
 const BookingDecoration = styled(Decoration)`
@@ -78,7 +78,7 @@ const BookingDecoration = styled(Decoration)`
 `;
 
 const Message = styled.p`
-  padding: 0.5rem;
+  padding: 8px 16px;
   min-width: 75%;
   font-weight: 700;
   line-height: 1.2;
