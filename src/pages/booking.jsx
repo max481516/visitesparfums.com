@@ -4,12 +4,15 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { QUERIES } from "../constants.js";
 import useStores from "../stores/useStores";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import Photo1 from "../media/Visit1.jpg";
 import Photo2 from "../media/Visit2.jpg";
 
 export default function Booking() {
   const toggleModal = useStores((state) => state.toggleModal);
+  const { t } = useTranslation();
+
   return (
     <>
       <Helmet>
@@ -21,18 +24,7 @@ export default function Booking() {
         <link rel="canonical" href="/booking" />
       </Helmet>
 
-      <Intro>
-        Visites Parfums Paris invites you to explore exclusive perfume boutiques
-        in historic districts of Paris. Deep dive into the secrets world of
-        smells and learn about the history and techniques of fragrance creation
-        while discovering unique and high-quality perfumes. Choose between two
-        districts and book a visit. Bullet points · When ? Saturday or Sunday.
-        Note it is also possible to organize visits on Fridays from 5pm (to be
-        discussed via message) · Time: 1:45 is the average time for a visit ·
-        Number of attendees: classic group is 5 persons. Possibility to organize
-        a private group visit or add additional participants (to be discussed
-        via message) · Price: 25 euros person for a classic visit
-      </Intro>
+      <Intro>{t("Booking.Intro")}</Intro>
       <Visit
         title="Paris Saint-Honoré"
         photo={Photo1}
@@ -62,8 +54,10 @@ information
 ·      Note there is a possibility to organize a private group visit or add additional participants"
       />
       <Message>
-        If you have any questions, please send me a{" "}
-        <MessageLink onClick={toggleModal}>message!</MessageLink>
+        {t("Booking.AnyQuestions")}{" "}
+        <MessageLink onClick={toggleModal}>
+          {t("Booking.AnyQuestionsLink")}
+        </MessageLink>
       </Message>
     </>
   );

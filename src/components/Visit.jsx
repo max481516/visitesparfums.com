@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import AirbnbLogo from "../media/airbnb.svg";
+import { useTranslation } from "react-i18next";
 
 export default function Visit({ title, text, photo }) {
+  const { t } = useTranslation();
+
   return (
     <Wrapper>
       <Title>{title}</Title>
@@ -11,7 +14,7 @@ export default function Visit({ title, text, photo }) {
         a
         href="https://www.airbnb.fr/experiences/4431379?guests=1&adults=1&s=67&unique_share_id=95ddc40a-121e-49a6-8d7b-14de1e847235"
       >
-        <BookText>Cliquez ici pour reserver sur:</BookText>
+        <BookText>{t("Booking.ClickHere")}</BookText>
         <BookButton src={AirbnbLogo} />
       </BookContainer>
     </Wrapper>

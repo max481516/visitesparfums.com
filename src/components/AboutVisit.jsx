@@ -1,19 +1,13 @@
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 export default function AboutVisit() {
+  const { t } = useTranslation();
+
   return (
     <Wrapper>
-      <Title>Discover Unique Boutiques and the Art of Olfaction</Title>
-      <Text>
-        Passionate about the world of fragrances and working within this vibrant
-        industry, I invite you to immerse yourself in the sensory universe of
-        scents. The objective of Visits Parfums Paris is to uncover the most
-        exquisite and unique perfume boutiques in Paris, enrich your knowledge
-        of perfumery history, and introduce you to the fundamentals of
-        olfaction. These walking tours, lasting no more than two hours per
-        session, are conducted by arrondissement, ensuring a personalized and
-        in-depth experience of Paris&apos;s fragrant landscape.
-      </Text>
+      <Title>{t("Home.AboutVisitTitle")}</Title>
+      <Text>{t("Home.AboutVisit")}</Text>
     </Wrapper>
   );
 }

@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+  const { t } = useTranslation();
+
   return (
     <>
-      <Title>Exclusive Paris Perfume Tours</Title>
+      <Title>{t("Home.h1")}</Title>
     </>
   );
 }

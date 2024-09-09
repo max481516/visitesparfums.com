@@ -6,24 +6,27 @@ import { AiOutlineMessage } from "react-icons/ai";
 import ContactForm from "./ContactForm";
 import ContactModal from "./ContactModal";
 import useStores from "../stores/useStores";
+import { useTranslation } from "react-i18next";
 
 export default function ContactUs() {
   const showModal = useStores((state) => state.showModal);
   const toggleModal = useStores((state) => state.toggleModal);
 
+  const { t } = useTranslation();
+
   return (
     <Wrapper>
       <Book to="/booking">
         <FaAirbnb size={50} />
-        <Title>Book Now!</Title>
+        <Title>{t("Home.BookNowIcon")}</Title>
       </Book>
       <FollowUs href="https://www.instagram.com/visitesparfumsparis/">
         <RxInstagramLogo size={50} />
-        <Title>Follow me!</Title>
+        <Title>{t("Home.FollowMeIcon")}</Title>
       </FollowUs>
       <ContactFormButton onClick={toggleModal}>
         <AiOutlineMessage size={50} />
-        <Title>Any questions?</Title>
+        <Title>{t("Home.AnyQuestionsIcon")}</Title>
         <ContactModal show={showModal} onClose={toggleModal}>
           <ContactForm />
         </ContactModal>

@@ -1,10 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { useEffect, useRef } from "react";
 import { register } from "swiper/element/bundle";
 register();
 
 export default function ReasonsWhyCarousel() {
+  const { t } = useTranslation();
   const swiperRef = useRef(null);
-
   useEffect(() => {
     const swiperContainer = swiperRef.current;
     const params = {
@@ -79,30 +80,24 @@ export default function ReasonsWhyCarousel() {
 
   return (
     <>
-      <h2 style={title}>3 Reasons Why:</h2>
+      <h2 style={title}>{t("Home.3ReasonsTitle")}</h2>
       <swiper-container style={swiperContainer} ref={swiperRef} init="false">
         <swiper-slide style={slideContent}>
           <p style={text}>
-            <b style={secondTitle}>Deep dive into the world of fragrances</b>
-            <br></br> enjoy a guided tour led by a passionate perfume expert who
-            will provide insights into the world of perfumery, enhancing your
-            knowledge and appreciation of fine fragrances
+            <b style={secondTitle}>{t("Home.ReasonTitle1")}</b>
+            <br></br> {t("Home.Reason1")}
           </p>
         </swiper-slide>
         <swiper-slide style={slideContent}>
           <p style={text}>
-            <b style={secondTitle}>Discover Hidden Gems</b>
-            <br></br> visit hidden perfumery boutiques in historical Parisian
-            districts, offering a unique experience that goes beyond typical
-            tourist paths
+            <b style={secondTitle}>{t("Home.ReasonTitle2")}</b>
+            <br></br> {t("Home.Reason2")}
           </p>
         </swiper-slide>
         <swiper-slide style={slideContent}>
           <p style={text}>
-            <b style={secondTitle}>Customized Perfume</b>
-            <br></br> experience Receive personalized attention and
-            recommendations tailored to your scent preferences, ensuring a
-            memorable and unique fragrance discovery journey.
+            <b style={secondTitle}>{t("Home.ReasonTitle3")}</b>
+            <br></br> {t("Home.Reason3")}
           </p>
         </swiper-slide>
       </swiper-container>

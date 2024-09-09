@@ -14,21 +14,14 @@ export default function AboutMe() {
 
   return (
     <Wrapper>
-      <Title>{t("About Me")}</Title>
+      <Title>{t("AboutMe.AboutMeMainTitle")}</Title>
       <ItemContainer>
         <ImageContainer>
           <Image src={AboutMePhoto1} alt="aboutme" />
         </ImageContainer>
         <TextContainer>
-          <ItemTitle>Natacha - From Moscow to Paris</ItemTitle>
-          <Text>
-            I&apos;m Natacha, a passionate perfume enthusiast based in Paris.
-            Growing up in a multicultural environment with dual French-Russian
-            nationality, I have always been inspired by my encounters and life
-            experiences, leading me to a creative career. With a strong
-            background in olfactory arts, I bring a unique and personalized
-            approach to the world of scents.
-          </Text>
+          <ItemTitle>{t("AboutMe.AboutMeTitle1")}</ItemTitle>
+          <Text>{t("AboutMe.AboutMe1")}</Text>
         </TextContainer>
       </ItemContainer>
       <ItemContainer>
@@ -36,16 +29,8 @@ export default function AboutMe() {
           <Image src={AboutMePhoto3} alt="aboutme" />
         </ImageContainer>
         <TextContainer>
-          <ItemTitle>From Perfume Lover to Fragrance Nerd</ItemTitle>
-          <Text>
-            My journey into perfumes began with my mum, who introduced me to
-            niche fragrance boutiques, making my encounter with perfumes of
-            Serge Lutens and Frederic Malle unfrogettable. As a student, I
-            worked for prestigious French brands like Fragonard and Le Labo,
-            appreciating the customer interactions and the dialogue about
-            fragrances. I am eternally impressed by their ability to evoke
-            emotions and memories. Today, I live, breathe, and sleep fragrances.
-          </Text>
+          <ItemTitle>{t("AboutMe.AboutMeTitle2")}</ItemTitle>
+          <Text>{t("AboutMe.AboutMe2")}</Text>
         </TextContainer>
       </ItemContainer>
       <ItemContainer>
@@ -53,15 +38,8 @@ export default function AboutMe() {
           <Image src={AboutMePhoto2} alt="aboutme" />
         </ImageContainer>
         <TextContainer>
-          <ItemTitle>My Experience at Your Service</ItemTitle>
-          <Text>
-            Over the years, I&apos;ve honed my skills and knowledge, working for
-            fragrances brands like Jimmy Choo and fragrance houses such as
-            Givaudan, IFF, and Sozio. I am dedicated to elevating the fragrance
-            experience for every customer I meet. This world is full of secrets,
-            creativity, and curiosity - and I am passionate about sharing it
-            with others.
-          </Text>
+          <ItemTitle>{t("AboutMe.AboutMeTitle3")}</ItemTitle>
+          <Text>{t("AboutMe.AboutMe3")}</Text>
         </TextContainer>
       </ItemContainer>
       <ItemContainer>
@@ -69,17 +47,11 @@ export default function AboutMe() {
           <Image4 src={AboutMePhoto4} alt="aboutme" />
         </ImageContainer>
         <TextContainer>
-          <ItemTitle>Let&apos;s Make the Magic Happen</ItemTitle>
-          <Text>
-            I believe that a fragrance should be as unique as the person wearing
-            it. Each scent tells a story, captures a moment, and expresses
-            individuality. My goal is to help you discover the perfect scent
-            that resonates with your personality and style, making you feel
-            confident and inspired every day.
-          </Text>
+          <ItemTitle>{t("AboutMe.AboutMeTitle4")}</ItemTitle>
+          <Text>{t("AboutMe.AboutMe4")}</Text>
           <Conclusion>
-            Ready to dive into the world of fragrances? Reach out and let&apos;s{" "}
-            <BookLink to="/booking">book a tour!</BookLink>
+            {t("AboutMe.Conclusion")}{" "}
+            <BookLink to="/booking">{t("AboutMe.BookLink")}</BookLink>
           </Conclusion>
         </TextContainer>
       </ItemContainer>
