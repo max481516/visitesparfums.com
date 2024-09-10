@@ -1,10 +1,10 @@
 {
   "Nav": {
     "Home": "Home",
-    "About Me": "About Me",
-    "Ask a Question": "Ask a Question",
-    "Book Now!": "Book Now!",
-    "Follow Me": "Follow Me"
+    "AboutMe": "About Me",
+    "AskQuestion": "Ask a Question",
+    "BookNow": "Book Now!",
+    "FollowMe": "Follow Me"
   },
   "Home": {
     "h1": "Exclusive Paris Perfume Tours",

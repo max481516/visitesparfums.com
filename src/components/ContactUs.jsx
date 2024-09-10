@@ -26,7 +26,7 @@ export default function ContactUs() {
       </FollowUs>
       <ContactFormButton onClick={toggleModal}>
         <AiOutlineMessage size={50} />
-        <Title>{t("Home.AnyQuestionsIcon")}</Title>
+        <Title>{t("Home.AnyQuestionIcon")}</Title>
         <ContactModal show={showModal} onClose={toggleModal}>
           <ContactForm />
         </ContactModal>

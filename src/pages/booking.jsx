@@ -28,31 +28,10 @@ export default function Booking() {
       <Visit
         title="Paris Saint-Honoré"
         photo={Photo1}
-        text="Saturday 4pm (or Friday 5pm - to be discussed)
- 
-Covered themes :
-·      Pioneers of Niche Perfumery -
- about the brands that have established the codes of the niche perfumery trend (il faudra rajouter les dates quand on va lancer le site)
-·      Trendy Niche brands – currently making the buzz in the fragrance industry (il faudra rajouter les dates quand on va lancer le site)
- "
+        text={t("Booking.Visit1")}
       />
       <BookingDecoration />
-      <Visit
-        title="Marais"
-        photo={Photo2}
-        text="Sunday 4pm  
- 
-Covered themes :
-·       Pioneers of Niche Perfumery – about the brands that have established the codes of the niche perfumery trend (il faudra rajouter les dates quand on va lancer le site)
-·       Between History & Modernity – inspired by ancient perfumery of the 18th century, these vintage brands are still making an impact nowadays    
-
-
-Additional general
-information
- 
-·      If the scheduled time is not convenient for you, it can be adjusted.
-·      Note there is a possibility to organize a private group visit or add additional participants"
-      />
+      <Visit title="Marais" photo={Photo2} text={t("Booking.Visit2")} />
       <Message>
         {t("Booking.AnyQuestions")}{" "}
         <MessageLink onClick={toggleModal}>

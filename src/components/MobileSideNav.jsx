@@ -19,21 +19,21 @@ export default function MobileSideNav({ isOpen, toggle }) {
       </SideBarLinkClose>
       <SideMenu>
         <SideBarItem onClick={toggle} to="/">
-          {t("Home")}
+          {t("Nav.Home")}
         </SideBarItem>
         <SideBarItem onClick={toggle} to="/about">
-          {t("About me")}
+          {t("Nav.AboutMe")}
         </SideBarItem>
         <SideBarItem as="div" onClick={toggleModal}>
-          {t("Ask a question")}
+          {t("Nav.AskQuestion")}
         </SideBarItem>
         <SideBarItem onClick={toggle} to="/booking">
-          {t("Book Now!")}
+          {t("Nav.BookNow")}
         </SideBarItem>
       </SideMenu>
       <FollowUs href="https://www.instagram.com/visitesparfumsparis/">
         <RxInstagramLogo size={50} />
-        <Title>Follow me!</Title>
+        <Title>{t("Nav.FollowMe")}</Title>
       </FollowUs>
       <MobileLanguageSelector />
     </SidebarContainer>

@@ -1,9 +1,11 @@
 import { useForm, ValidationError } from "@formspree/react";
 import { FaRegCheckCircle } from "react-icons/fa";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("mqazzaer");
+  const { t } = useTranslation();
 
   if (state.succeeded) {
     return (
@@ -17,17 +19,17 @@ export default function ContactForm() {
   return (
     <FormContainer onSubmit={handleSubmit}>
       <fieldset id="fs-frm-inputs">
-        <Label htmlFor="full-name">Full Name</Label>
+        <Label htmlFor="full-name">{t("Modal.FullName")}</Label>
         <Input
           type="text"
           name="name"
           id="full-name"
-          placeholder="First and Last"
+          placeholder={t("Modal.FullNamePlaceholder")}
           required
         />
         <ValidationError prefix="Name" field="name" errors={state.errors} />
 
-        <Label htmlFor="email-address">Email Address</Label>
+        <Label htmlFor="email-address">{t("Modal.Email")}</Label>
         <Input
           type="email"
           name="email"
@@ -37,12 +39,12 @@ export default function ContactForm() {
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
 
-        <Label htmlFor="message">Message</Label>
+        <Label htmlFor="message">{t("Modal.Message")}</Label>
         <Textarea
           rows="5"
           name="message"
           id="message"
-          placeholder="Your message here"
+          placeholder={t("Modal.FullNamePlaceholder")}
           required
         />
         <ValidationError
@@ -52,7 +54,7 @@ export default function ContactForm() {
         />
       </fieldset>
       <SubmitButton type="submit" disabled={state.submitting}>
-        Submit
+        {t("Modal.Submit")}
       </SubmitButton>
     </FormContainer>
   );

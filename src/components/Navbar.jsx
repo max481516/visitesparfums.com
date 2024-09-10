@@ -22,12 +22,12 @@ export default function Navbar() {
         </LogoLink>
         <Bars onClick={toggle} />
         <NavMenu>
-          <NavItem to="/">{t("Home")}</NavItem>
-          <NavItem to="/about">{t("About me")}</NavItem>
-          <NavItem onClick={toggleModal}>{t("Ask a question")}</NavItem>
+          <NavItem to="/">{t("Nav.Home")}</NavItem>
+          <NavItem to="/about">{t("Nav.AboutMe")}</NavItem>
+          <NavItem onClick={toggleModal}>{t("Nav.AskQuestion")}</NavItem>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to="/booking">{t("Book Now!")}</NavBtnLink>
+          <NavBtnLink to="/booking">{t("Nav.BookNow")}</NavBtnLink>
           <DesktopLanguageSelector />
         </NavBtn>
       </Nav>
