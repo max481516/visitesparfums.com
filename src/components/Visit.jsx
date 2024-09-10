@@ -2,11 +2,11 @@ import styled from "styled-components";
 import AirbnbLogo from "../media/airbnb.svg";
 import { useTranslation } from "react-i18next";
 
-export default function Visit({ title, text, photo }) {
+export default function Visit({ title, text, photo, className }) {
   const { t } = useTranslation();
 
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <Title>{title}</Title>
       <Photo src={photo}></Photo>
       <Text>{text}</Text>

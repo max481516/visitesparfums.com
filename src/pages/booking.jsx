@@ -31,7 +31,7 @@ export default function Booking() {
         text={t("Booking.Visit1")}
       />
       <BookingDecoration />
-      <Visit title="Marais" photo={Photo2} text={t("Booking.Visit2")} />
+      <VisitMarais title="Marais" photo={Photo2} text={t("Booking.Visit2")} />
       <Message>
         {t("Booking.AnyQuestions")}{" "}
         <MessageLink onClick={toggleModal}>
@@ -51,7 +51,7 @@ const BookingDecoration = styled(Decoration)`
 `;
 
 const Message = styled.p`
-  padding: 8px 16px;
+  padding: 0 16px 8px;
   min-width: 75%;
   font-weight: 700;
   line-height: 1.2;
@@ -69,4 +69,8 @@ const MessageLink = styled(Link)`
   &:hover {
     color: var(--color-green);
   }
+`;
+
+const VisitMarais = styled(Visit)`
+  padding-bottom: 0;
 `;
