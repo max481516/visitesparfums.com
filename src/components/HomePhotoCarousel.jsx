@@ -75,8 +75,13 @@ export default function HomePhotoCarousel() {
     swiperRef.current.initialize();
   }, []);
 
+  const swiperContainer = {
+    width: "100vw", // Full width to ignore page padding
+    marginLeft: "calc(-50vw + 50%)", // Center the container to adjust for full width
+  };
+
   return (
-    <swiper-container ref={swiperRef} init="false">
+    <swiper-container style={swiperContainer} ref={swiperRef} init="false">
       <swiper-slide>
         <img src={HomeCarouselPhoto1} alt="" />
       </swiper-slide>

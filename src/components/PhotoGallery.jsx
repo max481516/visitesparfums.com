@@ -24,6 +24,8 @@ const Wrapper = styled.section`
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
+  width: 100dvw;
+  margin-left: calc(-50vw + 50%);
 `;
 
 const IMG = styled.img`

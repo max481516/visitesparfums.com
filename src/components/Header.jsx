@@ -17,5 +17,5 @@ const Title = styled.h1`
   font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
   font-weight: 1000;
   line-height: 1.1;
-  padding: 0.5rem 16px;
+  padding: 0.5rem 0;
 `;

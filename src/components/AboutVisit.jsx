@@ -12,16 +12,14 @@ export default function AboutVisit() {
   );
 }
 
-const Wrapper = styled.div`
-  padding: 0 1rem;
-`;
+const Wrapper = styled.div``;
 
 const Title = styled.h2`
   text-align: start;
   font-size: calc(20rem / 16);
   font-weight: 800;
   line-height: 1.2;
-  padding: 1rem 0;
+  padding: 1rem 0 0.5rem;
 `;
 
 const Text = styled.p`

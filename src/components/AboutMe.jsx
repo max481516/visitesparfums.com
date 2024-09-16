@@ -63,6 +63,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 0 16px;
 
   @media ${QUERIES.laptopAndUp} {
     flex-direction: row;
@@ -76,7 +77,6 @@ const Title = styled.h2`
   font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
   font-weight: 1000;
   text-transform: uppercase;
-  padding: 0 16px;
 
   @media ${QUERIES.laptopAndUp} {
     padding: 3rem 8px 4rem;
@@ -116,7 +116,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   object-fit: cover;
   width: 100%;
-  padding: 0.5rem 16px;
+  padding: 0.5rem 0;
 
   @media ${QUERIES.tabletAndUp} {
     height: 500px;
@@ -130,18 +130,17 @@ const Image4 = styled(Image)`
 const ItemTitle = styled.h3`
   font-size: clamp(1.2rem, 4vw + 1rem, 1.5rem);
   font-weight: 800;
-  padding: 0 16px;
   line-height: 1.2;
 `;
 
 const Text = styled.p`
-  padding: 0.5rem 16px;
+  padding: 0.5rem 0;
   text-align: justify;
   line-height: 1.2;
 `;
 
 const Conclusion = styled.p`
-  padding: 0.5rem 16px;
+  padding: 0.5rem 0;
   min-width: 75%;
   font-weight: 700;
   line-height: 1.2;

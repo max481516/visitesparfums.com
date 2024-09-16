@@ -22,7 +22,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 0.5rem 16px;
+  padding: 0.5rem 0;
 `;
 
 const Title = styled.h2`
@@ -32,7 +32,6 @@ const Title = styled.h2`
 
 const Photo = styled.img`
   object-fit: cover;
-  padding: 0 8px 8px 0;
   width: 100%;
   height: auto;
 `;

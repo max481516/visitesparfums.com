@@ -56,14 +56,14 @@ export default function ReviewsCarousel() {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "start",
-    padding: "8px 16px 0",
+    padding: "8px 0",
   };
 
   const title = {
     textAlign: "start",
     fontSize: "calc(20rem / 16)",
     fontWeight: "800",
-    padding: "1rem 0 0 16px",
+    padding: "1rem 0 0",
   };
 
   const text = {

@@ -24,28 +24,38 @@ export default function Booking() {
         <link rel="canonical" href="/booking" />
       </Helmet>
 
-      <Intro>{t("Booking.Intro")}</Intro>
-      <VisitsWrapper>
-        <Visit
-          title="Paris Saint-Honoré"
-          photo={Photo1}
-          text={t("Booking.Visit1")}
-        />
-        <BookingDecoration />
-        <VisitMarais title="Marais" photo={Photo2} text={t("Booking.Visit2")} />
-      </VisitsWrapper>
-      <Message>
-        {t("Booking.AnyQuestions")}{" "}
-        <MessageLink onClick={toggleModal}>
-          {t("Booking.AnyQuestionsLink")}
-        </MessageLink>
-      </Message>
+      <Wrapper>
+        <Intro>{t("Booking.Intro")}</Intro>
+        <VisitsWrapper>
+          <Visit
+            title="Paris Saint-Honoré"
+            photo={Photo1}
+            text={t("Booking.Visit1")}
+          />
+          <BookingDecoration />
+          <VisitMarais
+            title="Marais"
+            photo={Photo2}
+            text={t("Booking.Visit2")}
+          />
+        </VisitsWrapper>
+        <Message>
+          {t("Booking.AnyQuestions")}{" "}
+          <MessageLink onClick={toggleModal}>
+            {t("Booking.AnyQuestionsLink")}
+          </MessageLink>
+        </Message>
+      </Wrapper>
     </>
   );
 }
 
+const Wrapper = styled.div`
+  padding: 0 16px;
+`;
+
 const Intro = styled.p`
-  padding: 8px 16px;
+  padding: 8px 0;
 `;
 
 const BookingDecoration = styled(Decoration)`
@@ -57,7 +67,7 @@ const BookingDecoration = styled(Decoration)`
 `;
 
 const Message = styled.p`
-  padding: 0 16px 8px;
+  padding: 0 0 8px;
   min-width: 75%;
   font-weight: 700;
   line-height: 1.2;
