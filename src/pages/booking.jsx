@@ -25,13 +25,15 @@ export default function Booking() {
       </Helmet>
 
       <Intro>{t("Booking.Intro")}</Intro>
-      <Visit
-        title="Paris Saint-Honoré"
-        photo={Photo1}
-        text={t("Booking.Visit1")}
-      />
-      <BookingDecoration />
-      <VisitMarais title="Marais" photo={Photo2} text={t("Booking.Visit2")} />
+      <VisitsWrapper>
+        <Visit
+          title="Paris Saint-Honoré"
+          photo={Photo1}
+          text={t("Booking.Visit1")}
+        />
+        <BookingDecoration />
+        <VisitMarais title="Marais" photo={Photo2} text={t("Booking.Visit2")} />
+      </VisitsWrapper>
       <Message>
         {t("Booking.AnyQuestions")}{" "}
         <MessageLink onClick={toggleModal}>
@@ -48,6 +50,10 @@ const Intro = styled.p`
 
 const BookingDecoration = styled(Decoration)`
   padding-bottom: 2rem;
+
+  @media ${QUERIES.laptopAndUp} {
+    display: none;
+  }
 `;
 
 const Message = styled.p`
@@ -68,6 +74,12 @@ const MessageLink = styled(Link)`
 
   &:hover {
     color: var(--color-green);
+  }
+`;
+
+const VisitsWrapper = styled.section`
+  @media ${QUERIES.laptopAndUp} {
+    display: flex;
   }
 `;
 

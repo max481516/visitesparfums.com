@@ -70,10 +70,10 @@
     "AnyQuestionsLink": "message"
   },
   "Modal": {
-    "FullName": "Nom complet",
+    "FullName": "Nom complet:",
     "FullNamePlaceholder": "Entrez votre nom complet",
-    "Email": "Adresse e-mail",
-    "Message": "Message",
+    "Email": "Adresse e-mail:",
+    "Message": "Messag:",
     "MessagePlaceholder": "Entrez votre message ici",
     "Submit": "Envoyer"
   }

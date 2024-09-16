@@ -10,10 +10,11 @@ import { QUERIES } from "../constants";
 export default function MobileSideNav({ isOpen, toggle }) {
   const toggleModal = useStores((state) => state.toggleModal);
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
-    <SidebarContainer isOpen={isOpen}>
+    <SidebarContainer $isOpen={isOpen}>
+      {/* transient props with $ to prevent prop passed to DOM */}
       <SideBarLinkClose onClick={toggle}>
         <AiOutlineClose />
       </SideBarLinkClose>
@@ -35,23 +36,10 @@ export default function MobileSideNav({ isOpen, toggle }) {
         <RxInstagramLogo size={50} />
         <Title>{t("Nav.FollowMe")}</Title>
       </FollowUs>
-      <MobileLanguageSelector />
+      <MobileLanguageSelector lang={i18n.language} />
     </SidebarContainer>
   );
 }
-
-const FollowUs = styled.a`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 10dvh;
-  min-width: 25%;
-  margin: 0 auto;
-  gap: 0.5rem;
-  color: white;
-  margin-top: -0.5rem;
-`;
 
 const Title = styled.h2`
   font-weight: 500;
@@ -65,7 +53,7 @@ const SidebarContainer = styled.aside`
   background: var(--color-brown);
   top: 0;
   transition: 0.3s ease-in-out;
-  right: ${({ isOpen }) => (isOpen ? "0" : "-1000px")};
+  right: ${({ $isOpen }) => ($isOpen ? "0" : "-1000px")};
   z-index: 990;
 
   @media ${QUERIES.tabletAndUp} {
@@ -89,6 +77,7 @@ const SideBarItem = styled(Link)`
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 600;
+  text-align: center;
 
   &.active {
     color: var(--color-green);
@@ -104,13 +93,34 @@ const SideBarLinkClose = styled.div`
   padding: 1rem;
 `;
 
+const FollowUs = styled.a`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 10dvh;
+  min-width: 25%;
+  margin: 0 auto;
+  gap: 0.5rem;
+  color: white;
+  margin-top: -0.5rem;
+`;
+
 const MobileLanguageSelector = styled(LanguageSelector)`
-  position: absolute;
-  bottom: 1.5rem;
-  min-width: 96px;
-  max-width: 104px;
-  left: 50%;
-  transform: translateX(
-    -50%
-  ); // This shifts the element to the left by 50% of its own width, effectively centering it horizontally
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  width: 72px;
+
+  ${({ lang }) =>
+    lang === "fr" &&
+    `
+    width: 82px;
+  `}
+
+  ${({ lang }) =>
+    lang === "ru" &&
+    `
+    width: 84px;
+  `}
 `;

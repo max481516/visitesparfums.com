@@ -10,10 +10,7 @@ export default function Visit({ title, text, photo, className }) {
       <Title>{title}</Title>
       <Photo src={photo}></Photo>
       <Text>{text}</Text>
-      <BookContainer
-        a
-        href="https://www.airbnb.fr/experiences/4431379?guests=1&adults=1&s=67&unique_share_id=95ddc40a-121e-49a6-8d7b-14de1e847235"
-      >
+      <BookContainer href="https://www.airbnb.fr/experiences/4431379?guests=1&adults=1&s=67&unique_share_id=95ddc40a-121e-49a6-8d7b-14de1e847235">
         <BookText>{t("Booking.ClickHere")}</BookText>
         <BookButton src={AirbnbLogo} />
       </BookContainer>
@@ -36,6 +33,8 @@ const Title = styled.h2`
 const Photo = styled.img`
   object-fit: cover;
   padding: 0 8px 8px 0;
+  width: 100%;
+  height: auto;
 `;
 
 const Text = styled.p`

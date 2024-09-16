@@ -11,7 +11,7 @@ import { QUERIES } from "../constants";
 
 export default function Navbar() {
   const toggleModal = useStores((state) => state.toggleModal);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { isOpen, toggle } = useSidebar();
 
   return (
@@ -27,8 +27,8 @@ export default function Navbar() {
           <NavItem onClick={toggleModal}>{t("Nav.AskQuestion")}</NavItem>
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to="/booking">{t("Nav.BookNow")}</NavBtnLink>
-          <DesktopLanguageSelector />
+          <NavBtnBookLink to="/booking">{t("Nav.BookNow")}</NavBtnBookLink>
+          <DesktopLanguageSelector lang={i18n.language} />
         </NavBtn>
       </Nav>
       <MobileSideNav isOpen={isOpen} toggle={toggle} />
@@ -121,7 +121,7 @@ const NavBtn = styled.nav`
   }
 `;
 
-const NavBtnLink = styled(Link)`
+const NavBtnBookLink = styled(Link)`
   border-radius: 4px;
   background: var(--color-green);
   padding: 10px 22px;
@@ -139,17 +139,29 @@ const NavBtnLink = styled(Link)`
 `;
 
 const DesktopLanguageSelector = styled(LanguageSelector)`
+  align-items: center;
   font-size: calc(12rem / 16);
-  width: 74px;
-  border: none;
+  width: 60px;
 
   &:hover {
     transition: all 0.2s ease-in-out;
     color: var(--color-green);
-    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path fill="%238EB6A5" d="M0 3.5l5 5 5-5z"/></svg>');
   }
 
-  &:focus-visible {
-    outline: 2px solid var(--color-green);
+  &:focus {
+    outline: none;
+    color: var(--color-green);
   }
+
+  ${({ lang }) =>
+    lang === "fr" &&
+    `
+    width: 66px;
+  `}
+
+  ${({ lang }) =>
+    lang === "ru" &&
+    `
+    width: 66px;
+  `}
 `;

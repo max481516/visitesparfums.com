@@ -1,6 +1,7 @@
 import { useState } from "react";
 import i18n from "../i18n/i18n";
 import styled from "styled-components";
+import { QUERIES } from "../constants";
 
 export default function LanguageSelector({ className }) {
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
@@ -13,31 +14,35 @@ export default function LanguageSelector({ className }) {
   };
 
   return (
-    <LanguageSelectorContainer
-      defaultValue={selectedLanguage}
-      onChange={chooseLanguage}
-      className={className}
-    >
-      <option value="en">English</option>
-      <option value="fr">Français</option>
-      <option value="ru">Русский</option>
+    <LanguageSelectorContainer>
+      <Selector
+        defaultValue={selectedLanguage}
+        onChange={chooseLanguage}
+        className={className}
+      >
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="ru">Русский</option>
+      </Selector>
     </LanguageSelectorContainer>
   );
 }
 
-const LanguageSelectorContainer = styled.select`
-  color: #fff;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+const Selector = styled.select`
+  color: #ccc;
   background: transparent;
-  border: 1px solid #ccc;
-  padding: 0.5em 1em;
-  font-size: 1em;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path fill="%23FFFFFF" d="M0 3.5l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 0.5em top 50%;
-  background-size: 0.65em auto;
-  cursor: pointer;
-  border-radius: 4px;
+  border: none;
+`;
+
+const LanguageSelectorContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 8px;
+
+  @media ${QUERIES.bigTabletAndUp} {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
 `;

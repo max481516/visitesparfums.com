@@ -44,7 +44,7 @@ export default function ContactForm() {
           rows="5"
           name="message"
           id="message"
-          placeholder={t("Modal.FullNamePlaceholder")}
+          placeholder={t("Modal.MessagePlaceholder")}
           required
         />
         <ValidationError

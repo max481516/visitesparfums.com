@@ -70,11 +70,11 @@
     "AnyQuestionsLink": "сообщение"
   },
   "Modal": {
-    "FullName": "Полное имя",
+    "FullName": "Полное имя:",
     "FullNamePlaceholder": "Введите ваше полное имя",
-    "Email": "Адрес электронной почты",
+    "Email": "Адрес электронной почты:",
     "Message": "Сообщение",
-    "MessagePlaceholder": "Введите ваше сообщение здесь",
+    "MessagePlaceholder": "Введите ваше сообщение здесь:",
     "Submit": "Отправить"
   }
 }
