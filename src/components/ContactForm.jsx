@@ -82,7 +82,7 @@ const Input = styled.input`
   border-radius: 4px;
 
   &::placeholder {
-    color: var(--color-green);
+    opacity: 0.5;
   }
 `;
 
@@ -94,7 +94,7 @@ const Textarea = styled.textarea`
   border-radius: 4px;
 
   &::placeholder {
-    color: var(--color-green);
+    opacity: 0.5;
   }
 `;
 

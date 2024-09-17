@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 import HomePhotoCarousel from "../components/HomePhotoCarousel.jsx";
 import ReviewsCarousel from "../components/ReviewsCarousel.jsx";
 import ReasonsWhyCarousel from "../components/ReasonsWhyCarousel.jsx";
+import { QUERIES } from "../constants";
 
 export default function Home() {
   return (
@@ -37,4 +38,8 @@ export default function Home() {
 
 const Wrapper = styled.div`
   padding: 0 16px;
+
+  @media ${QUERIES.laptopAndUp} {
+    padding: 0 54px;
+  }
 `;

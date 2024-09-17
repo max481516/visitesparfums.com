@@ -8,6 +8,7 @@ import Logo from "../media/logo.svg?react";
 import LanguageSelector from "./LanguageSelector";
 import useStores from "../stores/useStores";
 import { QUERIES } from "../constants";
+import { RxInstagramLogo } from "react-icons/rx";
 
 export default function Navbar() {
   const toggleModal = useStores((state) => state.toggleModal);
@@ -27,6 +28,9 @@ export default function Navbar() {
           <NavItem onClick={toggleModal}>{t("Nav.AskQuestion")}</NavItem>
         </NavMenu>
         <NavBtn>
+          <InstagramLink href="https://www.instagram.com/visitesparfumsparis/">
+            <StyledRxInstagramLogo size={35} />
+          </InstagramLink>
           <NavBtnBookLink to="/booking">{t("Nav.BookNow")}</NavBtnBookLink>
           <DesktopLanguageSelector lang={i18n.language} />
         </NavBtn>
@@ -52,11 +56,6 @@ const LogoLink = styled(Link)`
   text-decoration: none;
   margin-left: 16px;
   cursor: pointer;
-
-  &:hover {
-    color: var(--color-green);
-    transition: all 0.2s ease-in-out;
-  }
 `;
 
 const StyledLogo = styled(Logo)`
@@ -68,6 +67,22 @@ const StyledLogo = styled(Logo)`
 
   @media ${QUERIES.laptopAndUp} {
     margin-left: -8px;
+  }
+`;
+
+const InstagramLink = styled.a``;
+
+const StyledRxInstagramLogo = styled(RxInstagramLogo)`
+  cursor: pointer;
+  color: white;
+
+  &:hover {
+    transition: all 0.1s ease-in-out;
+    color: var(--color-pink);
+  }
+
+  &:focus {
+    border: 2px solid var(--color-green);
   }
 `;
 
