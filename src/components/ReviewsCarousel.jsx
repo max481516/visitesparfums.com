@@ -61,7 +61,7 @@ export default function ReviewsCarousel() {
 
   const title = {
     textAlign: "start",
-    fontSize: "calc(20rem / 16)",
+    fontSize: "clamp(1.25rem, 3vw + 0.8rem, 2.5rem)",
     fontWeight: "800",
     padding: "1rem 0 0",
   };

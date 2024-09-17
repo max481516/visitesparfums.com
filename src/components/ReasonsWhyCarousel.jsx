@@ -64,7 +64,7 @@ export default function ReasonsWhyCarousel() {
 
   const title = {
     textAlign: "start",
-    fontSize: "calc(20rem / 16)",
+    fontSize: "clamp(1.25rem, 3vw + 0.8rem, 2.5rem)",
     fontWeight: "800",
     padding: "0.2rem 0",
   };

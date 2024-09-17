@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { QUERIES } from "../constants.js";
 import useStores from "../stores/useStores";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
 import Photo1 from "../media/Visit1.jpg";
 import Photo2 from "../media/Visit2.jpg";
@@ -25,7 +25,27 @@ export default function Booking() {
       </Helmet>
 
       <Wrapper>
-        <Intro>{t("Booking.Intro")}</Intro>
+        <Title>{t("Booking.Title")}</Title>
+        <Intro>
+          <Intro>
+            <Trans i18nKey="Booking.IntroPart1" />
+            <br />
+            <br />
+            <Trans
+              i18nKey="Booking.IntroPart2"
+              components={{ bold: <Bold /> }}
+            />
+            <br />
+            <br />
+            <Trans
+              i18nKey="Booking.IntroPart3"
+              components={{
+                bold: <Bold />,
+                colored: <ColoredText />,
+              }}
+            />
+          </Intro>
+        </Intro>
         <VisitsWrapper>
           <Visit
             title="Paris Saint-Honoré"
@@ -52,10 +72,23 @@ export default function Booking() {
 
 const Wrapper = styled.div`
   padding: 0 16px;
+  white-space: pre-line; // to render new lines in the text from JSON
 `;
 
-const Intro = styled.p`
-  padding: 8px 0;
+const Title = styled.h2`
+  font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+  font-weight: 1000;
+  padding-top: 8px;
+`;
+
+const Intro = styled.p``;
+
+const Bold = styled.span`
+  font-weight: bold;
+`;
+
+const ColoredText = styled.span`
+  color: var(--color-dark-green);
 `;
 
 const BookingDecoration = styled(Decoration)`

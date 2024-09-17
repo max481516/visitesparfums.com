@@ -26,7 +26,7 @@ const Wrapper = styled.section`
 `;
 
 const Title = styled.h2`
-  font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
+  font-size: clamp(1.25rem, 3vw + 0.8rem, 2.5rem);
   font-weight: 1000;
 `;
 

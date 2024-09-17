@@ -16,7 +16,8 @@ const Wrapper = styled.div``;
 
 const Title = styled.h2`
   text-align: start;
-  font-size: calc(20rem / 16);
+  font-size: clamp(1.25rem, 3vw + 0.8rem, 2.5rem);
+
   font-weight: 800;
   line-height: 1.2;
   padding: 1rem 0 0.5rem;
