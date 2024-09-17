@@ -63,8 +63,12 @@ const StyledLogo = styled(Logo)`
   width: 175px;
   height: 125px;
   color: #fff;
-  margin-left: -8px;
   margin-top: -3px;
+  margin-left: -14px;
+
+  @media ${QUERIES.laptopAndUp} {
+    margin-left: -8px;
+  }
 `;
 
 const Bars = styled(FaBars)`

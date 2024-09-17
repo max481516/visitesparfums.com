@@ -34,23 +34,18 @@ export default function MobileSideNav({ isOpen, toggle }) {
       </SideMenu>
       <FollowUs href="https://www.instagram.com/visitesparfumsparis/">
         <RxInstagramLogo size={50} />
-        <Title>{t("Nav.FollowMe")}</Title>
+        <FollowUsTitle>{t("Nav.FollowMe")}</FollowUsTitle>
       </FollowUs>
       <MobileLanguageSelector lang={i18n.language} />
     </SidebarContainer>
   );
 }
 
-const Title = styled.h2`
-  font-weight: 500;
-  font-size: calc(20rem / 16);
-`;
-
 const SidebarContainer = styled.aside`
   position: fixed;
   width: 100%;
   height: 100%;
-  background: var(--color-brown);
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   top: 0;
   transition: 0.3s ease-in-out;
   right: ${({ $isOpen }) => ($isOpen ? "0" : "-1000px")};
@@ -71,26 +66,31 @@ const SideMenu = styled.div`
 `;
 
 const SideBarItem = styled(Link)`
-  color: #fff;
+  color: black;
   cursor: pointer;
   margin: 1rem 0;
   font-size: 2rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 600;
   text-align: center;
 
   &.active {
-    color: var(--color-green);
+    color: var(--color-dark-green);
   }
 `;
 
 const SideBarLinkClose = styled.div`
   display: flex;
-  color: var(--color-green);
+  color: black;
   justify-content: flex-end;
   font-size: 2.5rem;
   cursor: pointer;
   padding: 1rem;
+`;
+
+const FollowUsTitle = styled.h2`
+  font-weight: 500;
+  font-size: calc(20rem / 16);
 `;
 
 const FollowUs = styled.a`
@@ -102,7 +102,7 @@ const FollowUs = styled.a`
   min-width: 25%;
   margin: 0 auto;
   gap: 0.5rem;
-  color: white;
+  color: black;
   margin-top: -0.5rem;
 `;
 
@@ -111,6 +111,7 @@ const MobileLanguageSelector = styled(LanguageSelector)`
   margin-right: auto;
   margin-top: 32px;
   width: 72px;
+  color: black;
 
   ${({ lang }) =>
     lang === "fr" &&

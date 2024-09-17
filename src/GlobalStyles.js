@@ -158,7 +158,7 @@ body {
   font-family: "Archivo", sans-serif;
   font-weight: 400;
   font-style: normal;
-  background: hsl(20, 25%, 95%);
+  background: hsl(20, 25%, 85%);
 }
 
 a {
