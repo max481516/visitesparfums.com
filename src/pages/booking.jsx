@@ -51,12 +51,14 @@ export default function Booking() {
             title="Paris Saint-Honoré"
             photo={Photo1}
             text={t("Booking.Visit1")}
+            variant="first"
           />
           <BookingDecoration />
           <VisitMarais
             title="Marais"
             photo={Photo2}
             text={t("Booking.Visit2")}
+            variant="second"
           />
         </VisitsWrapper>
         <Message>
@@ -73,6 +75,10 @@ export default function Booking() {
 const Wrapper = styled.div`
   padding: 0 16px;
   white-space: pre-line; // to render new lines in the text from JSON
+
+  @media ${QUERIES.laptopAndUp} {
+    padding: 0 128px;
+  }
 `;
 
 const Title = styled.h2`
@@ -120,11 +126,7 @@ const MessageLink = styled(Link)`
   }
 `;
 
-const VisitsWrapper = styled.section`
-  @media ${QUERIES.laptopAndUp} {
-    display: flex;
-  }
-`;
+const VisitsWrapper = styled.section``;
 
 const VisitMarais = styled(Visit)`
   padding-bottom: 0;

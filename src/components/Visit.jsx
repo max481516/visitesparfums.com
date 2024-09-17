@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import AirbnbLogo from "../media/airbnb.svg";
 import { useTranslation } from "react-i18next";
+import { QUERIES } from "../constants.js";
 
-export default function Visit({ title, text, photo, className }) {
+export default function Visit({ title, text, photo, className, variant }) {
   const { t } = useTranslation();
 
   return (
-    <Wrapper className={className}>
+    <Wrapper className={className} $variant={variant}>
       <Title>{title}</Title>
       <Photo src={photo}></Photo>
       <Text>{text}</Text>
@@ -19,26 +20,69 @@ export default function Visit({ title, text, photo, className }) {
 }
 
 const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding: 0.5rem 0;
+  align-items: center;
+
+  @media ${QUERIES.laptopAndUp} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-gap: 1rem;
+
+    ${(props) =>
+      props.$variant === "first" &&
+      `
+    grid-template-areas: 
+    "title title"
+    "photo text"
+    "book book";
+  `}
+
+    ${(props) =>
+      props.$variant === "second" &&
+      `
+    grid-template-areas: 
+    "title title"
+    "text photo"
+    "book book";
+    
+    /* Push title to the right in the second column */
+    h2 {
+      grid-column: 2 / 3;
+      text-align: right;
+      
+    }
+  `}
+  }
 `;
 
 const Title = styled.h2`
   font-size: clamp(1.25rem, 3vw + 0.8rem, 2.5rem);
   font-weight: 1000;
+
+  @media ${QUERIES.laptopAndUp} {
+    ${(props) =>
+      props.$variant === "second" &&
+      `
+    /* Push the title to the second column */
+    grid-column: 2 / 3;
+    grid-row: 1; /* Ensure it stays in the first row */
+    text-align: right; /* Align the text to the right if needed */
+  `}
+  }
 `;
 
 const Photo = styled.img`
   object-fit: cover;
   width: 100%;
   height: auto;
+  grid-area: photo;
+  height: 500px;
 `;
 
 const Text = styled.p`
   padding: 8px 8px 0 0;
   text-align: start;
+  grid-area: text;
 `;
 
 const BookContainer = styled.a`
@@ -48,6 +92,7 @@ const BookContainer = styled.a`
   padding: 1rem;
   text-decoration: none;
   color: black;
+  grid-area: book;
 `;
 
 const BookText = styled.p`
