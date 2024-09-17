@@ -46,21 +46,21 @@ export default function Booking() {
             />
           </Intro>
         </Intro>
-        <VisitsWrapper>
-          <Visit
-            title="Paris Saint-Honoré"
-            photo={Photo1}
-            text={t("Booking.Visit1")}
-            variant="first"
-          />
-          <BookingDecoration />
-          <VisitMarais
-            title="Marais"
-            photo={Photo2}
-            text={t("Booking.Visit2")}
-            variant="second"
-          />
-        </VisitsWrapper>
+
+        <Visit
+          title="Paris Saint-Honoré"
+          photo={Photo1}
+          text={t("Booking.Visit1")}
+          variant="first"
+        />
+        <BookingDecoration />
+        <VisitMarais
+          title="Marais"
+          photo={Photo2}
+          text={t("Booking.Visit2")}
+          variant="second"
+        />
+
         <Message>
           {t("Booking.AnyQuestions")}{" "}
           <MessageLink onClick={toggleModal}>
@@ -89,14 +89,6 @@ const Title = styled.h2`
 
 const Intro = styled.p``;
 
-const Bold = styled.span`
-  font-weight: bold;
-`;
-
-const ColoredText = styled.span`
-  color: var(--color-dark-green);
-`;
-
 const BookingDecoration = styled(Decoration)`
   padding-bottom: 2rem;
 
@@ -110,7 +102,6 @@ const Message = styled.p`
   min-width: 75%;
   font-weight: 700;
   line-height: 1.2;
-  font-size: calc(18rem / 16);
 
   @media ${QUERIES.laptopAndUp} {
     font-size: calc(17rem / 16);
@@ -126,8 +117,15 @@ const MessageLink = styled(Link)`
   }
 `;
 
-const VisitsWrapper = styled.section``;
-
 const VisitMarais = styled(Visit)`
   padding-bottom: 0;
+`;
+
+// JSON i18n text styling
+const Bold = styled.span`
+  font-weight: bold;
+`;
+
+const ColoredText = styled.span`
+  color: var(--color-dark-green);
 `;

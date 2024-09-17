@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import AirbnbLogo from "../media/airbnb.svg";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import { QUERIES } from "../constants.js";
 
 export default function Visit({ title, text, photo, className, variant }) {
@@ -10,7 +10,15 @@ export default function Visit({ title, text, photo, className, variant }) {
     <Wrapper className={className} $variant={variant}>
       <Title>{title}</Title>
       <Photo src={photo}></Photo>
-      <Text>{text}</Text>
+      <Text>
+        <Trans
+          i18nKey={text}
+          components={{
+            bold: <Bold />,
+            colored: <ColoredText />,
+          }}
+        />
+      </Text>
       <BookContainer href="https://www.airbnb.fr/experiences/4431379?guests=1&adults=1&s=67&unique_share_id=95ddc40a-121e-49a6-8d7b-14de1e847235">
         <BookText>{t("Booking.ClickHere")}</BookText>
         <BookButton src={AirbnbLogo} />
@@ -21,6 +29,7 @@ export default function Visit({ title, text, photo, className, variant }) {
 
 const Wrapper = styled.section`
   align-items: center;
+  padding-top: 1rem;
 
   @media ${QUERIES.laptopAndUp} {
     display: grid;
@@ -34,7 +43,7 @@ const Wrapper = styled.section`
     grid-template-areas: 
     "title title"
     "photo text"
-    "book book";
+    "book .";
   `}
 
     ${(props) =>
@@ -43,7 +52,7 @@ const Wrapper = styled.section`
     grid-template-areas: 
     "title title"
     "text photo"
-    "book book";
+    ". book";
     
     /* Push title to the right in the second column */
     h2 {
@@ -97,10 +106,25 @@ const BookContainer = styled.a`
 
 const BookText = styled.p`
   font-weight: 700;
+  color: var(--color-dark-green);
 `;
 
 const BookButton = styled.img`
   width: 35%;
   cursor: pointer;
   margin: 1rem 0;
+
+  @media ${QUERIES.laptopAndUp} {
+    width: 25%;
+  }
+`;
+
+//Styling of JSON i18n text
+
+const Bold = styled.span`
+  font-weight: bold;
+`;
+
+const ColoredText = styled.span`
+  color: var(--color-dark-green);
 `;

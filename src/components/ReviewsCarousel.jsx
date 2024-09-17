@@ -69,6 +69,7 @@ export default function ReviewsCarousel() {
   const text = {
     lineHeight: "1.3",
     marginBottom: "1rem",
+    fontStyle: "italic",
   };
 
   const clientName = {

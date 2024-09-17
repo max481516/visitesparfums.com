@@ -17,7 +17,7 @@ export default function ReasonsWhyCarousel() {
         type: "fraction",
       },
       autoplay: {
-        delay: 10000,
+        delay: 5000,
       },
       injectStyles: [
         `
