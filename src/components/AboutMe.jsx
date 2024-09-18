@@ -17,7 +17,7 @@ export default function AboutMe() {
       <Title>{t("AboutMe.AboutMeMainTitle")}</Title>
       <ItemContainer>
         <ImageContainer>
-          <Image src={AboutMePhoto1} alt="aboutme" />
+          <Image src={AboutMePhoto1} loading="lazy" alt="aboutme" />
         </ImageContainer>
         <TextContainer>
           <ItemTitle>{t("AboutMe.AboutMeTitle1")}</ItemTitle>
@@ -26,7 +26,7 @@ export default function AboutMe() {
       </ItemContainer>
       <ItemContainer>
         <ImageContainer>
-          <Image src={AboutMePhoto3} alt="aboutme" />
+          <Image src={AboutMePhoto3} loading="lazy" alt="aboutme" />
         </ImageContainer>
         <TextContainer>
           <ItemTitle>{t("AboutMe.AboutMeTitle2")}</ItemTitle>
@@ -35,7 +35,7 @@ export default function AboutMe() {
       </ItemContainer>
       <ItemContainer>
         <ImageContainer>
-          <Image src={AboutMePhoto2} alt="aboutme" />
+          <Image src={AboutMePhoto2} loading="lazy" alt="aboutme" />
         </ImageContainer>
         <TextContainer>
           <ItemTitle>{t("AboutMe.AboutMeTitle3")}</ItemTitle>
@@ -44,7 +44,7 @@ export default function AboutMe() {
       </ItemContainer>
       <ItemContainer>
         <ImageContainer>
-          <Image4 src={AboutMePhoto4} alt="aboutme" />
+          <Image4 src={AboutMePhoto4} loading="lazy" alt="aboutme" />
         </ImageContainer>
         <TextContainer>
           <ItemTitle>{t("AboutMe.AboutMeTitle4")}</ItemTitle>

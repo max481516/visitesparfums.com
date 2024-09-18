@@ -83,19 +83,19 @@ export default function HomePhotoCarousel() {
   return (
     <swiper-container style={swiperContainer} ref={swiperRef} init="false">
       <swiper-slide>
-        <img src={HomeCarouselPhoto1} alt="" />
+        <img src={HomeCarouselPhoto1} loading="lazy" alt="" />
       </swiper-slide>
       <swiper-slide>
-        <img src={HomeCarouselPhoto2} alt="" />
+        <img src={HomeCarouselPhoto2} loading="lazy" alt="" />
       </swiper-slide>
       <swiper-slide>
-        <img src={HomeCarouselPhoto3} alt="" />
+        <img src={HomeCarouselPhoto3} loading="lazy" alt="" />
       </swiper-slide>
       <swiper-slide>
-        <img src={HomeCarouselPhoto4} alt="" />
+        <img src={HomeCarouselPhoto4} loading="lazy" alt="" />
       </swiper-slide>
       <swiper-slide>
-        <img src={HomeCarouselPhoto5} alt="" />
+        <img src={HomeCarouselPhoto5} loading="lazy" alt="" />
       </swiper-slide>
     </swiper-container>
   );

@@ -7,7 +7,7 @@ export default function Visit({ title, text, photo, className, variant }) {
 
   return (
     <Wrapper className={className} $variant={variant}>
-      <Photo src={photo}></Photo>
+      <Photo src={photo} loading="lazy"></Photo>
       <Text>
         <Title>{title}</Title>
         <Trans
@@ -70,7 +70,7 @@ const Photo = styled.img`
 `;
 
 const Text = styled.p`
-  padding: 8px;
+  padding: 0 8px 8px 0;
   text-align: start;
   grid-area: text;
 `;

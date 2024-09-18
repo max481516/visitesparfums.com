@@ -11,11 +11,11 @@ import {
 export default function PhotoGallery() {
   return (
     <Wrapper>
-      <IMG src={PhotoGalleryImage1} alt="PhotoGalleryImage1" />
-      <IMG src={PhotoGalleryImage2} alt="PhotoGalleryImage2" />
-      <IMG src={PhotoGalleryImage3} alt="PhotoGalleryImage3" />
-      <IMG src={PhotoGalleryImage4} alt="PhotoGalleryImage4" />
-      <IMG src={PhotoGalleryImage5} alt="PhotoGalleryImage5" />
+      <IMG src={PhotoGalleryImage1} loading="lazy" alt="PhotoGalleryImage1" />
+      <IMG src={PhotoGalleryImage2} loading="lazy" alt="PhotoGalleryImage2" />
+      <IMG src={PhotoGalleryImage3} loading="lazy" alt="PhotoGalleryImage3" />
+      <IMG src={PhotoGalleryImage4} loading="lazy" alt="PhotoGalleryImage4" />
+      <IMG src={PhotoGalleryImage5} loading="lazy" alt="PhotoGalleryImage5" />
     </Wrapper>
   );
 }
