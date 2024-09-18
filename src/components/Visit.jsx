@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import AirbnbLogo from "../media/airbnb.svg";
 import { useTranslation, Trans } from "react-i18next";
 import { QUERIES } from "../constants.js";
 
@@ -8,9 +7,9 @@ export default function Visit({ title, text, photo, className, variant }) {
 
   return (
     <Wrapper className={className} $variant={variant}>
-      <Title>{title}</Title>
       <Photo src={photo}></Photo>
       <Text>
+        <Title>{title}</Title>
         <Trans
           i18nKey={text}
           components={{
@@ -18,11 +17,13 @@ export default function Visit({ title, text, photo, className, variant }) {
             colored: <ColoredText />,
           }}
         />
+        <BookButton
+          $variant={variant}
+          href="https://www.airbnb.fr/experiences/4431379?guests=1&adults=1&s=67&unique_share_id=95ddc40a-121e-49a6-8d7b-14de1e847235"
+        >
+          {t("Nav.BookNow")}
+        </BookButton>
       </Text>
-      <BookContainer href="https://www.airbnb.fr/experiences/4431379?guests=1&adults=1&s=67&unique_share_id=95ddc40a-121e-49a6-8d7b-14de1e847235">
-        <BookText>{t("Booking.ClickHere")}</BookText>
-        <BookButton src={AirbnbLogo} />
-      </BookContainer>
     </Wrapper>
   );
 }
@@ -34,14 +35,13 @@ const Wrapper = styled.section`
   @media ${QUERIES.laptopAndUp} {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto;
     grid-gap: 1rem;
 
     ${(props) =>
       props.$variant === "first" &&
       `
     grid-template-areas: 
-    "title title"
     "photo text"
     "book .";
   `}
@@ -50,16 +50,8 @@ const Wrapper = styled.section`
       props.$variant === "second" &&
       `
     grid-template-areas: 
-    "title title"
     "text photo"
     ". book";
-    
-    /* Push title to the right in the second column */
-    h2 {
-      grid-column: 2 / 3;
-      text-align: right;
-      
-    }
   `}
   }
 `;
@@ -67,17 +59,6 @@ const Wrapper = styled.section`
 const Title = styled.h2`
   font-size: clamp(1.25rem, 3vw + 0.8rem, 2.5rem);
   font-weight: 1000;
-
-  @media ${QUERIES.laptopAndUp} {
-    ${(props) =>
-      props.$variant === "second" &&
-      `
-    /* Push the title to the second column */
-    grid-column: 2 / 3;
-    grid-row: 1; /* Ensure it stays in the first row */
-    text-align: right; /* Align the text to the right if needed */
-  `}
-  }
 `;
 
 const Photo = styled.img`
@@ -89,33 +70,39 @@ const Photo = styled.img`
 `;
 
 const Text = styled.p`
-  padding: 8px 8px 0 0;
+  padding: 8px;
   text-align: start;
   grid-area: text;
 `;
 
-const BookContainer = styled.a`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  text-decoration: none;
-  color: black;
-  grid-area: book;
-`;
-
-const BookText = styled.p`
-  font-weight: 700;
-  color: var(--color-dark-green);
-`;
-
-const BookButton = styled.img`
-  width: 35%;
+const BookButton = styled.a`
+  display: block;
+  width: 125px;
+  border-radius: 4px;
+  background: var(--color-green);
+  padding: 10px 22px;
+  color: #fff;
+  border: none;
+  outline: none;
   cursor: pointer;
-  margin: 1rem 0;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
 
-  @media ${QUERIES.laptopAndUp} {
-    width: 25%;
+  ${(props) =>
+    props.$variant === "first" &&
+    `
+      margin-top: 1rem;
+  `}
+
+  ${(props) =>
+    props.$variant === "second" &&
+    `
+      margin-top: calc(-8rem / 16);
+  `}
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: var(--color-dark-green);
   }
 `;
 

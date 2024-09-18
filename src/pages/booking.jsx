@@ -87,7 +87,9 @@ const Title = styled.h2`
   padding-top: 8px;
 `;
 
-const Intro = styled.p``;
+const Intro = styled.p`
+  margin-bottom: 1rem;
+`;
 
 const BookingDecoration = styled(Decoration)`
   padding-bottom: 2rem;
