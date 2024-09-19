@@ -29,11 +29,10 @@ export default function AboutMe() {
               "
               type="image/webp"
             />
-            {/* Fallback to JPEG */}
             <StyledImage
               src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692273/AboutMePhoto1_jjbcvd.jpg"
               loading="lazy"
-              alt="aboutme"
+              alt="Portrait of Natacha Pascalis, perfumery expert and creator of Visites Parfums Paris perfume guided tours"
             />
           </picture>
         </ImageContainer>
@@ -62,11 +61,10 @@ export default function AboutMe() {
               "
               type="image/webp"
             />
-            {/* Fallback to JPEG */}
             <StyledImage
               src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692278/AboutMePhoto3_tggvz1.jpg"
               loading="lazy"
-              alt="aboutme"
+              alt="Visites Parfums Paris guide, Natacha Pascalis, in front of a historic Parisian building on 1, rue des Ursins in the 4th arrondissement"
             />
           </picture>
         </ImageContainer>
@@ -95,11 +93,10 @@ export default function AboutMe() {
               "
               type="image/webp"
             />
-            {/* Fallback to JPEG */}
             <StyledImage
               src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692276/AboutMePhoto2_ngtuwe.jpg"
               loading="lazy"
-              alt="aboutme"
+              alt="Perfume expert and guide of Visites Parfums Paris, Natacha Pascalis, holding a scented paper blotter in front of a historic Parisian front door"
             />
           </picture>
         </ImageContainer>
@@ -128,11 +125,10 @@ export default function AboutMe() {
               "
               type="image/webp"
             />
-            {/* Fallback to JPEG */}
             <StyledImage
               src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692278/AboutMePhoto4_qmml4s.jpg"
               loading="lazy"
-              alt="aboutme"
+              alt="Natacha Pascalis, creator of Visites Parfums Paris, standing in front of a historic Parisian entrance door, holding a bouquet of sunflowers"
             />
           </picture>
         </ImageContainer>
