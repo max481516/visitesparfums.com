@@ -1,13 +1,7 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { QUERIES } from "../constants.js";
-import {
-  AboutMePhoto1,
-  AboutMePhoto2,
-  AboutMePhoto3,
-  AboutMePhoto4,
-} from "../media/AboutMe/AboutMePhotos.js";
+import { QUERIES, BREAKPOINTS } from "../constants.js";
 
 export default function AboutMe() {
   const { t } = useTranslation();
@@ -15,36 +9,132 @@ export default function AboutMe() {
   return (
     <Wrapper>
       <Title>{t("AboutMe.AboutMeMainTitle")}</Title>
+
       <ItemContainer>
         <ImageContainer>
-          <Image src={AboutMePhoto1} loading="lazy" alt="aboutme" />
+          <picture>
+            <source
+              srcSet="
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726692273/AboutMePhoto1_jjbcvd.jpg 1600w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1726692273/AboutMePhoto1_jjbcvd.jpg 1100w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1726692273/AboutMePhoto1_jjbcvd.jpg 770w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1726692273/AboutMePhoto1_jjbcvd.jpg 550w
+              "
+              sizes="
+                (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
+                (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
+                (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
+                (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
+                100vw
+              "
+              type="image/webp"
+            />
+            {/* Fallback to JPEG */}
+            <StyledImage
+              src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692273/AboutMePhoto1_jjbcvd.jpg"
+              loading="lazy"
+              alt="aboutme"
+            />
+          </picture>
         </ImageContainer>
         <TextContainer>
           <ItemTitle>{t("AboutMe.AboutMeTitle1")}</ItemTitle>
           <Text>{t("AboutMe.AboutMe1")}</Text>
         </TextContainer>
       </ItemContainer>
+
       <ItemContainer>
         <ImageContainer>
-          <Image src={AboutMePhoto3} loading="lazy" alt="aboutme" />
+          <picture>
+            <source
+              srcSet="
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726692278/AboutMePhoto3_tggvz1.jpg 1600w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1726692278/AboutMePhoto3_tggvz1.jpg 1100w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1726692278/AboutMePhoto3_tggvz1.jpg 770w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1726692278/AboutMePhoto3_tggvz1.jpg 550w
+              "
+              sizes="
+                (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
+                (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
+                (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
+                (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
+                100vw
+              "
+              type="image/webp"
+            />
+            {/* Fallback to JPEG */}
+            <StyledImage
+              src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692278/AboutMePhoto3_tggvz1.jpg"
+              loading="lazy"
+              alt="aboutme"
+            />
+          </picture>
         </ImageContainer>
         <TextContainer>
           <ItemTitle>{t("AboutMe.AboutMeTitle2")}</ItemTitle>
           <Text>{t("AboutMe.AboutMe2")}</Text>
         </TextContainer>
       </ItemContainer>
+
       <ItemContainer>
         <ImageContainer>
-          <Image src={AboutMePhoto2} loading="lazy" alt="aboutme" />
+          <picture>
+            <source
+              srcSet="
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726692276/AboutMePhoto2_ngtuwe.jpg 1600w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1726692276/AboutMePhoto2_ngtuwe.jpg 1100w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1726692276/AboutMePhoto2_ngtuwe.jpg 770w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1726692276/AboutMePhoto2_ngtuwe.jpg 550w
+              "
+              sizes="
+                (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
+                (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
+                (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
+                (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
+                100vw
+              "
+              type="image/webp"
+            />
+            {/* Fallback to JPEG */}
+            <StyledImage
+              src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692276/AboutMePhoto2_ngtuwe.jpg"
+              loading="lazy"
+              alt="aboutme"
+            />
+          </picture>
         </ImageContainer>
         <TextContainer>
           <ItemTitle>{t("AboutMe.AboutMeTitle3")}</ItemTitle>
           <Text>{t("AboutMe.AboutMe3")}</Text>
         </TextContainer>
       </ItemContainer>
+
       <ItemContainer>
         <ImageContainer>
-          <Image4 src={AboutMePhoto4} loading="lazy" alt="aboutme" />
+          <picture>
+            <source
+              srcSet="
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726692278/AboutMePhoto4_qmml4s.jpg 1600w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1726692278/AboutMePhoto4_qmml4s.jpg 1100w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1726692278/AboutMePhoto4_qmml4s.jpg 770w,
+                https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1726692278/AboutMePhoto4_qmml4s.jpg 550w
+              "
+              sizes="
+                (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
+                (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
+                (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
+                (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
+                100vw
+              "
+              type="image/webp"
+            />
+            {/* Fallback to JPEG */}
+            <StyledImage
+              src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692278/AboutMePhoto4_qmml4s.jpg"
+              loading="lazy"
+              alt="aboutme"
+            />
+          </picture>
         </ImageContainer>
         <TextContainer>
           <ItemTitle>{t("AboutMe.AboutMeTitle4")}</ItemTitle>
@@ -113,7 +203,7 @@ const ImageContainer = styled.div`
   }
 `;
 
-const Image = styled.img`
+const StyledImage = styled.img`
   object-fit: cover;
   width: 100%;
   padding: 0.5rem 0;
@@ -121,10 +211,6 @@ const Image = styled.img`
   @media ${QUERIES.tabletAndUp} {
     height: 500px;
   }
-`;
-
-const Image4 = styled(Image)`
-  object-position: left top;
 `;
 
 const ItemTitle = styled.h3`

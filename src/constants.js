@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 const BREAKPOINTS = {
   tabletMin: 550,
   bigTabletMin: 770,
