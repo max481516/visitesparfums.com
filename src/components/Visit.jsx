@@ -98,6 +98,7 @@ const BookButton = styled.a`
     props.$variant === "second" &&
     `
       margin-top: calc(-8rem / 16);
+      margin-bottom: 1rem; 
   `}
 
   &:hover {

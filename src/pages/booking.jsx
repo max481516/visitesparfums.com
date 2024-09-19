@@ -92,7 +92,7 @@ const Intro = styled.p`
 `;
 
 const BookingDecoration = styled(Decoration)`
-  padding-bottom: 2rem;
+  margin: 1rem 0;
 
   @media ${QUERIES.laptopAndUp} {
     display: none;

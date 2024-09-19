@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { QUERIES } from "../constants.js";
 
 export default function AboutVisit() {
   const { t } = useTranslation();
@@ -12,7 +13,11 @@ export default function AboutVisit() {
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  @media ${QUERIES.laptopAndUp} {
+    margin-top: 2rem;
+  }
+`;
 
 const Title = styled.h2`
   text-align: start;

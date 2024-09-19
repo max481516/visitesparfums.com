@@ -26,7 +26,7 @@ export default function Home() {
         <HomePhotoCarousel />
         <Header />
         <ReasonsWhyCarousel />
-        <Decoration />
+        <HomeDecoration />
         <AboutVisit title="rgew" />
         <PhotoGallery />
         <ReviewsCarousel />
@@ -41,5 +41,11 @@ const Wrapper = styled.div`
 
   @media ${QUERIES.laptopAndUp} {
     padding: 0 54px;
+  }
+`;
+
+const HomeDecoration = styled(Decoration)`
+  @media ${QUERIES.laptopAndUp} {
+    display: none;
   }
 `;
