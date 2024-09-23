@@ -77,7 +77,7 @@ const Wrapper = styled.div`
   white-space: pre-line; // to render new lines in the text from JSON
 
   @media ${QUERIES.laptopAndUp} {
-    padding: 0 128px;
+    padding: 48px 128px;
   }
 `;
 
@@ -101,12 +101,13 @@ const BookingDecoration = styled(Decoration)`
 
 const Message = styled.p`
   padding: 0 0 8px;
-  min-width: 75%;
   font-weight: 700;
   line-height: 1.2;
 
   @media ${QUERIES.laptopAndUp} {
     font-size: calc(17rem / 16);
+    width: 50%;
+    margin-top: -86px;
   }
 `;
 

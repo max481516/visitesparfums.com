@@ -154,7 +154,7 @@ const Wrapper = styled.section`
   @media ${QUERIES.laptopAndUp} {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 0 128px;
+    padding: 0 128px 48px;
   }
 `;
 
