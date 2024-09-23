@@ -15,6 +15,7 @@ export default function Visit({ title, text, photo, className, variant }) {
           components={{
             bold: <Bold />,
             colored: <ColoredText />,
+            size: <Size />,
           }}
         />
         <BookButton
@@ -116,3 +117,5 @@ const Bold = styled.span`
 const ColoredText = styled.span`
   color: var(--color-dark-green);
 `;
+
+const Size = styled.span``;
