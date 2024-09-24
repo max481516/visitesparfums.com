@@ -110,7 +110,7 @@ const MobileLanguageSelector = styled(LanguageSelector)`
   margin-left: auto;
   margin-right: auto;
   margin-top: 32px;
-  width: 72px;
+  width: 73px;
   color: black;
 
   ${({ lang }) =>

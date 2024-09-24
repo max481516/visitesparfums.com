@@ -3,7 +3,7 @@ import { useTranslation, Trans } from "react-i18next";
 import { QUERIES } from "../constants.js";
 
 export default function Visit({ title, text, photo, className, variant }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <Wrapper className={className} $variant={variant}>
@@ -20,6 +20,7 @@ export default function Visit({ title, text, photo, className, variant }) {
         <BookButton
           $variant={variant}
           href="https://www.airbnb.fr/experiences/4431379?guests=1&adults=1&s=67&unique_share_id=95ddc40a-121e-49a6-8d7b-14de1e847235"
+          lang={i18n.language}
         >
           {t("Nav.BookNow")}
         </BookButton>
@@ -95,6 +96,7 @@ const BookButton = styled.a`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  text-align: center;
   margin-right: auto;
   margin-left: auto;
 
@@ -115,6 +117,18 @@ const BookButton = styled.a`
     transition: all 0.2s ease-in-out;
     background: var(--color-dark-green);
   }
+
+  ${({ lang }) =>
+    lang === "fr" &&
+    `
+    width: 129px;
+  `}
+
+  ${({ lang }) =>
+    lang === "ru" &&
+    `
+    width: 160px;
+  `}
 `;
 
 //Styling of JSON i18n text
