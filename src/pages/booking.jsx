@@ -172,7 +172,7 @@ const Message = styled.p`
   @media ${QUERIES.laptopAndUp} {
     font-size: calc(17rem / 16);
     width: 50%;
-    margin-top: -86px;
+    margin-top: -108px;
   }
 `;
 

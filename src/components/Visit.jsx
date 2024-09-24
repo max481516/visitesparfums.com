@@ -8,14 +8,13 @@ export default function Visit({ title, text, photo, className, variant }) {
   return (
     <Wrapper className={className} $variant={variant}>
       <Photo src={photo} loading="lazy"></Photo>
-      <Text>
+      <Text $variant={variant}>
         <Title>{title}</Title>
         <Trans
           i18nKey={text}
           components={{
             bold: <Bold />,
             colored: <ColoredText />,
-            size: <Size />,
           }}
         />
         <BookButton
@@ -74,6 +73,14 @@ const Text = styled.p`
   padding: 0 8px 8px 0;
   text-align: start;
   grid-area: text;
+
+  @media ${QUERIES.laptopAndUp} {
+    ${(props) =>
+      props.$variant === "second" &&
+      `
+    margin-top: -3rem;
+  `}
+  }
 `;
 
 const BookButton = styled.a`
@@ -88,17 +95,19 @@ const BookButton = styled.a`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
 
   ${(props) =>
     props.$variant === "first" &&
     `
-      margin-top: 1rem;
+      margin-top: 2rem;
   `}
 
   ${(props) =>
     props.$variant === "second" &&
     `
-      margin-top: calc(-8rem / 16);
+      margin-top: calc(-4rem / 16);
       margin-bottom: 1rem; 
   `}
 
@@ -117,5 +126,3 @@ const Bold = styled.span`
 const ColoredText = styled.span`
   color: var(--color-dark-green);
 `;
-
-const Size = styled.span``;
