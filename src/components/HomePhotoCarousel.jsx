@@ -54,6 +54,7 @@ export default function HomePhotoCarousel() {
     ],
   };
 
+  //we use this hook to remove slides per view bug on resize
   useIsomorphicLayoutEffect(() => {
     if (swiperRef.current) {
       if (swiperRef.current?.swiper?.currentBreakpoint) {
@@ -70,6 +71,11 @@ export default function HomePhotoCarousel() {
   const swiperContainer = {
     width: "100vw", // Full width to ignore page padding
     marginLeft: "calc(-50vw + 50%)", // Center the container to adjust for full width
+    height: "75dvh",
+  };
+
+  const swiperImages = {
+    objectFit: "cover",
   };
 
   return (
@@ -93,6 +99,7 @@ export default function HomePhotoCarousel() {
             type="image/webp"
           />
           <img
+            style={swiperImages}
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726752161/HomeCarouselPhoto1_ss6dm9.jpg"
             loading="lazy"
             alt="A Visites Parfums Paris tour participant smelling a perfume in a niche Parisian perfume shop"
@@ -119,6 +126,7 @@ export default function HomePhotoCarousel() {
             type="image/webp"
           />
           <img
+            style={swiperImages}
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726752163/HomeCarouselPhoto2_ybwgrm.jpg"
             loading="lazy"
             alt="A group of Visites Parfums Paris participants posing with Natacha Pascalis, perfumery expert and creator of the guided tours, in a passageway on rue des Francs Bourgeois in the Marais"
@@ -145,6 +153,7 @@ export default function HomePhotoCarousel() {
             type="image/webp"
           />
           <img
+            style={swiperImages}
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726752165/HomeCarouselPhoto3_ffeyww.jpg"
             loading="lazy"
             alt="A Visites Parfums Paris tour participant inspecting a beauty product in a niche Parisian perfume shop"
@@ -171,6 +180,7 @@ export default function HomePhotoCarousel() {
             type="image/webp"
           />
           <img
+            style={swiperImages}
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726752168/HomeCarouselPhoto4_ghotpg.jpg"
             loading="lazy"
             alt="A Visites Parfums Paris participant inspecting a perfume bottle display in a niche Parisian shop"
@@ -197,6 +207,7 @@ export default function HomePhotoCarousel() {
             type="image/webp"
           />
           <img
+            style={swiperImages}
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726752159/HomeCarouselPhoto5_znhvyp.jpg"
             loading="lazy"
             alt="A group of Visites Parfums Paris participants posing with Natacha Pascalis, perfumery expert and creator of the guided tours, in front of a historic entrance door in central Paris"
