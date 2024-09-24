@@ -8,6 +8,7 @@ import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
 import Photo1 from "../media/Visit1.jpg";
 import Photo2 from "../media/Visit2.jpg";
+import { FaCalendar, FaClock, FaUserFriends, FaTag } from "react-icons/fa";
 
 export default function Booking() {
   const toggleModal = useStores((state) => state.toggleModal);
@@ -32,18 +33,63 @@ export default function Booking() {
             <br />
             <br />
             <Trans
-              i18nKey="Booking.IntroPart2"
+              i18nKey="Booking.IntroPart2.Title"
               components={{ bold: <Bold /> }}
             />
             <br />
             <br />
-            <Trans
-              i18nKey="Booking.IntroPart3"
-              components={{
-                bold: <Bold />,
-                colored: <ColoredText />,
-              }}
-            />
+
+            <IconTextWrapper>
+              <StyledIcons as={FaCalendar} />
+              <Text>
+                <Trans
+                  i18nKey="Booking.IntroPart2.When"
+                  components={{
+                    bold: <Bold />,
+                    colored: <ColoredText />,
+                  }}
+                />
+              </Text>
+            </IconTextWrapper>
+
+            <IconTextWrapper>
+              <StyledIcons as={FaClock} />
+              <Text>
+                <Trans
+                  i18nKey="Booking.IntroPart2.Time"
+                  components={{
+                    bold: <Bold />,
+                    colored: <ColoredText />,
+                  }}
+                />
+              </Text>
+            </IconTextWrapper>
+
+            <IconTextWrapper>
+              <StyledIcons as={FaUserFriends} />
+              <Text>
+                <Trans
+                  i18nKey="Booking.IntroPart2.Attendees"
+                  components={{
+                    bold: <Bold />,
+                    colored: <ColoredText />,
+                  }}
+                />
+              </Text>
+            </IconTextWrapper>
+
+            <IconTextWrapper>
+              <StyledIcons as={FaTag} />
+              <Text>
+                <Trans
+                  i18nKey="Booking.IntroPart2.Price"
+                  components={{
+                    bold: <Bold />,
+                    colored: <ColoredText />,
+                  }}
+                />
+              </Text>
+            </IconTextWrapper>
           </Intro>
         </Intro>
 
@@ -89,6 +135,25 @@ const Title = styled.h2`
 
 const Intro = styled.p`
   margin-bottom: 1rem;
+`;
+
+const StyledIcons = styled.span`
+  display: flex;
+  color: var(--color-green);
+  flex-shrink: 0;
+  margin-top: 2px;
+`;
+
+const Text = styled.span`
+  flex-grow: 1;
+  word-break: break-word;
+`;
+
+const IconTextWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.3;
 `;
 
 const BookingDecoration = styled(Decoration)`
