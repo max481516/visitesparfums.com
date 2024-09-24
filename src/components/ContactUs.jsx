@@ -12,10 +12,10 @@ export default function ContactUs() {
   const showModal = useStores((state) => state.showModal);
   const toggleModal = useStores((state) => state.toggleModal);
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
-    <Wrapper>
+    <Wrapper lang={i18n.language}>
       <Book to="/booking">
         <FaAirbnb size={50} />
         <Title>{t("Home.BookNowIcon")}</Title>
@@ -40,6 +40,13 @@ const Wrapper = styled.section`
   justify-content: center;
   padding: 0 2rem 2rem;
   gap: 3rem;
+
+  ${({ lang }) =>
+    lang === "ru" &&
+    `
+    gap: 2rem;
+    padding: 0 2.5rem 2rem 2rem;
+  `}
 `;
 
 const Title = styled.h2`
