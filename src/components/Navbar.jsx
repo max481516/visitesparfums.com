@@ -147,7 +147,7 @@ const AskQuestionBtn = styled.button`
   align-items: center;
 
   &:hover {
-    color: var(--color-green); /* Same hover effect as other items */
+    color: var(--color-green);
     transition: all 0.2s ease-in-out;
   }
 

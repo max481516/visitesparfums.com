@@ -218,7 +218,7 @@ const ItemTitle = styled.h3`
 const Text = styled.p`
   padding: 0.5rem 0;
   text-align: justify;
-  line-height: 1.2;
+  line-height: 1.4;
 `;
 
 const Conclusion = styled.p`
