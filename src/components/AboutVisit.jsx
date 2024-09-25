@@ -14,6 +14,8 @@ export default function AboutVisit() {
 }
 
 const Wrapper = styled.div`
+  margin: 2rem 0;
+
   @media ${QUERIES.laptopAndUp} {
     margin-top: 2rem;
   }

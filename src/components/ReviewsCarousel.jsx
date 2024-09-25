@@ -51,19 +51,23 @@ export default function ReviewsCarousel() {
     swiperContainer.initialize();
   }, []);
 
+  const title = {
+    textAlign: "start",
+    fontSize: "clamp(1.25rem, 3vw + 0.8rem, 2.5rem)",
+    fontWeight: "800",
+    padding: "2rem 0 0",
+  };
+
+  const swiperContainer = {
+    padding: "0 0 2rem",
+  };
+
   const slideContent = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "start",
     padding: "8px 0",
-  };
-
-  const title = {
-    textAlign: "start",
-    fontSize: "clamp(1.25rem, 3vw + 0.8rem, 2.5rem)",
-    fontWeight: "800",
-    padding: "1rem 0 0",
   };
 
   const text = {
@@ -82,7 +86,7 @@ export default function ReviewsCarousel() {
   return (
     <>
       <h2 style={title}>{t("Home.ReviewsTitle")}</h2>
-      <swiper-container ref={swiperRef} init="false">
+      <swiper-container style={swiperContainer} ref={swiperRef} init="false">
         <swiper-slide style={slideContent}>
           <p style={text}>{t("Home.Review1")}</p>
           <cite style={clientName}>{t("Home.ReviewAuthor1")}</cite>

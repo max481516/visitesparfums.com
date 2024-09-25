@@ -69,19 +69,24 @@ export default function HomePhotoCarousel() {
   }, []);
 
   const swiperContainer = {
-    width: "100vw", // Full width to ignore page padding
-    marginLeft: "calc(-50vw + 50%)", // Center the container to adjust for full width
+    width: "100vw",
+    marginLeft: "calc(-50vw + 50%)",
     height: "75dvh",
+  };
+
+  const swiperSlide = {
+    height: "100%",
   };
 
   const swiperImages = {
     objectFit: "cover",
-    height: "100%",
+    width: "100%",
+    height: "75dvh",
   };
 
   return (
     <swiper-container style={swiperContainer} ref={swiperRef} init="false">
-      <swiper-slide>
+      <swiper-slide style={swiperSlide}>
         <picture>
           <source
             srcSet="

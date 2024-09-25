@@ -51,7 +51,7 @@ export default function ReasonsWhyCarousel() {
   }, []);
 
   const swiperContainer = {
-    marginBottom: "1rem",
+    margin: "0 0 2rem",
   };
 
   const slideContent = {
@@ -66,7 +66,7 @@ export default function ReasonsWhyCarousel() {
     textAlign: "start",
     fontSize: "clamp(1.25rem, 3vw + 0.8rem, 2.5rem)",
     fontWeight: "800",
-    padding: "0.2rem 0",
+    padding: "2rem 0 0",
   };
 
   const text = {
