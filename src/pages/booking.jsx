@@ -6,13 +6,63 @@ import { QUERIES } from "../constants.js";
 import useStores from "../stores/useStores";
 import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
-import Photo1 from "../media/Visit1.jpg";
-import Photo2 from "../media/Visit2.jpg";
 import { FaCalendar, FaClock, FaUserFriends, FaTag } from "react-icons/fa";
 
 export default function Booking() {
   const toggleModal = useStores((state) => state.toggleModal);
   const { t } = useTranslation();
+
+  const Visit1Picture = (
+    <picture>
+      <source
+        srcSet="
+          https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1727254937/mathias-reding-8ldNGhGutaM-unsplash_jzqxrn.jpg 1600w,
+          https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1727254937/mathias-reding-8ldNGhGutaM-unsplash_jzqxrn.jpg 1100w,
+          https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1727254937/mathias-reding-8ldNGhGutaM-unsplash_jzqxrn.jpg 770w,
+          https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1727254937/mathias-reding-8ldNGhGutaM-unsplash_jzqxrn.jpg 550w
+        "
+        sizes="
+          (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
+          (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
+          (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
+          (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
+          100vw
+        "
+        type="image/webp"
+      />
+      <img
+        src="https://res.cloudinary.com/dqs3mkxnr/image/upload/v1727254937/mathias-reding-8ldNGhGutaM-unsplash_jzqxrn.jpg"
+        loading="lazy"
+        alt="A typical haussmannian building in Paris"
+      />
+    </picture>
+  );
+
+  const Visit2Picture = (
+    <picture>
+      <source
+        srcSet="
+          https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726691651/Visit1_glokrt.jpg 1600w,
+          https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1726691651/Visit1_glokrt.jpg 1100w,
+          https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1726691651/Visit1_glokrt.jpg 770w,
+          https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1726691651/Visit1_glokrt.jpg 550w
+        "
+        sizes="
+          (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
+          (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
+          (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
+          (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
+          100vw
+        "
+        type="image/webp"
+      />
+      <img
+        src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726691651/Visit1_glokrt.jpg"
+        loading="lazy"
+        alt="Interior of a niche perfume shop in Paris called Infiniment Coty"
+      />
+    </picture>
+  );
 
   return (
     <>
@@ -95,14 +145,14 @@ export default function Booking() {
 
         <Visit
           title="Paris Saint-Honoré"
-          photo={Photo1}
+          photo={Visit1Picture}
           text={t("Booking.Visit1")}
           variant="first"
         />
         <BookingDecoration />
         <VisitMarais
           title="Marais"
-          photo={Photo2}
+          photo={Visit2Picture}
           text={t("Booking.Visit2")}
           variant="second"
         />

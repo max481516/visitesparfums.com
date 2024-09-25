@@ -76,6 +76,7 @@ export default function HomePhotoCarousel() {
 
   const swiperImages = {
     objectFit: "cover",
+    height: "100%",
   };
 
   return (

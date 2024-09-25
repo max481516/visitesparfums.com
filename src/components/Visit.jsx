@@ -7,7 +7,7 @@ export default function Visit({ title, text, photo, className, variant }) {
 
   return (
     <Wrapper className={className} $variant={variant}>
-      <Photo src={photo} loading="lazy"></Photo>
+      <PhotoContainer>{photo}</PhotoContainer>
       <Text $variant={variant}>
         <Title>{title}</Title>
         <Trans
@@ -62,12 +62,25 @@ const Title = styled.h2`
   font-weight: 1000;
 `;
 
-const Photo = styled.img`
-  object-fit: cover;
-  width: 100%;
-  height: auto;
+const PhotoContainer = styled.div`
   grid-area: photo;
+  width: 100%;
   height: 500px;
+  overflow: hidden;
+
+  @media ${QUERIES.bigTabletAndUp} {
+    height: 700px;
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    height: 500px;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const Text = styled.p`
