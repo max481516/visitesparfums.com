@@ -124,6 +124,10 @@ const NavItem = styled(Link)`
     transition: all 0.2s ease-in-out;
   }
 
+  &.active {
+    color: var(--color-green);
+  }
+
   @media ${QUERIES.laptopAndUp} {
     font-size: calc(20rem / 16);
   }

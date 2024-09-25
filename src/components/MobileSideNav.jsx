@@ -45,7 +45,10 @@ const SidebarContainer = styled.aside`
   position: fixed;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background: hsla(20, 25%, 89%, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
   top: 0;
   transition: 0.3s ease-in-out;
   right: ${({ $isOpen }) => ($isOpen ? "0" : "-1000px")};
