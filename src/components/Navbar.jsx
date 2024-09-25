@@ -25,7 +25,9 @@ export default function Navbar() {
         <NavMenu>
           <NavItem to="/">{t("Nav.Home")}</NavItem>
           <NavItem to="/about">{t("Nav.AboutMe")}</NavItem>
-          <NavItem onClick={toggleModal}>{t("Nav.AskQuestion")}</NavItem>
+          <AskQuestionBtn onClick={toggleModal}>
+            {t("Nav.AskQuestion")}
+          </AskQuestionBtn>
         </NavMenu>
         <NavBtn>
           <InstagramLink href="https://www.instagram.com/visitesparfumsparis/">
@@ -126,6 +128,31 @@ const NavItem = styled(Link)`
 
   &.active {
     color: var(--color-green);
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    font-size: calc(20rem / 16);
+  }
+`;
+
+const AskQuestionBtn = styled.button`
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  height: 50%;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: var(--color-green); /* Same hover effect as other items */
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:focus {
+    outline: none;
   }
 
   @media ${QUERIES.laptopAndUp} {
