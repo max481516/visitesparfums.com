@@ -2,7 +2,14 @@ import styled from "styled-components";
 import { useTranslation, Trans } from "react-i18next";
 import { QUERIES } from "../constants.js";
 
-export default function Visit({ title, text, photo, className, variant }) {
+export default function Visit({
+  title,
+  text,
+  photo,
+  link,
+  className,
+  variant,
+}) {
   const { t, i18n } = useTranslation();
 
   return (
@@ -17,11 +24,7 @@ export default function Visit({ title, text, photo, className, variant }) {
             colored: <ColoredText />,
           }}
         />
-        <BookButton
-          $variant={variant}
-          href="https://www.airbnb.fr/experiences/4431379?guests=1&adults=1&s=67&unique_share_id=95ddc40a-121e-49a6-8d7b-14de1e847235"
-          lang={i18n.language}
-        >
+        <BookButton $variant={variant} href={link} lang={i18n.language}>
           {t("Nav.BookNow")}
         </BookButton>
       </Text>

@@ -15,9 +15,9 @@ export default function MobileSideNav({ isOpen, toggle }) {
   return (
     <SidebarContainer $isOpen={isOpen}>
       {/* transient props with $ to prevent prop passed to DOM */}
-      <SideBarLinkClose onClick={toggle}>
+      <SideBarCloseBtn onClick={toggle}>
         <AiOutlineClose />
-      </SideBarLinkClose>
+      </SideBarCloseBtn>
       <SideMenu>
         <SideBarItem onClick={toggle} to="/">
           {t("Nav.Home")}
@@ -82,7 +82,7 @@ const SideBarItem = styled(Link)`
   }
 `;
 
-const SideBarLinkClose = styled.div`
+const SideBarCloseBtn = styled.div`
   display: flex;
   color: black;
   justify-content: flex-end;

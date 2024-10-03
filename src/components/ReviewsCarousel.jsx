@@ -58,9 +58,7 @@ export default function ReviewsCarousel() {
     padding: "2rem 0 0",
   };
 
-  const swiperContainer = {
-    padding: "0 0 2rem",
-  };
+  const swiperContainer = {};
 
   const slideContent = {
     display: "flex",
