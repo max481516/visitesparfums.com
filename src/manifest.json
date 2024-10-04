@@ -3,14 +3,25 @@
   "short_name": "VPP",
   "start_url": "/",
   "display": "standalone",
+
   "icons": [
     {
-      "src": "/src/media/favicon/android-chrome-192x192.png",
+      "src": "/src/media/favicon-dark/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/src/media/favicon/android-chrome-512x512.png",
+      "src": "/src/media/favicon-light/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/media/favicon-dark/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/media/favicon-light/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
