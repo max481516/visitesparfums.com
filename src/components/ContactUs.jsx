@@ -7,6 +7,7 @@ import ContactForm from "./ContactForm";
 import ContactModal from "./ContactModal";
 import useStores from "../stores/useStores";
 import { useTranslation } from "react-i18next";
+import { QUERIES } from "../constants";
 
 export default function ContactUs() {
   const showModal = useStores((state) => state.showModal);
@@ -38,14 +39,24 @@ export default function ContactUs() {
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
-  padding: 0 2rem 2rem;
-  gap: 3rem;
+  padding: 0 0 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @media ${QUERIES.tabletAndUp} {
+    gap: 4rem;
+  }
 `;
 
 const Title = styled.h2`
+  width: 95px;
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
+
+  @media ${QUERIES.tabletAndUp} {
+    width: 120px;
+  }
 `;
 
 const Book = styled(Link)`
