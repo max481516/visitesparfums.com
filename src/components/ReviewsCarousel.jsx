@@ -55,7 +55,7 @@ export default function ReviewsCarousel() {
     textAlign: "start",
     fontSize: "clamp(1.25rem, 3vw + 0.8rem, 2.5rem)",
     fontWeight: "800",
-    padding: "2rem 0 0",
+    padding: "1rem 0 0",
   };
 
   const swiperContainer = {};

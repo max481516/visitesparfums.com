@@ -143,6 +143,7 @@ const Wrapper = styled.section`
   white-space: nowrap;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  margin-top: 1rem;
 `;
 
 const PictureContainer = styled.div`
@@ -157,6 +158,8 @@ const PictureContainer = styled.div`
 `;
 
 const IMG = styled.img`
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 `;
