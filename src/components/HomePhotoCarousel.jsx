@@ -11,6 +11,9 @@ export default function HomePhotoCarousel() {
   const params = {
     slidesPerView: 1,
     loop: true,
+    autoplay: {
+      delay: 6000,
+    },
     breakpoints: {
       770: {
         slidesPerView: 2,

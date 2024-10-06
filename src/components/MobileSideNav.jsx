@@ -116,15 +116,27 @@ const MobileLanguageSelector = styled(LanguageSelector)`
   width: 73px;
   color: black;
 
+  &.ios-selector {
+    width: 85px; /* Adjust the width specifically for iOS */
+  }
+
   ${({ lang }) =>
     lang === "fr" &&
     `
     width: 82px;
+
+    &.ios-selector {
+    width: 95px;
+  }
   `}
 
   ${({ lang }) =>
     lang === "ru" &&
     `
     width: 84px;
+
+    &.ios-selector {
+    width: 95px;
+  }
   `}
 `;
