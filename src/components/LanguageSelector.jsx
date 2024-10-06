@@ -7,12 +7,11 @@ export default function LanguageSelector({ className }) {
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
 
   useEffect(() => {
-    // Check if the user is on an iOS device
     const isiOS =
       /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     if (isiOS) {
-      // Add the 'ios-selector' class if it's an iOS device
+      // Add the 'ios-selector' class if it's an iOS device to fix the iOS select input bug
       document.querySelectorAll(".mobile-language-selector").forEach((el) => {
         el.classList.add("ios-selector");
       });
@@ -43,7 +42,7 @@ export default function LanguageSelector({ className }) {
 
 const Selector = styled.select`
   color: #ccc;
-  background: hsla(20, 25%, 89%, 0.98);
+  background: transparent;
   border: none;
 `;
 

@@ -1,22 +1,33 @@
 import styled from "styled-components";
-import { AiOutlineClose } from "react-icons/ai";
 import { NavLink as Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "./LanguageSelector";
 import useStores from "../stores/useStores";
 import { RxInstagramLogo } from "react-icons/rx";
 import { QUERIES } from "../constants";
+import { useEffect } from "react";
 
 export default function MobileSideNav({ isOpen, toggle }) {
   const toggleModal = useStores((state) => state.toggleModal);
 
   const { t, i18n } = useTranslation();
 
+  // Use effect to disable page scrolling when sidebar is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
+
   return (
     <SidebarContainer $isOpen={isOpen}>
       {/* transient props with $ to prevent prop passed to DOM */}
-      <SideBarCloseBtn onClick={toggle}>
-        <AiOutlineClose />
+      <SideBarCloseBtn onClick={toggle} isOpen={isOpen}>
+        <div className="bar1"></div>
+        <div className="bar2"></div>
+        <div className="bar3"></div>
       </SideBarCloseBtn>
       <SideMenu>
         <SideBarItem onClick={toggle} to="/">
@@ -64,6 +75,7 @@ const SideMenu = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 70px;
   height: 70dvh;
   gap: 1rem;
 `;
@@ -83,12 +95,16 @@ const SideBarItem = styled(Link)`
 `;
 
 const SideBarCloseBtn = styled.div`
-  display: flex;
-  color: black;
-  justify-content: flex-end;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: ${({ isOpen }) => (isOpen ? "black" : "white")};
   font-size: 2.5rem;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  padding: 1rem;
+  z-index: 900;
+  padding: 0.5rem;
 `;
 
 const FollowUsTitle = styled.h2`
@@ -112,9 +128,10 @@ const FollowUs = styled.a`
 const MobileLanguageSelector = styled(LanguageSelector)`
   margin-left: auto;
   margin-right: auto;
-  margin-top: 32px;
+  margin-top: 16px;
   width: 73px;
   color: black;
+  background: hsla(20, 25%, 89%, 0.98);
 
   &.ios-selector {
     width: 85px; /* Adjust the width specifically for iOS */

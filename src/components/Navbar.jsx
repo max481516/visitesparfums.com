@@ -1,5 +1,4 @@
 import { NavLink as Link } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import useSidebar from "../hooks/useSidebar";
@@ -7,8 +6,8 @@ import MobileSideNav from "./MobileSideNav";
 import Logo from "../media/logo.svg?react";
 import LanguageSelector from "./LanguageSelector";
 import useStores from "../stores/useStores";
-import { QUERIES } from "../constants";
 import { RxInstagramLogo } from "react-icons/rx";
+import { QUERIES } from "../constants";
 
 export default function Navbar() {
   const toggleModal = useStores((state) => state.toggleModal);
@@ -19,9 +18,13 @@ export default function Navbar() {
     <>
       <Nav id="nav">
         <LogoLink to="/">
-          <StyledLogo></StyledLogo>
+          <StyledLogo />
         </LogoLink>
-        <Bars onClick={toggle} />
+        <HamburgerContainer onClick={toggle} isOpen={isOpen}>
+          <div className="bar1"></div>
+          <div className="bar2"></div>
+          <div className="bar3"></div>
+        </HamburgerContainer>
         <NavMenu>
           <NavItem to="/">{t("Nav.Home")}</NavItem>
           <NavItem to="/about">{t("Nav.AboutMe")}</NavItem>
@@ -41,6 +44,8 @@ export default function Navbar() {
     </>
   );
 }
+
+// Styled Components
 
 const Nav = styled.nav`
   background: var(--color-brown);
@@ -72,35 +77,45 @@ const StyledLogo = styled(Logo)`
   }
 `;
 
-const InstagramLink = styled.a``;
-
-const StyledRxInstagramLogo = styled(RxInstagramLogo)`
+const HamburgerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
   cursor: pointer;
-  color: white;
-
-  &:hover {
-    transition: all 0.1s ease-in-out;
-    color: var(--color-pink);
-  }
-
-  &:focus {
-    border: 2px solid var(--color-green);
-  }
-`;
-
-const Bars = styled(FaBars)`
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(-100%, 75%);
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #fff;
+  z-index: 1002;
+  transform: translateX(-25px);
 
   @media ${QUERIES.bigTabletAndUp} {
     display: none;
   }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    height: 3px;
+    width: 90%;
+    background-color: ${({ isOpen }) =>
+      isOpen ? "black" : "#fff"}; /* Change color based on state */
+    transition: all 0.3s ease-in-out;
+  }
+
+  ${({ isOpen }) =>
+    isOpen &&
+    `
+    .bar1 {
+      transform: rotate(45deg) translate(10px, 5px);
+      transform-origin: center;
+    }
+    .bar2 {
+      opacity: 0;
+    }
+    .bar3 {
+      transform: rotate(-45deg) translate(10px, -5px);
+      transform-origin: center;
+    }
+  `}
 `;
 
 const NavMenu = styled.div`
@@ -168,6 +183,22 @@ const NavBtn = styled.nav`
     gap: 16px;
     align-items: center;
     margin-right: 16px;
+  }
+`;
+
+const InstagramLink = styled.a``;
+
+const StyledRxInstagramLogo = styled(RxInstagramLogo)`
+  cursor: pointer;
+  color: white;
+
+  &:hover {
+    transition: all 0.1s ease-in-out;
+    color: var(--color-pink);
+  }
+
+  &:focus {
+    border: 2px solid var(--color-green);
   }
 `;
 
