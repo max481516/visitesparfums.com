@@ -141,6 +141,8 @@ export default function ContactForm() {
   );
 }
 
+// Styling Components (unchanged)
+
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
@@ -248,14 +250,6 @@ const ContactText = styled.p`
   font-size: calc(10rem / 16);
   margin-top: calc(6rem / 16);
   margin-bottom: calc(-22rem / 16);
-
-  @media ${QUERIES.bigTabletAndUp} {
-    margin-top: calc(26rem / 16);
-  }
-
-  @media ${QUERIES.laptopAndUp} {
-    margin-top: calc(36rem / 16);
-  }
 `;
 
 const MailLink = styled.a`
