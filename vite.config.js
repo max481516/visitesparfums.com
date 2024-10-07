@@ -8,7 +8,7 @@ export default defineConfig({
     sitemap({
       hostname: "https://vpparis.fr",
       outDir: "dist",
-      extraUrls: ["/about", "/booking"],
+      extraUrls: ["https://vpparis.fr/about", "https://vpparis.fr/booking"],
     }),
     react({
       babel: {
