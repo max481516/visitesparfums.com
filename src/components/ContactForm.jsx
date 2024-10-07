@@ -1,4 +1,4 @@
-import { useForm, ValidationError } from "@formspree/react";
+import { ValidationError } from "@formspree/react";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { BiErrorCircle } from "react-icons/bi";
 import styled from "styled-components";
@@ -8,13 +8,12 @@ import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm("mqazzaer");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formError, setFormError] = useState(false);
   const [recaptchaValue, setRecaptchaValue] = useState(null);
   const { t } = useTranslation();
 
-  // Custom handler to manage both reCAPTCHA and Formspree submission
+  // Custom handler to manage both reCAPTCHA and form submission via fetch
   const handleCustomSubmit = async (event) => {
     event.preventDefault();
 
@@ -24,14 +23,29 @@ export default function ContactForm() {
       return;
     }
 
-    // Proceed to use Formspree's handleSubmit
-    const result = await handleSubmit(event);
+    // Prepare the form data for submission
+    const form = event.target;
+    const formData = new FormData(form);
+    formData.append("g-recaptcha-response", recaptchaValue);
 
-    // Check the state after submitting to Formspree
-    if (result.succeeded) {
-      setFormSubmitted(true);
-      setFormError(false);
-    } else if (result.errors && result.errors.length > 0) {
+    // Use fetch to submit the form data
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      // Check response status
+      if (response.ok) {
+        setFormSubmitted(true);
+        setFormError(false);
+      } else {
+        setFormError(true);
+      }
+    } catch (error) {
       setFormError(true);
     }
   };
@@ -39,7 +53,7 @@ export default function ContactForm() {
   // Handle ReCAPTCHA value change
   const onRecaptchaChange = (value) => {
     setRecaptchaValue(value);
-    setFormError(false); // Reset error when reCAPTCHA is completed
+    setFormError(false); // Reset form error when reCAPTCHA is completed
   };
 
   // Render success message
@@ -73,7 +87,7 @@ export default function ContactForm() {
   return (
     <FormContainer
       onSubmit={handleCustomSubmit}
-      action="https://formspree.io/f/mqazzae"
+      action="https://formspree.io/f/mqazzaer"
       method="POST"
     >
       <fieldset id="fs-frm-inputs">
@@ -85,7 +99,7 @@ export default function ContactForm() {
           placeholder={t("Modal.FullNamePlaceholder")}
           required
         />
-        <ValidationError prefix="Name" field="name" errors={state.errors} />
+        <ValidationError prefix="Name" field="name" />
 
         <Label htmlFor="email-address">{t("Modal.Email")}</Label>
         <Input
@@ -95,7 +109,7 @@ export default function ContactForm() {
           placeholder="email@domain.com"
           required
         />
-        <ValidationError prefix="Email" field="email" errors={state.errors} />
+        <ValidationError prefix="Email" field="email" />
 
         <Label htmlFor="message">{t("Modal.Message")}</Label>
         <Textarea
@@ -105,11 +119,7 @@ export default function ContactForm() {
           placeholder={t("Modal.MessagePlaceholder")}
           required
         />
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
-        />
+        <ValidationError prefix="Message" field="message" />
       </fieldset>
       <RecaptchaWrapper>
         <ReCAPTCHA
@@ -119,10 +129,7 @@ export default function ContactForm() {
           onChange={onRecaptchaChange}
         />
       </RecaptchaWrapper>
-      <SubmitButton
-        type="submit"
-        disabled={state.submitting || !recaptchaValue}
-      >
+      <SubmitButton type="submit" disabled={!recaptchaValue}>
         {t("Modal.Submit")}
       </SubmitButton>
       <ContactText>
