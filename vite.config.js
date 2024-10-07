@@ -8,7 +8,21 @@ export default defineConfig({
     sitemap({
       hostname: "https://vpparis.fr",
       outDir: "dist",
-      extraUrls: ["/about", "/booking"],
+      extraUrls: [
+        {
+          loc: "/about",
+          lastmod: new Date().toISOString(),
+          changefreq: "monthly",
+          priority: 0.8,
+        },
+        {
+          loc: "/booking",
+          lastmod: new Date().toISOString(),
+          changefreq: "monthly",
+          priority: 0.8,
+        },
+      ],
+      readable: true, // To make debugging easier with a readable format
     }),
     react({
       babel: {
