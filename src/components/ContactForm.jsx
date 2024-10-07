@@ -32,9 +32,10 @@ export default function ContactForm() {
     handleSubmit(event);
   };
 
-  // Render success message
+  // Determine content to display based on submission state
+  let content;
   if (state.succeeded) {
-    return (
+    content = (
       <ConfirmationWrapper>
         <FaRegCheckCircle color="var(--color-green)" size={50} />
         <ConfirmationMessage>
@@ -42,11 +43,8 @@ export default function ContactForm() {
         </ConfirmationMessage>
       </ConfirmationWrapper>
     );
-  }
-
-  // Render error message if reCAPTCHA is not complete or any form error
-  if (recaptchaError || state.errors) {
-    return (
+  } else if (recaptchaError || state.errors) {
+    content = (
       <ErrorWrapper>
         <BiErrorCircle color="red" size={40} />
         <ErrorMessage>
@@ -57,67 +55,67 @@ export default function ContactForm() {
         </ErrorMessage>
       </ErrorWrapper>
     );
+  } else {
+    content = (
+      <FormContainer onSubmit={handleCustomSubmit}>
+        <fieldset id="fs-frm-inputs">
+          <Label htmlFor="full-name">{t("Modal.FullName")}</Label>
+          <Input
+            type="text"
+            name="name"
+            id="full-name"
+            placeholder={t("Modal.FullNamePlaceholder")}
+            required
+          />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
+
+          <Label htmlFor="email-address">{t("Modal.Email")}</Label>
+          <Input
+            type="email"
+            name="email"
+            id="email-address"
+            placeholder="email@domain.com"
+            required
+          />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+
+          <Label htmlFor="message">{t("Modal.Message")}</Label>
+          <Textarea
+            rows="5"
+            name="message"
+            id="message"
+            placeholder={t("Modal.MessagePlaceholder")}
+            required
+          />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+        </fieldset>
+        <RecaptchaWrapper>
+          <ReCAPTCHA
+            className="g-recaptcha"
+            sitekey="6LfkRVoqAAAAAFWMl8Bm4XHtDGPaFd0SnvYaGjR_"
+            onChange={onRecaptchaChange}
+          />
+        </RecaptchaWrapper>
+        <SubmitButton type="submit" disabled={state.submitting}>
+          {t("Modal.Submit")}
+        </SubmitButton>
+        <ContactText>
+          {t("Modal.ContactText")} <br />
+          <MailLink href="mailto:npascalis@gmail.com">
+            npascalis@gmail.com
+          </MailLink>
+        </ContactText>
+      </FormContainer>
+    );
   }
 
-  // Render form
-  return (
-    <FormContainer onSubmit={handleCustomSubmit}>
-      <fieldset id="fs-frm-inputs">
-        <Label htmlFor="full-name">{t("Modal.FullName")}</Label>
-        <Input
-          type="text"
-          name="name"
-          id="full-name"
-          placeholder={t("Modal.FullNamePlaceholder")}
-          required
-        />
-        <ValidationError prefix="Name" field="name" errors={state.errors} />
-
-        <Label htmlFor="email-address">{t("Modal.Email")}</Label>
-        <Input
-          type="email"
-          name="email"
-          id="email-address"
-          placeholder="email@domain.com"
-          required
-        />
-        <ValidationError prefix="Email" field="email" errors={state.errors} />
-
-        <Label htmlFor="message">{t("Modal.Message")}</Label>
-        <Textarea
-          rows="5"
-          name="message"
-          id="message"
-          placeholder={t("Modal.MessagePlaceholder")}
-          required
-        />
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
-        />
-      </fieldset>
-      <RecaptchaWrapper>
-        <ReCAPTCHA
-          className="g-recaptcha"
-          sitekey="6LfkRVoqAAAAAFWMl8Bm4XHtDGPaFd0SnvYaGjR_"
-          onChange={onRecaptchaChange}
-        />
-      </RecaptchaWrapper>
-      <SubmitButton type="submit" disabled={state.submitting}>
-        {t("Modal.Submit")}
-      </SubmitButton>
-      <ContactText>
-        {t("Modal.ContactText")} <br />
-        <MailLink href="mailto:npascalis@gmail.com">
-          npascalis@gmail.com
-        </MailLink>
-      </ContactText>
-    </FormContainer>
-  );
+  // Render the modal with the correct content
+  return content;
 }
-
-// Styling Components (unchanged)
 
 const FormContainer = styled.form`
   display: flex;
