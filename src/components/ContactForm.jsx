@@ -1,63 +1,40 @@
-import { ValidationError } from "@formspree/react";
+import React, { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { BiErrorCircle } from "react-icons/bi";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { QUERIES } from "../constants";
-import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [formError, setFormError] = useState(false);
   const [recaptchaValue, setRecaptchaValue] = useState(null);
+  const [recaptchaError, setRecaptchaError] = useState(false);
   const { t } = useTranslation();
-
-  // Custom handler to manage both reCAPTCHA and form submission via fetch
-  const handleCustomSubmit = async (event) => {
-    event.preventDefault();
-
-    // Check if reCAPTCHA is completed
-    if (!recaptchaValue) {
-      setFormError(true); // Set an error if reCAPTCHA is not completed
-      return;
-    }
-
-    // Prepare the form data for submission
-    const form = event.target;
-    const formData = new FormData(form);
-    formData.append("g-recaptcha-response", recaptchaValue);
-
-    // Use fetch to submit the form data
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      // Check response status
-      if (response.ok) {
-        setFormSubmitted(true);
-        setFormError(false);
-      } else {
-        setFormError(true);
-      }
-    } catch (error) {
-      setFormError(true);
-    }
-  };
+  const [state, handleSubmit] = useForm("mqazzaer");
 
   // Handle ReCAPTCHA value change
   const onRecaptchaChange = (value) => {
     setRecaptchaValue(value);
-    setFormError(false); // Reset form error when reCAPTCHA is completed
+    setRecaptchaError(false);
+  };
+
+  // Custom handler to manage both reCAPTCHA and form submission
+  const handleCustomSubmit = (event) => {
+    event.preventDefault();
+
+    // Check if reCAPTCHA is completed
+    if (!recaptchaValue) {
+      setRecaptchaError(true);
+      return;
+    }
+
+    // If reCAPTCHA is completed, proceed with Formspree submission
+    handleSubmit(event);
   };
 
   // Render success message
-  if (formSubmitted) {
+  if (state.succeeded) {
     return (
       <ConfirmationWrapper>
         <FaRegCheckCircle color="var(--color-green)" size={50} />
@@ -68,8 +45,8 @@ export default function ContactForm() {
     );
   }
 
-  // Render error message
-  if (formError) {
+  // Render error message if reCAPTCHA is not complete or any form error
+  if (recaptchaError || state.errors) {
     return (
       <ErrorWrapper>
         <BiErrorCircle color="red" size={40} />
@@ -99,7 +76,7 @@ export default function ContactForm() {
           placeholder={t("Modal.FullNamePlaceholder")}
           required
         />
-        <ValidationError prefix="Name" field="name" />
+        <ValidationError prefix="Name" field="name" errors={state.errors} />
 
         <Label htmlFor="email-address">{t("Modal.Email")}</Label>
         <Input
@@ -109,7 +86,7 @@ export default function ContactForm() {
           placeholder="email@domain.com"
           required
         />
-        <ValidationError prefix="Email" field="email" />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
 
         <Label htmlFor="message">{t("Modal.Message")}</Label>
         <Textarea
@@ -119,7 +96,11 @@ export default function ContactForm() {
           placeholder={t("Modal.MessagePlaceholder")}
           required
         />
-        <ValidationError prefix="Message" field="message" />
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+        />
       </fieldset>
       <RecaptchaWrapper>
         <ReCAPTCHA
@@ -128,7 +109,7 @@ export default function ContactForm() {
           onChange={onRecaptchaChange}
         />
       </RecaptchaWrapper>
-      <SubmitButton type="submit" disabled={!recaptchaValue}>
+      <SubmitButton type="submit" disabled={state.submitting}>
         {t("Modal.Submit")}
       </SubmitButton>
       <ContactText>
