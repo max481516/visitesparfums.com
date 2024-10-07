@@ -1,49 +1,35 @@
-import { useEffect, useState } from "react";
+import { ValidationError } from "@formspree/react";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { BiErrorCircle } from "react-icons/bi";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { QUERIES } from "../constants";
+import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formError, setFormError] = useState(false);
-  const [recaptchaReady, setRecaptchaReady] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
   const { t } = useTranslation();
 
-  useEffect(() => {
-    // Load the reCAPTCHA script dynamically
-    const script = document.createElement("script");
-    script.src =
-      "https://www.google.com/recaptcha/enterprise.js?render=6LfVaFkqAAAAAJE6vMtle4LNE8WGVvmog9o6GWcc";
-    script.async = true;
-    script.onload = () => {
-      setRecaptchaReady(true);
-    };
-    document.body.appendChild(script);
-  }, []);
-
+  // Custom handler to manage both reCAPTCHA and form submission via fetch
   const handleCustomSubmit = async (event) => {
     event.preventDefault();
 
-    if (!recaptchaReady || !window.grecaptcha) {
-      setFormError(true);
+    // Check if reCAPTCHA is completed
+    if (!recaptchaValue) {
+      setFormError(true); // Set an error if reCAPTCHA is not completed
       return;
     }
 
+    // Prepare the form data for submission
+    const form = event.target;
+    const formData = new FormData(form);
+    formData.append("g-recaptcha-response", recaptchaValue);
+
+    // Use fetch to submit the form data
     try {
-      // Get reCAPTCHA token using window.grecaptcha
-      const token = await window.grecaptcha.enterprise.execute(
-        "6LfVaFkqAAAAAJE6vMtle4LNE8WGVvmog9o6GWcc",
-        { action: "submit" }
-      );
-
-      // Append reCAPTCHA token to form data
-      const form = event.target;
-      const formData = new FormData(form);
-      formData.append("g-recaptcha-response", token);
-
-      // Use fetch to submit the form data
       const response = await fetch(form.action, {
         method: form.method,
         body: formData,
@@ -52,6 +38,7 @@ export default function ContactForm() {
         },
       });
 
+      // Check response status
       if (response.ok) {
         setFormSubmitted(true);
         setFormError(false);
@@ -59,9 +46,14 @@ export default function ContactForm() {
         setFormError(true);
       }
     } catch (error) {
-      console.error("Error during form submission:", error);
       setFormError(true);
     }
+  };
+
+  // Handle ReCAPTCHA value change
+  const onRecaptchaChange = (value) => {
+    setRecaptchaValue(value);
+    setFormError(false); // Reset form error when reCAPTCHA is completed
   };
 
   // Render success message
@@ -107,6 +99,7 @@ export default function ContactForm() {
           placeholder={t("Modal.FullNamePlaceholder")}
           required
         />
+        <ValidationError prefix="Name" field="name" />
 
         <Label htmlFor="email-address">{t("Modal.Email")}</Label>
         <Input
@@ -116,6 +109,7 @@ export default function ContactForm() {
           placeholder="email@domain.com"
           required
         />
+        <ValidationError prefix="Email" field="email" />
 
         <Label htmlFor="message">{t("Modal.Message")}</Label>
         <Textarea
@@ -125,8 +119,17 @@ export default function ContactForm() {
           placeholder={t("Modal.MessagePlaceholder")}
           required
         />
+        <ValidationError prefix="Message" field="message" />
       </fieldset>
-      <SubmitButton type="submit" disabled={!recaptchaReady}>
+      <RecaptchaWrapper>
+        <ReCAPTCHA
+          className="g-recaptcha"
+          sitekey="6LfVaFkqAAAAAJE6vMtle4LNE8WGVvmog9o6GWcc"
+          data-action="LOGIN"
+          onChange={onRecaptchaChange}
+        />
+      </RecaptchaWrapper>
+      <SubmitButton type="submit" disabled={!recaptchaValue}>
         {t("Modal.Submit")}
       </SubmitButton>
       <ContactText>
@@ -229,6 +232,10 @@ const ErrorMailLink = styled.a`
   &:hover {
     color: var(--color-dark-green);
   }
+`;
+
+const RecaptchaWrapper = styled.div`
+  margin-top: 1rem;
 `;
 
 const ContactText = styled.p`
