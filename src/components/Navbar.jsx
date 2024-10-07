@@ -20,7 +20,7 @@ export default function Navbar() {
         <LogoLink to="/">
           <StyledLogo />
         </LogoLink>
-        <HamburgerContainer onClick={toggle} isOpen={isOpen}>
+        <HamburgerContainer onClick={toggle} $isOpen={isOpen}>
           <div className="bar1"></div>
           <div className="bar2"></div>
           <div className="bar3"></div>
@@ -96,13 +96,13 @@ const HamburgerContainer = styled.div`
   .bar3 {
     height: 3px;
     width: 90%;
-    background-color: ${({ isOpen }) =>
-      isOpen ? "black" : "#fff"}; /* Change color based on state */
+    background-color: ${({ $isOpen }) =>
+      $isOpen ? "black" : "#fff"}; /* Change color based on state */
     transition: all 0.3s ease-in-out;
   }
 
-  ${({ isOpen }) =>
-    isOpen &&
+  ${({ $isOpen }) =>
+    $isOpen &&
     `
     .bar1 {
       transform: rotate(45deg) translate(10px, 5px);

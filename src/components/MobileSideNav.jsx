@@ -24,7 +24,7 @@ export default function MobileSideNav({ isOpen, toggle }) {
   return (
     <SidebarContainer $isOpen={isOpen}>
       {/* transient props with $ to prevent prop passed to DOM */}
-      <SideBarCloseBtn onClick={toggle} isOpen={isOpen}>
+      <SideBarCloseBtn onClick={toggle} $isOpen={isOpen}>
         <div className="bar1"></div>
         <div className="bar2"></div>
         <div className="bar3"></div>
@@ -98,7 +98,7 @@ const SideBarCloseBtn = styled.div`
   position: absolute;
   top: 15px;
   right: 15px;
-  color: ${({ isOpen }) => (isOpen ? "black" : "white")};
+  color: ${({ $isOpen }) => ($isOpen ? "black" : "white")};
   font-size: 2.5rem;
   width: 50px;
   height: 50px;
