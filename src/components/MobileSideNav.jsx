@@ -56,6 +56,7 @@ const SidebarContainer = styled.aside`
   position: fixed;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
   background: hsla(20, 25%, 89%, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -107,7 +108,8 @@ const SideBarCloseBtn = styled.div`
   padding: 0.5rem;
 `;
 
-const FollowUsTitle = styled.h2`
+const FollowUsTitle = styled(Link)`
+  color: inherit;
   font-weight: 500;
   font-size: calc(20rem / 16);
 `;

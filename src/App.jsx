@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import "./i18n/i18n";
 import ContactModal from "./components/ContactModal";
 import ContactForm from "./components/ContactForm";
-import { useEffect } from "react";
 import useFavicon from "./hooks/useFavicon";
 
 function App() {

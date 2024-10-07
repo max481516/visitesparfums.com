@@ -1,10 +1,4 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Yandex
-Allow: /
-
 User-agent: *
-Disallow: /
+Allow: /
 
-add sitemap url after deploy
+Sitemap: https://vpparis.fr.com/sitemap.xml

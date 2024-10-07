@@ -36,7 +36,9 @@ export default function Navbar() {
           <InstagramLink href="https://www.instagram.com/visitesparfumsparis/">
             <StyledRxInstagramLogo size={35} />
           </InstagramLink>
-          <NavBtnBookLink to="/booking">{t("Nav.BookNow")}</NavBtnBookLink>
+          <NavBtnBookLink lang={i18n.language} to="/booking">
+            {t("Nav.BookNow")}
+          </NavBtnBookLink>
           <DesktopLanguageSelector lang={i18n.language} />
         </NavBtn>
       </Nav>
@@ -135,6 +137,7 @@ const NavItem = styled(Link)`
   height: 50%;
   cursor: pointer;
   font-size: 1rem;
+  text-align: center;
 
   &:hover {
     color: var(--color-green);
@@ -191,6 +194,7 @@ const InstagramLink = styled.a``;
 const StyledRxInstagramLogo = styled(RxInstagramLogo)`
   cursor: pointer;
   color: white;
+  flex-shrink: 0;
 
   &:hover {
     transition: all 0.1s ease-in-out;
@@ -212,11 +216,23 @@ const NavBtnBookLink = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  text-align: center;
 
   &:hover {
     transition: all 0.2s ease-in-out;
     background: var(--color-dark-green);
   }
+
+  ${({ lang }) =>
+    lang === "fr" &&
+    `
+    @media ${QUERIES.bigTabletAndUp} {
+    font-size: calc(12rem / 16);
+
+    @media ${QUERIES.laptopAndUp} {
+      font-size: revert;
+    }
+  `}
 `;
 
 const DesktopLanguageSelector = styled(LanguageSelector)`

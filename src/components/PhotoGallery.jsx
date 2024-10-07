@@ -23,6 +23,8 @@ export default function PhotoGallery() {
             type="image/webp"
           />
           <IMG
+            width="1600"
+            height="900"
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692185/PhotoGalleryImage1_enrfpo.jpg"
             loading="lazy"
             alt="A young woman's hand holding scented paper blotters in front of a historic Parisian door"
@@ -49,6 +51,8 @@ export default function PhotoGallery() {
             type="image/webp"
           />
           <IMG
+            width="1600"
+            height="900"
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692181/PhotoGalleryImage2_bpllbt.jpg"
             loading="lazy"
             alt="A typical outdoor table and chair at a Parisian café"
@@ -75,6 +79,8 @@ export default function PhotoGallery() {
             type="image/webp"
           />
           <IMG
+            width="1600"
+            height="900"
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692182/PhotoGalleryImage3_o2dotc.jpg"
             loading="lazy"
             alt="A large balcony with chessboard tile floors at Musée de la Marine in Paris"
@@ -101,6 +107,8 @@ export default function PhotoGallery() {
             type="image/webp"
           />
           <IMG
+            width="1600"
+            height="900"
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692183/PhotoGalleryImage4_ubg7bf.jpg"
             loading="lazy"
             alt="A flower on a white background"
@@ -127,6 +135,8 @@ export default function PhotoGallery() {
             type="image/webp"
           />
           <IMG
+            width="1600"
+            height="900"
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726692179/PhotoGalleryImage5_slbyrq.jpg"
             loading="lazy"
             alt="A woman spraying perfume on herself"

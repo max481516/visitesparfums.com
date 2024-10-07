@@ -31,6 +31,8 @@ export default function Booking() {
         type="image/webp"
       />
       <img
+        width="1600"
+        height="900"
         src="https://res.cloudinary.com/dqs3mkxnr/image/upload/v1727254937/mathias-reding-8ldNGhGutaM-unsplash_jzqxrn.jpg"
         loading="lazy"
         alt="A typical haussmannian building in Paris"
@@ -57,6 +59,8 @@ export default function Booking() {
         type="image/webp"
       />
       <img
+        width="1600"
+        height="900"
         src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726691651/Visit1_glokrt.jpg"
         loading="lazy"
         alt="Interior of a niche perfume shop in Paris called Infiniment Coty"

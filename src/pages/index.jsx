@@ -17,9 +17,9 @@ export default function Home() {
         <title>Visites Parfums Paris</title>
         <meta
           name="description"
-          content="Guided tours of the best perfume shops in Paris"
+          content="Experience guided tours of Paris's top perfume shops. Discover exquisite fragrances and learn the fascinating history behind each scent."
         />
-        <link rel="canonical" href="http://localhost:5173/" />
+        <link rel="canonical" href="http://vpparis.fr/" />
       </Helmet>
 
       <Wrapper>
