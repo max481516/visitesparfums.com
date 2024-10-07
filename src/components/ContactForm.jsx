@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { FaRegCheckCircle } from "react-icons/fa";
 import { BiErrorCircle } from "react-icons/bi";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { QUERIES } from "../constants";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
@@ -62,11 +61,7 @@ export default function ContactForm() {
 
   // Render form
   return (
-    <FormContainer
-      onSubmit={handleCustomSubmit}
-      action="https://formspree.io/f/mqazzaer"
-      method="POST"
-    >
+    <FormContainer onSubmit={handleCustomSubmit}>
       <fieldset id="fs-frm-inputs">
         <Label htmlFor="full-name">{t("Modal.FullName")}</Label>
         <Input
@@ -153,7 +148,7 @@ const Input = styled.input`
 const Textarea = styled.textarea`
   width: 100%;
   padding: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: -0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
 
