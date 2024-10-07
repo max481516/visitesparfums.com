@@ -11,11 +11,11 @@ import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
-    const darkThemeFavicon32 = "/src/media/favicon-dark/favicon-32x32.png";
-    const lightThemeFavicon32 = "/src/media/favicon-light/favicon-32x32.png";
+    const darkThemeFavicon32 = "/favicon-dark/favicon-32x32.png";
+    const lightThemeFavicon32 = "/favicon-light/favicon-32x32.png";
 
-    const darkThemeFavicon16 = "/src/media/favicon-dark/favicon-16x16.png";
-    const lightThemeFavicon16 = "/src/media/favicon-light/favicon-16x16.png";
+    const darkThemeFavicon16 = "/favicon-dark/favicon-16x16.png";
+    const lightThemeFavicon16 = "/favicon-light/favicon-16x16.png";
 
     const applyFavicon = (theme) => {
       const existingFavicons = document.querySelectorAll('link[rel="icon"]');
