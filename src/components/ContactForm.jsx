@@ -124,7 +124,7 @@ export default function ContactForm() {
       <RecaptchaWrapper>
         <ReCAPTCHA
           className="g-recaptcha"
-          sitekey="6LfVaFkqAAAAAJE6vMtle4LNE8WGVvmog9o6GWcc"
+          sitekey="6LfkRVoqAAAAAFWMl8Bm4XHtDGPaFd0SnvYaGjR_"
           data-action="LOGIN"
           onChange={onRecaptchaChange}
         />
