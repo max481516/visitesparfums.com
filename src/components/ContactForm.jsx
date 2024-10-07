@@ -35,19 +35,19 @@ export default function ContactForm() {
   // Render success message
   if (state.succeeded) {
     return (
-      <ConfirmationWrapper>
+      <MessageWrapper>
         <FaRegCheckCircle color="var(--color-green)" size={50} />
         <ConfirmationMessage>
           {t("Modal.ConfirmationMessage")}
         </ConfirmationMessage>
-      </ConfirmationWrapper>
+      </MessageWrapper>
     );
   }
 
   // Render error message if reCAPTCHA is not complete or any form error
   if (recaptchaError || state.errors) {
     return (
-      <ErrorWrapper>
+      <MessageWrapper>
         <BiErrorCircle color="red" size={40} />
         <ErrorMessage>
           {t("Modal.ErrorMessage")}{" "}
@@ -55,7 +55,7 @@ export default function ContactForm() {
             npascalis@gmail.com
           </ErrorMailLink>
         </ErrorMessage>
-      </ErrorWrapper>
+      </MessageWrapper>
     );
   }
 
@@ -117,6 +117,8 @@ export default function ContactForm() {
   );
 }
 
+// Reusable MessageWrapper for both confirmation and error messages
+
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
@@ -173,35 +175,22 @@ const SubmitButton = styled.button`
   }
 `;
 
-const ConfirmationWrapper = styled.div`
+const MessageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  width: fit-content;
   padding: 8px 0;
   margin: 30px auto;
   border-radius: 4px;
 `;
 
 const ConfirmationMessage = styled.p`
-  font-size: 1.5rem;
+  text-align: center;
 `;
 
-const ErrorWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: fit-content;
-  padding: 8px 0;
-  margin: 30px auto;
-  border-radius: 4px;
-`;
-
-const ErrorMessage = styled.div`
+const ErrorMessage = styled.p`
   text-align: center;
 `;
 

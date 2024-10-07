@@ -61,6 +61,7 @@ function App() {
         <Navbar />
         <ContactModal>
           {/* to ensure that modal opens on every page */}
+          <ContactForm />
         </ContactModal>
         <Routes>
           <Route path="/" exact element={<Home />} />
