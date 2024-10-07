@@ -83,6 +83,9 @@
     "Email": "Email Address:",
     "Message": "Message:",
     "MessagePlaceholder": "Enter your message here",
-    "Submit": "Submit"
+    "Submit": "Submit",
+    "ContactText": "If you encounter any problems with the form, please contact me at:",
+    "ConfirmationMessage": "Thank you for your message! I will get back to you as soon as possible.",
+    "ErrorMessage": "An error occurred. Please try again, or write me a message at:"
   }
 }

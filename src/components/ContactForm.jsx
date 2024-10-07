@@ -1,23 +1,81 @@
 import { useForm, ValidationError } from "@formspree/react";
 import { FaRegCheckCircle } from "react-icons/fa";
+import { BiErrorCircle } from "react-icons/bi";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { QUERIES } from "../constants";
+import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("mqazzaer");
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
   const { t } = useTranslation();
 
-  if (state.succeeded) {
+  // Custom handler to manage both reCAPTCHA and Formspree submission
+  const handleCustomSubmit = async (event) => {
+    event.preventDefault();
+
+    // Check if reCAPTCHA is completed
+    if (!recaptchaValue) {
+      setFormError(true); // Set an error if reCAPTCHA is not completed
+      return;
+    }
+
+    // Proceed to use Formspree's handleSubmit
+    const result = await handleSubmit(event);
+
+    // Check the state after submitting to Formspree
+    if (result.succeeded) {
+      setFormSubmitted(true);
+      setFormError(false);
+    } else if (result.errors && result.errors.length > 0) {
+      setFormError(true);
+    }
+  };
+
+  // Handle ReCAPTCHA value change
+  const onRecaptchaChange = (value) => {
+    setRecaptchaValue(value);
+    setFormError(false); // Reset error when reCAPTCHA is completed
+  };
+
+  // Render success message
+  if (formSubmitted) {
     return (
-      <Wrapper>
+      <ConfirmationWrapper>
         <FaRegCheckCircle color="var(--color-green)" size={50} />
-        <ConfirmationMessage>Thank you for your message!</ConfirmationMessage>
-      </Wrapper>
+        <ConfirmationMessage>
+          {t("Modal.ConfirmationMessage")}
+        </ConfirmationMessage>
+      </ConfirmationWrapper>
     );
   }
 
+  // Render error message
+  if (formError) {
+    return (
+      <ErrorWrapper>
+        <BiErrorCircle color="red" size={40} />
+        <ErrorMessage>
+          {t("Modal.ErrorMessage")}{" "}
+          <ErrorMailLink href="mailto:npascalis@gmail.com">
+            npascalis@gmail.com
+          </ErrorMailLink>
+        </ErrorMessage>
+      </ErrorWrapper>
+    );
+  }
+
+  // Render form
   return (
-    <FormContainer onSubmit={handleSubmit}>
+    <FormContainer
+      onSubmit={handleCustomSubmit}
+      action="https://formspree.io/f/mqazzae"
+      method="POST"
+    >
       <fieldset id="fs-frm-inputs">
         <Label htmlFor="full-name">{t("Modal.FullName")}</Label>
         <Input
@@ -53,13 +111,31 @@ export default function ContactForm() {
           errors={state.errors}
         />
       </fieldset>
-      <SubmitButton type="submit" disabled={state.submitting}>
+      <RecaptchaWrapper>
+        <ReCAPTCHA
+          className="g-recaptcha"
+          sitekey="6LfVaFkqAAAAAJE6vMtle4LNE8WGVvmog9o6GWcc"
+          data-action="LOGIN"
+          onChange={onRecaptchaChange}
+        />
+      </RecaptchaWrapper>
+      <SubmitButton
+        type="submit"
+        disabled={state.submitting || !recaptchaValue}
+      >
         {t("Modal.Submit")}
       </SubmitButton>
+      <ContactText>
+        {t("Modal.ContactText")} <br />
+        <MailLink href="mailto:npascalis@gmail.com">
+          npascalis@gmail.com
+        </MailLink>
+      </ContactText>
     </FormContainer>
   );
 }
 
+// Styled components remain the same
 const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
@@ -116,15 +192,67 @@ const SubmitButton = styled.button`
   }
 `;
 
-const Wrapper = styled.div`
+const ConfirmationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 15dvh;
   gap: 1rem;
+  width: fit-content;
+  padding: 8px 0;
+  margin: 30px auto;
+  border-radius: 4px;
 `;
 
 const ConfirmationMessage = styled.p`
   font-size: 1.5rem;
+`;
+
+const ErrorWrapper = styled.div`
+  height: 20dvh;
+  margin: 30px auto;
+  padding: 0 8px;
+`;
+
+const ErrorMessage = styled.div`
+  text-align: center;
+`;
+
+const ErrorMailLink = styled.a`
+  color: var(--color-green);
+  text-decoration: none;
+  transition: color 0.4s ease-in-out;
+
+  &:hover {
+    color: var(--color-dark-green);
+  }
+`;
+
+const RecaptchaWrapper = styled.div`
+  margin-top: 1rem;
+`;
+
+const ContactText = styled.p`
+  text-align: center;
+  font-size: calc(10rem / 16);
+  margin-top: calc(6rem / 16);
+  margin-bottom: calc(-22rem / 16);
+
+  @media ${QUERIES.bigTabletAndUp} {
+    margin-top: calc(26rem / 16);
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    margin-top: calc(36rem / 16);
+  }
+`;
+
+const MailLink = styled.a`
+  color: var(--color-green);
+  text-decoration: none;
+  transition: color 0.4s ease-in-out;
+
+  &:hover {
+    color: var(--color-dark-green);
+  }
 `;

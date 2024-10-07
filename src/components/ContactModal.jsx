@@ -10,7 +10,6 @@ export default function ContactModal({ children }) {
   }
 
   const handleOverlayClick = (e) => {
-    // This stops the click event from propagating beyond the Overlay keeping the close onclick
     e.stopPropagation();
     toggleModal();
   };

@@ -83,6 +83,9 @@
     "Email": "Adresse e-mail:",
     "Message": "Message:",
     "MessagePlaceholder": "Entrez votre message ici",
-    "Submit": "Envoyer"
+    "Submit": "Envoyer",
+    "ContactText": "Si vous rencontrez des problèmes avec le formulaire, veuillez me contacter sur:",
+    "ConfirmationMessage": "Merci pour votre message! Je vous répondrai dès que possible.",
+    "ErrorMessage": "Une erreur s'est produite. Veuillez réessayer ou envoyez-moi un message à:"
   }
 }
