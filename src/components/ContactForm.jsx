@@ -215,9 +215,15 @@ const ConfirmationMessage = styled.p`
 `;
 
 const ErrorWrapper = styled.div`
-  height: 20dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: fit-content;
+  padding: 8px 0;
   margin: 30px auto;
-  padding: 0 8px;
+  border-radius: 4px;
 `;
 
 const ErrorMessage = styled.div`
