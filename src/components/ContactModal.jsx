@@ -26,7 +26,7 @@ export default function ContactModal({ children }) {
 
 const Overlay = styled.div`
   position: fixed;
-  z-index: 998;
+  z-index: 2000;
   top: 0;
   left: 0;
   right: 0;

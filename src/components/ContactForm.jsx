@@ -123,7 +123,7 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
   gap: 1rem;
 `;
 
