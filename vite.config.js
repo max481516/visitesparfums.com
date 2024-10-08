@@ -9,12 +9,21 @@ export default defineConfig({
       hostname: "https://vpparis.fr",
       outDir: "dist",
       extraUrls: [
+        // Home page
+        {
+          loc: "/",
+          lastmod: new Date().toISOString(),
+          changefreq: "daily",
+          priority: 1.0,
+        },
+        // About page
         {
           loc: "/about",
           lastmod: new Date().toISOString(),
           changefreq: "monthly",
           priority: 0.8,
         },
+        // Booking page
         {
           loc: "/booking",
           lastmod: new Date().toISOString(),
@@ -22,22 +31,11 @@ export default defineConfig({
           priority: 0.8,
         },
       ],
-      readable: true, // To make debugging easier with a readable format
+
+      robotsTxt: true,
+      readable: true,
     }),
-    react({
-      babel: {
-        plugins: [
-          [
-            "babel-plugin-styled-components",
-            {
-              displayName: true,
-              fileName: false,
-            },
-          ],
-        ],
-      },
-    }),
+    react(),
     svgr(),
   ],
-  assetsInclude: ["**/*.JPG"],
 });
