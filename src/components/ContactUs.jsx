@@ -21,7 +21,11 @@ export default function ContactUs() {
         <FaAirbnb size={50} />
         <Title>{t("Home.BookNowIcon")}</Title>
       </Book>
-      <FollowUs href="https://www.instagram.com/visitesparfumsparis/">
+      <FollowUs
+        href="https://www.instagram.com/visitesparfumsparis/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <RxInstagramLogo size={50} />
         <Title>{t("Home.FollowMeIcon")}</Title>
       </FollowUs>

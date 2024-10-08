@@ -9,6 +9,8 @@ export default function Visit({
   link,
   className,
   variant,
+  target = "_self",
+  rel = "",
 }) {
   const { t, i18n } = useTranslation();
 
@@ -24,7 +26,13 @@ export default function Visit({
             colored: <ColoredText />,
           }}
         />
-        <BookButton $variant={variant} href={link} lang={i18n.language}>
+        <BookButton
+          $variant={variant}
+          href={link}
+          target={target}
+          rel={rel}
+          lang={i18n.language}
+        >
           {t("Nav.BookNow")}
         </BookButton>
       </Text>

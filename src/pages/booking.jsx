@@ -152,6 +152,8 @@ export default function Booking() {
           photo={Visit1Picture}
           text={t("Booking.Visit1")}
           link="https://www.airbnb.ie/experiences/4431379"
+          target="_blank"
+          rel="noopener noreferrer"
           variant="first"
         />
         <BookingDecoration />
@@ -160,6 +162,8 @@ export default function Booking() {
           photo={Visit2Picture}
           text={t("Booking.Visit2")}
           link="https://www.airbnb.fr/experiences/4431379"
+          target="_blank"
+          rel="noopener noreferrer"
           variant="second"
         />
 

@@ -32,15 +32,19 @@ export default function Navbar() {
             {t("Nav.AskQuestion")}
           </AskQuestionBtn>
         </NavMenu>
-        <NavBtn>
-          <InstagramLink href="https://www.instagram.com/visitesparfumsparis/">
+        <NavBtns>
+          <InstagramLink
+            href="https://www.instagram.com/visitesparfumsparis/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <StyledRxInstagramLogo size={35} />
           </InstagramLink>
           <NavBtnBookLink lang={i18n.language} to="/booking">
             {t("Nav.BookNow")}
           </NavBtnBookLink>
           <DesktopLanguageSelector lang={i18n.language} />
-        </NavBtn>
+        </NavBtns>
       </Nav>
       <MobileSideNav isOpen={isOpen} toggle={toggle} />
     </>
@@ -178,7 +182,7 @@ const AskQuestionBtn = styled.button`
   }
 `;
 
-const NavBtn = styled.nav`
+const NavBtns = styled.div`
   display: none;
 
   @media ${QUERIES.bigTabletAndUp} {

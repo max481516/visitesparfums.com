@@ -48,14 +48,9 @@ function App() {
           `}
         </script>
 
+        {/* Fix for Yandex.Metrika noscript */}
         <noscript>
-          <div>
-            <img
-              src="https://mc.yandex.ru/watch/98578666"
-              style={{ position: "absolute", left: "-9999px" }}
-              alt=""
-            />
-          </div>
+          {`<div><img src="https://mc.yandex.ru/watch/98578666" style="position:absolute; left:-9999px;" alt="" /></div>`}
         </noscript>
       </Helmet>
       <Router>

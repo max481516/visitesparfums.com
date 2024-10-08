@@ -43,7 +43,11 @@ export default function MobileSideNav({ isOpen, toggle }) {
           {t("Nav.BookNow")}
         </SideBarItem>
       </SideMenu>
-      <FollowUs href="https://www.instagram.com/visitesparfumsparis/">
+      <FollowUs
+        href="https://www.instagram.com/visitesparfumsparis/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <RxInstagramLogo size={50} />
         <FollowUsTitle>{t("Nav.FollowMe")}</FollowUsTitle>
       </FollowUs>
