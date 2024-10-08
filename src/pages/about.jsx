@@ -1,7 +1,7 @@
 import AboutMe from "../components/AboutMe";
 import { Helmet } from "react-helmet-async";
 
-export default function About() {
+export default function about() {
   return (
     <>
       <Helmet>
