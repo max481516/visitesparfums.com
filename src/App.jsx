@@ -1,8 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Index from "./pages/";
-import About from "./pages/About";
-import Booking from "./pages/Booking";
+import Home from "./pages";
+import About from "./pages/about";
+import Booking from "./pages/booking";
 import Footer from "./components/Footer";
 import "./i18n/i18n";
 import ContactModal from "./components/ContactModal";
@@ -37,7 +37,7 @@ function App() {
           <ContactForm />
         </ContactModal>
         <Routes>
-          <Route path="/" exact element={<Index />} />
+          <Route path="/" exact element={<Home />} />
           <Route path="/about" exact element={<About />} />
           <Route path="/booking" exact element={<Booking />} />
         </Routes>

@@ -1,14 +1,14 @@
-import Decoration from "../components/Decoration";
-import Header from "../components/Header";
-import ContactUs from "../components/ContactUs";
-import AboutVisit from "../components/AboutVisit";
-import PhotoGallery from "../components/PhotoGallery";
+import Decoration from "../components/Decoration.jsx";
+import Header from "../components/Header.jsx";
+import ContactUs from "../components/ContactUs.jsx";
+import AboutVisit from "../components/AboutVisit.jsx";
+import PhotoGallery from "../components/PhotoGallery.jsx";
 import styled from "styled-components";
 import { Helmet } from "react-helmet-async";
 import HomePhotoCarousel from "../components/HomePhotoCarousel.jsx";
 import ReviewsCarousel from "../components/ReviewsCarousel.jsx";
 import ReasonsWhyCarousel from "../components/ReasonsWhyCarousel.jsx";
-import { QUERIES } from "../constants";
+import { QUERIES } from "../constants.js";
 
 export default function Home() {
   return (

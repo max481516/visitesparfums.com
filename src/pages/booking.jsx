@@ -1,9 +1,9 @@
-import Visit from "../components/Visit";
-import Decoration from "../components/Decoration";
+import Visit from "../components/Visit.jsx";
+import Decoration from "../components/Decoration.jsx";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { QUERIES } from "../constants.js";
-import useStores from "../stores/useStores";
+import useStores from "../stores/useStores.js";
 import { useTranslation, Trans } from "react-i18next";
 import styled from "styled-components";
 import { FaCalendar, FaClock, FaUserFriends, FaTag } from "react-icons/fa";
