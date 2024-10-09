@@ -44,6 +44,7 @@ const Selector = styled.select`
   color: #ccc;
   background: transparent;
   border: none;
+  cursor: pointer;
 `;
 
 const LanguageSelectorContainer = styled.div`
