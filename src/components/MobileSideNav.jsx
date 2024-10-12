@@ -112,7 +112,7 @@ const SideBarCloseBtn = styled.div`
   padding: 0.5rem;
 `;
 
-const FollowUsTitle = styled(Link)`
+const FollowUsTitle = styled.h3`
   color: inherit;
   font-weight: 500;
   font-size: calc(20rem / 16);
@@ -140,7 +140,7 @@ const MobileLanguageSelector = styled(LanguageSelector)`
   background: hsla(20, 25%, 89%, 0.98);
 
   &.ios-selector {
-    width: 85px; /* Adjust the width specifically for iOS */
+    width: 85px;
   }
 
   ${({ lang }) =>

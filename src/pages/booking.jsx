@@ -71,12 +71,30 @@ export default function Booking() {
   return (
     <>
       <Helmet>
-        <title>Booking page</title>
+        <title>Booking Perfume Tours in Paris - Visites Parfums Paris</title>
         <meta
           name="description"
-          content="Information and booking page for perfume tours in Paris."
+          content="Book your spot for an exclusive perfume tour in Paris with Natacha Pascalis. Discover the art of fragrances and explore hidden perfume boutiques."
         />
-        <link rel="canonical" href="/booking" />
+        <meta
+          property="og:title"
+          content="Book Your Perfume Tour in Paris - Visites Parfums Paris"
+        />
+        <meta
+          property="og:description"
+          content="Join Natacha Pascalis for an unforgettable perfume tour in Paris. Explore hidden perfume boutiques and discover your personalized fragrance."
+        />
+        <meta
+          property="og:image"
+          content="https://vpparis.fr/og-images/BookingOGPhoto.jpg"
+        />
+        <meta property="og:url" content="https://vpparis.fr/booking" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Visites Parfums Paris" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="fr_FR" />
+        <meta property="og:locale:alternate" content="ru_RU" />
+        <link rel="canonical" href="https://vpparis.fr/booking" />
       </Helmet>
 
       <Wrapper>
