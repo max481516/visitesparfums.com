@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vpparis.fr.com/sitemap.xml
+Sitemap: https://vpparis.fr/sitemap.xml
