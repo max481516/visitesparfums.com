@@ -82,7 +82,7 @@ export default function Booking() {
         />
         <meta
           property="og:description"
-          content="Join Natacha Pascalis for an unforgettable perfume tour in Paris. Explore hidden perfume boutiques and discover your personalized fragrance."
+          content="Book your spot for an exclusive perfume tour in Paris with Natacha Pascalis. Discover the art of fragrances and explore hidden perfume boutiques."
         />
         <meta
           property="og:image"

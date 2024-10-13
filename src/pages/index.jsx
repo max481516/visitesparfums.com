@@ -25,7 +25,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="Join Natacha on a journey through hidden Parisian perfume boutiques, explore customized scents, and deep dive into the history of French perfumery."
+          content="Experience guided tours of Paris's top perfume shops. Discover exquisite fragrances and learn the fascinating history behind each scent."
         />
         <meta
           property="og:image"
