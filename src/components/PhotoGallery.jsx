@@ -8,17 +8,14 @@ export default function PhotoGallery() {
         <picture>
           <source
             srcSet="
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726692185/PhotoGalleryImage1_enrfpo.jpg 1600w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1726692185/PhotoGalleryImage1_enrfpo.jpg 1100w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1726692185/PhotoGalleryImage1_enrfpo.jpg 770w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1726692185/PhotoGalleryImage1_enrfpo.jpg 550w
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_192,f_auto,q_auto/v1726692185/PhotoGalleryImage1_enrfpo.jpg 192w,
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_384,f_auto,q_auto/v1726692185/PhotoGalleryImage1_enrfpo.jpg 384w,
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_576,f_auto,q_auto/v1726692185/PhotoGalleryImage1_enrfpo.jpg 576w
             "
             sizes="
-              (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
-              (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
-              (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
-              (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
-              100vw
+              (min-width: ${BREAKPOINTS.desktopMin}px) 30vw,
+              (min-width: ${BREAKPOINTS.bigTabletAndUp}px) 
+              10vw
             "
             type="image/webp"
           />
@@ -36,17 +33,14 @@ export default function PhotoGallery() {
         <picture>
           <source
             srcSet="
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726692181/PhotoGalleryImage2_bpllbt.jpg 1600w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1726692181/PhotoGalleryImage2_bpllbt.jpg 1100w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1726692181/PhotoGalleryImage2_bpllbt.jpg 770w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1726692181/PhotoGalleryImage2_bpllbt.jpg 550w
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_192,f_auto,q_auto/v1726692181/PhotoGalleryImage2_bpllbt.jpg 192w,
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_384,f_auto,q_auto/v1726692181/PhotoGalleryImage2_bpllbt.jpg 384w,
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_576,f_auto,q_auto/v1726692181/PhotoGalleryImage2_bpllbt.jpg 576w
             "
             sizes="
-              (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
-              (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
-              (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
-              (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
-              100vw
+              (min-width: ${BREAKPOINTS.desktopMin}px) 30vw,
+              (min-width: ${BREAKPOINTS.bigTabletAndUp}px) 
+              10vw
             "
             type="image/webp"
           />
@@ -64,17 +58,14 @@ export default function PhotoGallery() {
         <picture>
           <source
             srcSet="
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726692182/PhotoGalleryImage3_o2dotc.jpg 1600w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1726692182/PhotoGalleryImage3_o2dotc.jpg 1100w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1726692182/PhotoGalleryImage3_o2dotc.jpg 770w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1726692182/PhotoGalleryImage3_o2dotc.jpg 550w
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_192,f_auto,q_auto/v1726692182/PhotoGalleryImage3_o2dotc.jpg 192w,
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_384,f_auto,q_auto/v1726692182/PhotoGalleryImage3_o2dotc.jpg 384w,
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_576,f_auto,q_auto/v1726692182/PhotoGalleryImage3_o2dotc.jpg 576w
             "
             sizes="
-              (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
-              (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
-              (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
-              (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
-              100vw
+              (min-width: ${BREAKPOINTS.desktopMin}px) 30vw,
+              (min-width: ${BREAKPOINTS.bigTabletAndUp}px) 
+              10vw
             "
             type="image/webp"
           />
@@ -92,17 +83,14 @@ export default function PhotoGallery() {
         <picture>
           <source
             srcSet="
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726692183/PhotoGalleryImage4_ubg7bf.jpg 1600w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1726692183/PhotoGalleryImage4_ubg7bf.jpg 1100w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1726692183/PhotoGalleryImage4_ubg7bf.jpg 770w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1726692183/PhotoGalleryImage4_ubg7bf.jpg 550w
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_192,f_auto,q_auto/v1726692183/PhotoGalleryImage4_ubg7bf.jpg 192w,
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_384,f_auto,q_auto/v1726692183/PhotoGalleryImage4_ubg7bf.jpg 384w,
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_576,f_auto,q_auto/v1726692183/PhotoGalleryImage4_ubg7bf.jpg 576w
             "
             sizes="
-              (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
-              (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
-              (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
-              (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
-              100vw
+              (min-width: ${BREAKPOINTS.desktopMin}px) 30vw,
+              (min-width: ${BREAKPOINTS.bigTabletAndUp}px) 
+              10vw
             "
             type="image/webp"
           />
@@ -120,17 +108,14 @@ export default function PhotoGallery() {
         <picture>
           <source
             srcSet="
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726692179/PhotoGalleryImage5_slbyrq.jpg 1600w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1100,f_auto,q_auto/v1726692179/PhotoGalleryImage5_slbyrq.jpg 1100w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_770,f_auto,q_auto/v1726692179/PhotoGalleryImage5_slbyrq.jpg 770w,
-              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_550,f_auto,q_auto/v1726692179/PhotoGalleryImage5_slbyrq.jpg 550w
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_192,f_auto,q_auto/v1726692179/PhotoGalleryImage5_slbyrq.jpg 192w,
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_384,f_auto,q_auto/v1726692179/PhotoGalleryImage5_slbyrq.jpg 384w,
+              https://res.cloudinary.com/dqs3mkxnr/image/upload/w_576,f_auto,q_auto/v1726692179/PhotoGalleryImage5_slbyrq.jpg 576w
             "
             sizes="
-              (min-width: ${BREAKPOINTS.desktopMin}px) 1500px,
-              (min-width: ${BREAKPOINTS.laptopMin}px) 1100px,
-              (min-width: ${BREAKPOINTS.bigTabletMin}px) 770px,
-              (min-width: ${BREAKPOINTS.tabletMin}px) 550px,
-              100vw
+              (min-width: ${BREAKPOINTS.desktopMin}px) 30vw,
+              (min-width: ${BREAKPOINTS.bigTabletAndUp}px) 
+              10vw
             "
             type="image/webp"
           />

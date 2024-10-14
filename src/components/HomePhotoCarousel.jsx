@@ -110,7 +110,6 @@ export default function HomePhotoCarousel() {
             width="1600"
             height="900"
             src="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_800/v1726752161/HomeCarouselPhoto1_ss6dm9.jpg"
-            loading="lazy"
             alt="A Visites Parfums Paris tour participant smelling a perfume in a niche Parisian perfume shop"
           />
         </picture>
