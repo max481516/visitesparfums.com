@@ -38,6 +38,12 @@ export default function Home() {
         <meta property="og:locale:alternate" content="fr_FR" />
         <meta property="og:locale:alternate" content="ru_RU" /> */}
         <link rel="canonical" href="https://vpparis.fr/" />
+
+        <link
+          rel="preload"
+          as="image"
+          href="https://res.cloudinary.com/dqs3mkxnr/image/upload/w_1600,f_auto,q_auto/v1726752161/HomeCarouselPhoto1_ss6dm9.jpg"
+        />
       </Helmet>
 
       <Wrapper>
