@@ -13,9 +13,9 @@ export default function PhotoGallery() {
               https://res.cloudinary.com/dqs3mkxnr/image/upload/w_576,f_auto,q_auto/v1726692185/PhotoGalleryImage1_enrfpo.jpg 576w
             "
             sizes="
-              (min-width: ${BREAKPOINTS.desktopMin}px) 30vw,
-              (min-width: ${BREAKPOINTS.bigTabletAndUp}px) 
-              10vw
+              (max-width: 600px) 100vw,
+              (min-width: 601px) and (max-width: 1200px) 50vw,
+              30vw
             "
             type="image/webp"
           />
@@ -38,9 +38,9 @@ export default function PhotoGallery() {
               https://res.cloudinary.com/dqs3mkxnr/image/upload/w_576,f_auto,q_auto/v1726692181/PhotoGalleryImage2_bpllbt.jpg 576w
             "
             sizes="
-              (min-width: ${BREAKPOINTS.desktopMin}px) 30vw,
-              (min-width: ${BREAKPOINTS.bigTabletAndUp}px) 
-              10vw
+              (max-width: 600px) 100vw,
+              (min-width: 601px) and (max-width: 1200px) 50vw,
+              30vw
             "
             type="image/webp"
           />
@@ -63,9 +63,9 @@ export default function PhotoGallery() {
               https://res.cloudinary.com/dqs3mkxnr/image/upload/w_576,f_auto,q_auto/v1726692182/PhotoGalleryImage3_o2dotc.jpg 576w
             "
             sizes="
-              (min-width: ${BREAKPOINTS.desktopMin}px) 30vw,
-              (min-width: ${BREAKPOINTS.bigTabletAndUp}px) 
-              10vw
+              (max-width: 600px) 100vw,
+              (min-width: 601px) and (max-width: 1200px) 50vw,
+              30vw
             "
             type="image/webp"
           />
@@ -88,9 +88,9 @@ export default function PhotoGallery() {
               https://res.cloudinary.com/dqs3mkxnr/image/upload/w_576,f_auto,q_auto/v1726692183/PhotoGalleryImage4_ubg7bf.jpg 576w
             "
             sizes="
-              (min-width: ${BREAKPOINTS.desktopMin}px) 30vw,
-              (min-width: ${BREAKPOINTS.bigTabletAndUp}px) 
-              10vw
+              (max-width: 600px) 100vw,
+              (min-width: 601px) and (max-width: 1200px) 50vw,
+              30vw
             "
             type="image/webp"
           />
@@ -113,9 +113,9 @@ export default function PhotoGallery() {
               https://res.cloudinary.com/dqs3mkxnr/image/upload/w_576,f_auto,q_auto/v1726692179/PhotoGalleryImage5_slbyrq.jpg 576w
             "
             sizes="
-              (min-width: ${BREAKPOINTS.desktopMin}px) 30vw,
-              (min-width: ${BREAKPOINTS.bigTabletAndUp}px) 
-              10vw
+              (max-width: 600px) 100vw,
+              (min-width: 601px) and (max-width: 1200px) 50vw,
+              30vw
             "
             type="image/webp"
           />
