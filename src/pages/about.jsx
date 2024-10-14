@@ -10,7 +10,7 @@ export default function about() {
           name="description"
           content="Learn about Natacha Pascalis, the founder of Visites Parfums Paris, and her deep passion for the world of perfumes. Explore her expertise in fragrances and her dedication to helping others discover their perfect scent."
         />
-        <meta
+        {/* <meta
           property="og:title"
           content="About Natacha Pascalis - Visites Parfums Paris"
         />
@@ -27,7 +27,7 @@ export default function about() {
         <meta property="og:site_name" content="Visites Parfums Paris" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:locale:alternate" content="fr_FR" />
-        <meta property="og:locale:alternate" content="ru_RU" />
+        <meta property="og:locale:alternate" content="ru_RU" /> */}
         <link rel="canonical" href="https://vpparis.fr/about" />
       </Helmet>
       <AboutMe />

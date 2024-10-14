@@ -19,7 +19,7 @@ export default function Home() {
           name="description"
           content="Experience guided tours of Paris's top perfume shops. Discover exquisite fragrances and learn the fascinating history behind each scent."
         />
-        <meta
+        {/*  <meta
           property="og:title"
           content="Exclusive Paris Perfume Tours - Discover the World of Fragrances"
         />
@@ -36,7 +36,8 @@ export default function Home() {
         <meta property="og:site_name" content="Visites Parfums Paris" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:locale:alternate" content="fr_FR" />
-        <meta property="og:locale:alternate" content="ru_RU" />
+        <meta property="og:locale:alternate" content="ru_RU" /> */}
+        <link rel="canonical" href="https://vpparis.fr/" />
       </Helmet>
 
       <Wrapper>

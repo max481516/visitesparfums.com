@@ -76,7 +76,7 @@ export default function Booking() {
           name="description"
           content="Book your spot for an exclusive perfume tour in Paris with Natacha Pascalis. Discover the art of fragrances and explore hidden perfume boutiques."
         />
-        <meta
+        {/* <meta
           property="og:title"
           content="Book Your Perfume Tour in Paris - Visites Parfums Paris"
         />
@@ -93,7 +93,7 @@ export default function Booking() {
         <meta property="og:site_name" content="Visites Parfums Paris" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:locale:alternate" content="fr_FR" />
-        <meta property="og:locale:alternate" content="ru_RU" />
+        <meta property="og:locale:alternate" content="ru_RU" /> */}
         <link rel="canonical" href="https://vpparis.fr/booking" />
       </Helmet>
 
