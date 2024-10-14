@@ -169,7 +169,7 @@ export default function Booking() {
           title="Paris Saint-Honoré"
           photo={Visit1Picture}
           text={t("Booking.Visit1")}
-          link="https://www.airbnb.ie/experiences/4431379"
+          link="https://www.airbnb.com/experiences/4256832"
           target="_blank"
           rel="noopener noreferrer"
           variant="first"
@@ -179,7 +179,7 @@ export default function Booking() {
           title="Marais"
           photo={Visit2Picture}
           text={t("Booking.Visit2")}
-          link="https://www.airbnb.fr/experiences/4431379"
+          link="https://www.airbnb.com/experiences/4431379"
           target="_blank"
           rel="noopener noreferrer"
           variant="second"
