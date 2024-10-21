@@ -12,8 +12,9 @@ import { useEffect } from "react";
 import TagManager from "react-gtm-module";
 
 function App() {
-  useFavicon(); //for dynamic favicon
+  useFavicon(); // for dynamic favicon
 
+  // Initialize Google Tag Manager
   useEffect(() => {
     const tagManagerArgs = {
       gtmId: "GTM-W6BT5MKZ",
@@ -21,21 +22,8 @@ function App() {
     TagManager.initialize(tagManagerArgs);
   }, []);
 
-  /* useEffect(() => {
-    // Load Google Tag Manager (GTM)
-    const loadGTM = () => {
-      const script = document.createElement("script");
-      script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-W6BT5MKZ"; // Replace with your GTM ID
-      script.async = true;
-      document.body.appendChild(script);
-
-      // You can also add the no-script fallback here
-      const noscript = document.createElement("noscript");
-      noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6BT5MKZ" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
-      document.body.appendChild(noscript);
-    };
-
-    // Load Yandex Metrika
+  // Load Yandex Metrika
+  useEffect(() => {
     const loadYandexMetrika = () => {
       const script = document.createElement("script");
       script.async = true;
@@ -55,7 +43,7 @@ function App() {
           k=e.createElement(t), a=e.getElementsByTagName(t)[0],
           k.async=1, k.src=r, a.parentNode.insertBefore(k,a)
         })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-  
+
         ym(98578666, "init", {
           clickmap:true,
           trackLinks:true,
@@ -66,15 +54,8 @@ function App() {
       document.body.appendChild(inlineScript);
     };
 
-    // Load both Google Tag Manager and Yandex Metrika
-    loadGTM();
-    loadYandexMetrika();
-
-    // Yandex.Metrika noscript workaround
-    const noscript = document.createElement("noscript");
-    noscript.innerHTML = `<div><img src="https://mc.yandex.ru/watch/98578666" style="position:absolute; left:-9999px;" alt="" /></div>`;
-    document.body.appendChild(noscript);
-  }, []); */
+    loadYandexMetrika(); // Load Yandex Metrika
+  }, []);
 
   return (
     <main>
