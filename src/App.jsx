@@ -14,21 +14,17 @@ function App() {
   useFavicon(); //for dynamic favicon
 
   useEffect(() => {
-    // Load Google Analytics (gtag.js)
-    const loadGoogleAnalytics = () => {
+    // Load Google Tag Manager (GTM)
+    const loadGTM = () => {
       const script = document.createElement("script");
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-EE119JD8TQ";
+      script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-W6BT5MKZ"; // Replace with your GTM ID
       script.async = true;
       document.body.appendChild(script);
 
-      const inlineScript = document.createElement("script");
-      inlineScript.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-EE119JD8TQ');
-      `;
-      document.body.appendChild(inlineScript);
+      // You can also add the no-script fallback here
+      const noscript = document.createElement("noscript");
+      noscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6BT5MKZ" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+      document.body.appendChild(noscript);
     };
 
     // Load Yandex Metrika
@@ -51,7 +47,7 @@ function App() {
           k=e.createElement(t), a=e.getElementsByTagName(t)[0],
           k.async=1, k.src=r, a.parentNode.insertBefore(k,a)
         })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
+  
         ym(98578666, "init", {
           clickmap:true,
           trackLinks:true,
@@ -62,8 +58,8 @@ function App() {
       document.body.appendChild(inlineScript);
     };
 
-    // Load both Google Analytics and Yandex Metrika
-    loadGoogleAnalytics();
+    // Load both Google Tag Manager and Yandex Metrika
+    loadGTM();
     loadYandexMetrika();
 
     // Yandex.Metrika noscript workaround
