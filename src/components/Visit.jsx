@@ -32,6 +32,7 @@ export default function Visit({
           target={target}
           rel={rel}
           lang={i18n.language}
+          id="book-link"
         >
           {t("Nav.BookNow")}
         </BookButton>
