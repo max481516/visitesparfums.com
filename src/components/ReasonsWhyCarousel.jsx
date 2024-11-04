@@ -78,7 +78,7 @@ export default function ReasonsWhyCarousel() {
   };
 
   return (
-    <>
+    <section>
       <h2 style={title}>{t("Home.3ReasonsTitle")}</h2>
       <swiper-container style={swiperContainer} ref={swiperRef} init="false">
         <swiper-slide style={slideContent}>
@@ -100,6 +100,6 @@ export default function ReasonsWhyCarousel() {
           </p>
         </swiper-slide>
       </swiper-container>
-    </>
+    </section>
   );
 }

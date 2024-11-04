@@ -9,32 +9,15 @@ import HomePhotoCarousel from "../components/HomePhotoCarousel.jsx";
 import ReviewsCarousel from "../components/ReviewsCarousel.jsx";
 import ReasonsWhyCarousel from "../components/ReasonsWhyCarousel.jsx";
 import { QUERIES } from "../constants.js";
-import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    (function (h, o, t, j, a, r) {
-      h.hj =
-        h.hj ||
-        function () {
-          (h.hj.q = h.hj.q || []).push(arguments);
-        };
-      h._hjSettings = { hjid: 5173492, hjsv: 6 };
-      a = o.getElementsByTagName("head")[0];
-      r = o.createElement("script");
-      r.async = 1;
-      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-  }, []);
-
   return (
     <>
       <Helmet>
         <title>Visites Parfums Paris</title>
         <meta
           name="description"
-          content="Experience guided tours of Paris's top perfume shops. Discover exquisite fragrances and learn the fascinating history behind each scent."
+          content="Experience guided tours of Paris's top perfume shops with Visites Parfums Paris. Discover exquisite fragrances and learn the fascinating history behind each scent."
         />
         {/*  <meta
           property="og:title"

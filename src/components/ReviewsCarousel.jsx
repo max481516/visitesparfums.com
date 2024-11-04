@@ -82,7 +82,7 @@ export default function ReviewsCarousel() {
   };
 
   return (
-    <>
+    <section>
       <h2 style={title}>{t("Home.ReviewsTitle")}</h2>
       <swiper-container style={swiperContainer} ref={swiperRef} init="false">
         <swiper-slide style={slideContent}>
@@ -140,6 +140,6 @@ export default function ReviewsCarousel() {
           <cite style={clientName}>{t("Home.ReviewAuthor13")}</cite>
         </swiper-slide>
       </swiper-container>
-    </>
+    </section>
   );
 }

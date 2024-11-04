@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { QUERIES, BREAKPOINTS } from "../constants.js";
+import { QUERIES } from "../constants.js";
 
 export default function AboutMe() {
   const { t } = useTranslation();

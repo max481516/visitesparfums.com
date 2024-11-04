@@ -13,7 +13,7 @@ export default function AboutVisit() {
   );
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   @media ${QUERIES.laptopAndUp} {
     margin-top: 2rem;
   }
