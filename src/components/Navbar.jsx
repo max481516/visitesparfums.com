@@ -197,7 +197,7 @@ const InstagramLink = styled.a``;
 
 const StyledRxInstagramLogo = styled(RxInstagramLogo)`
   cursor: pointer;
-  color: white;
+  color: pink;
   flex-shrink: 0;
 
   &:hover {
